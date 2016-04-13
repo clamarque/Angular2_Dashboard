@@ -4,7 +4,7 @@
                 <form class="form-signin" role="form" (submit)="login($event, username.value, password.value)">
                     <h2 class="form-signin-heading">Login</h2><br>
                     <label for="Identifiant" class="">Identifiant</label>
-                    <input type="email" #username id="username" class="form-control" placeholder="Identifiant" required autofocus><br>
+                    <input type="email" #username id="username" class="form-control" placeholder="Identifiant" required><br>
                     <label for="password" class="">Password</label>
                     <input type="password" #password id="password" class="form-control" placeholder="Password" required>
                     <br>
@@ -14,7 +14,7 @@
                         </label>&nbsp;&nbsp;
                         <a href="#">Forgot your password</a>
                     </div><br>
-                <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+                <button class="btn btn-primary" type="submit">Sign in</button>
                 </form>
             </div>
 	    </div>

@@ -1,15 +1,15 @@
 import { Component } from 'angular2/core';
 import { CORE_DIRECTIVES } from 'angular2/common';
 import { Http, Headers } from 'angular2/http';
-import { Router, RouterLink } from 'angular2/router';
+import { Router, RouterLink,CanActivate } from 'angular2/router';
+import {HeaderComponent} from '../main/header.component';
 
-import {AppHeader} from '../main/app-header';
 
 
 @Component({
     selector: 'home',
     templateUrl: './dev/home/home.html',
-    directives: [CORE_DIRECTIVES, RouterLink, AppHeader]
+    directives: [CORE_DIRECTIVES, RouterLink]
 })
 
 
@@ -20,5 +20,4 @@ export class HomeComponent{
 	  this.password = localStorage.getItem('password');
 	  
 	}
-
 }

@@ -1,4 +1,4 @@
-import {Component} from "angular2/core";
+import {Component, Input} from "angular2/core";
 import {Router, RouterLink} from "angular2/router";
 import { CORE_DIRECTIVES, FORM_DIRECTIVES } from 'angular2/common';
 import {LoginService} from "./login.service";
@@ -7,12 +7,14 @@ import {LoginService} from "./login.service";
     selector:'login',
     templateUrl: './dev/login/login.html',
     providers:[LoginService],
-    directives: [RouterLink]
+    directives: [CORE_DIRECTIVES, RouterLink]
     
 })
 
 export class LoginComponent {
+    @Input() LoggedIn;
     
+    public LoggedIn = false;
     constructor (public _loginService : LoginService){}
     
     
@@ -20,6 +22,8 @@ export class LoginComponent {
         
         event.preventDefault();
         
-        this._loginService.login(username, password);       
-    }
+        if(this._loginService.login(username, password)){
+            this.LoggedIn = true;
+        }
+    }  
 }
