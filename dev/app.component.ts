@@ -5,7 +5,7 @@ import {Location, RouteConfig, Router} from 'angular2/router';
 //LoggedInOutlet
 import {LoggedInRouterOutlet} from './LoggedInOutlet';
 
-import {HeaderComponent} from './main/header.component';
+
 
 import {TeamListComponent} from "./teams/team-list.component";
 import {NewMemberComponent} from "./teams/new-member.component";
@@ -22,7 +22,7 @@ import {HomeComponent} from "./home/home.component";
 @Component({
     selector: 'my-app',
     templateUrl: './dev/app.html',
-    directives:[LoggedInRouterOutlet, HeaderComponent]
+    directives:[LoggedInRouterOutlet]
 })
 @RouteConfig([   
     { path: '/', redirectTo: ['/Home'] },
