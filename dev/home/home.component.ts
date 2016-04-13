@@ -13,17 +13,18 @@ import { Router, RouterLink} from 'angular2/router';
 
 export class HomeComponent{
     
-    public username: string;
-    public password: string;
+        
+    public username;
+    public password;
     
-     constructor(private router: Router, private http: Http ) {
+    constructor(private router: Router, private http: Http ) {
 	  this.username = localStorage.getItem('username');
 	  this.password = localStorage.getItem('password');
 	  
 	}
     
-    logout(event) {
-        event.preventDfault();
+    logout() {
+        event.preventDefault();
         
         localStorage.removeItem('username');
         localStorage.removeItem('password');
