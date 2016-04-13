@@ -1,9 +1,11 @@
+//Angular
 import {Component} from 'angular2/core';
-import { Http, Headers } from 'angular2/http';
-import {Location, RouteConfig, Router, RouterLink, ROUTER_DIRECTIVES, CanActivate} from 'angular2/router';
-import {LoggedInRouterOutlet} from './LoggedInOutlet';
-import {LoginComponent} from './login/login.component';
+import {Location, RouteConfig, Router} from 'angular2/router';
 
+//LoggedInOutlet
+import {LoggedInRouterOutlet} from './LoggedInOutlet';
+
+import {HeaderComponent} from './main/header.component';
 
 import {TeamListComponent} from "./teams/team-list.component";
 import {NewMemberComponent} from "./teams/new-member.component";
@@ -15,21 +17,19 @@ import {SaveProjetComponent} from "./projets/save-project.component";
 import {ArchiveProjetsComponent} from "./projets/archive-project.component";
 import {LoginComponent} from "./login/login.component";
 import {HomeComponent} from "./home/home.component";
-import {ProjectComponent} from "./projects/project.component";
+
 
 @Component({
     selector: 'my-app',
     templateUrl: './dev/app.html',
-    directives:[LoggedInRouterOutlet, RouterLink, LoginComponent]
+    directives:[LoggedInRouterOutlet, HeaderComponent]
 })
-@RouteConfig([
-    
+@RouteConfig([   
     { path: '/', redirectTo: ['/Home'] },
     { path: '/login', component: LoginComponent, name: 'LoginComponent' },
-  	{ path: '/home', component: HomeComponent, name: 'HomeComponent' },
+  	{ path: '/home', component: HomeComponent, name: 'Home' },
     
     {path: '/projects', component: ProjetsListComponent; name: 'ProjetsListComponent'},
-    {path: '/project', component: ProjectComponent; name: 'Project'},
     {path: '/projects/newprojet', name: 'NewProjet', component: NewProjetComponent},
     {path: '/projects/importprojet', name: 'ImportProjet', component: ImportProjetComponent},
     {path: '/projects/exportprojet', name: 'ExportProjet', component: ExportProjetComponent},
@@ -40,15 +40,7 @@ import {ProjectComponent} from "./projects/project.component";
     
 ])
 
-
-
 export class AppComponent {
-    
-    
-   
-    constructor(public router: Router,  private http: Http){
-        
-        this.username = localStorage.getItem('username');
-        this.password = localStorage.getItem('password');
-    }
+    constructor(public router: Router) {}
+      
 }

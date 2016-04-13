@@ -1,9 +1,6 @@
 import {Component} from 'angular2/core';
 import { Router, RouterLink } from 'angular2/router';
 
-
-
-
 @Component({
 	selector: 'app-header',
     templateUrl: './dev/main/header.html',

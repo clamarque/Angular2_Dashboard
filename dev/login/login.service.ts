@@ -26,7 +26,7 @@ export class LoginService{
             
         
         
-        this.router.parent.navigateByUrl('/home', {loggedIn: true});
+        this.router.parent.navigateByUrl('/home');
        
         /*
        this._http.post('http://10.226.166.18/PIC_BO/PIC/projet/',json,{ headers })

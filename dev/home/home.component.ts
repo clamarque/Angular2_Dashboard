@@ -1,7 +1,10 @@
+//Angular
 import { Component } from 'angular2/core';
 import { CORE_DIRECTIVES } from 'angular2/common';
 import { Http, Headers } from 'angular2/http';
-import { Router, RouterLink,CanActivate } from 'angular2/router';
+import { Router, RouterLink} from 'angular2/router';
+
+//Header
 import {HeaderComponent} from '../main/header.component';
 
 
@@ -19,5 +22,11 @@ export class HomeComponent{
 	  this.username = localStorage.getItem('username');
 	  this.password = localStorage.getItem('password');
 	  
+	}
+    
+    logout() {
+	  localStorage.removeItem('token');
+	  localStorage.removeItem('client');
+	  this.router.parent.navigateByUrl('/login');
 	}
 }

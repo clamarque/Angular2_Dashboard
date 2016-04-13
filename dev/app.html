@@ -3,27 +3,6 @@
     <h1 class="textWhite col-lg-9 text-center">Plateforme d Integration Continue</h1>
 </header>
 
-<div id="head-nav" class="navbar navbar-default" *ngIf="LoggedIn ==true">
-    <div class="container-fluid">
-        <div class="navbar-collapse">
-            <ul class="nav navbar-nav navbar-right user-nav">
-                <li>
-                    <a [routerLink]="['project']">Projects</a>
-                </li>
-                <li class="dropdown profile_menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-2x" aria-hidden="true"></i><span> {{username}}</span> <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Messages</a></li>
-                        <li class="divider"></li>
-                        <li><a href="" (click)="logout()">Sign Out</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
 
 <div class="main">
     <router-outlet></router-outlet>
