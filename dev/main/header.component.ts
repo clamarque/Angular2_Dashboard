@@ -9,6 +9,9 @@ import { Router, RouterLink } from 'angular2/router';
 })
 
 export class HeaderComponent {
+    
+public username: String;
+public password: String;
 	constructor(private router: Router, private http: Http ) {
 	  this.username = localStorage.getItem('username');
 	  this.password = localStorage.getItem('password');

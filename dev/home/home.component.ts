@@ -23,8 +23,8 @@ import {ProjetsListComponent} from '../projets/projets-list.component';
 export class HomeComponent{
     
         
-    public username;
-    public password;
+    public username: String;
+    public password: String;
     
     constructor(private router: Router, private http: Http ) {
 	  this.username = localStorage.getItem('username');
