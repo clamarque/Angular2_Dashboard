@@ -1,7 +1,5 @@
 import {Component} from "angular2/core";
 
-import {AppHeader} from '../main/app-header';
-
 @Component({
     selector:'projets-list',
     template:`
@@ -36,8 +34,7 @@ import {AppHeader} from '../main/app-header';
             </table>
 		</div>
     </div>
-    `,
-    directives: [AppHeader]
+    `
 })
 
 export class ProjetsListComponent {

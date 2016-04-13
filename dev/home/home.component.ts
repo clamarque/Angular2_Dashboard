@@ -17,6 +17,8 @@ import {HeaderComponent} from '../main/header.component';
 
 
 export class HomeComponent{
+public username: string;
+public password: string;
     
      constructor(private router: Router, private http: Http ) {
 	  this.username = localStorage.getItem('username');
@@ -24,9 +26,12 @@ export class HomeComponent{
 	  
 	}
     
-    logout() {
-	  localStorage.removeItem('token');
-	  localStorage.removeItem('client');
-	  this.router.parent.navigateByUrl('/login');
+    logout(event) {
+        event.preventDfault();
+        
+        localStorage.removeItem('token');
+        localStorage.removeItem('client');
+        
+	    this.router.parent.navigateByUrl('/login');
 	}
 }

@@ -29,7 +29,7 @@ import {HomeComponent} from "./home/home.component";
     { path: '/login', component: LoginComponent, name: 'LoginComponent' },
   	{ path: '/home', component: HomeComponent, name: 'Home' },
     
-    {path: '/projects', component: ProjetsListComponent; name: 'ProjetsListComponent'},
+    {path: '/projects', component: ProjetsListComponent, name: 'ProjetsListComponent'},
     {path: '/projects/newprojet', name: 'NewProjet', component: NewProjetComponent},
     {path: '/projects/importprojet', name: 'ImportProjet', component: ImportProjetComponent},
     {path: '/projects/exportprojet', name: 'ExportProjet', component: ExportProjetComponent},
