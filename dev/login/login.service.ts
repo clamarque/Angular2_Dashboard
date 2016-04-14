@@ -14,6 +14,17 @@ export class LoginService{
         
         console.log(username);
         console.log(password);
+        
+        /////// identifiants mockés
+        let   userRef:any;
+        let passwordRef:any;  
+ 
+        userRef="test";
+        passwordRef="test";
+       
+        
+        ///////////////////
+        
         /*
         let json = JSON.stringify({username, password});
         let headers = new Headers();
@@ -24,7 +35,16 @@ export class LoginService{
         localStorage.setItem('username',username);
         localStorage.setItem('password', password);
             
+        ///////verif identifiants mockés
+          if ((username===userRef)&& (password===passwordRef))
+    
+     {   localStorage.setItem('username',username);
+        localStorage.setItem('password', password);
+            
+        this.router.parent.navigateByUrl('/home');
         
+        
+        /////////////////////////////////////////////
         
         this.router.parent.navigateByUrl('/home');
        
@@ -42,8 +62,8 @@ export class LoginService{
                     console.log(error);
                 },
                 () => console.log('completed')
-            );
+            );*/
 
-    }*/
+    }
     }
 }
