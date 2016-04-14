@@ -6,6 +6,12 @@ import { Router, RouteConfig, RouterOutlet,RouterLink, ROUTER_DIRECTIVES} from '
 
 import {ProjetsListComponent} from '../projets/projets-list.component';
 import {TeamListComponent} from '../teams/team-list.component';
+import {NewProjetComponent} from "../projets/new-project.component";
+import {NewMemberComponent} from "../teams/new-member.component";
+import {ImportProjetComponent} from "../projets/import-project.component";
+import {ExportProjetComponent} from "../projets/export-project.component";
+import {SaveProjetComponent} from "../projets/save-project.component";
+import {ArchiveProjetsComponent} from "../projets/archive-project.component";
 
 @Component({
     selector: 'home',
@@ -14,8 +20,16 @@ import {TeamListComponent} from '../teams/team-list.component';
 
 })
 @RouteConfig([   
-    { path: '/', component: ProjetsListComponent,name: 'Projets', useAsDefault: true}
-    { path: 'team', component: TeamListComponent, name: 'Team'}
+    { path: '/', component: ProjetsListComponent,as: 'Projets', useAsDefault: true},
+    { path: '/team', component: TeamListComponent, as: 'Team'},
+    {path: '/projects', name: 'Projets', component: ProjetsListComponent},
+    {path: '/projects/newprojet', name: 'NewProjet', component: NewProjetComponent},
+    {path: '/projects/importprojet', name: 'ImportProjet', component: ImportProjetComponent},
+    {path: '/projects/exportprojet', name: 'ExportProjet', component: ExportProjetComponent},
+    {path: '/projects/saveprojet', name: 'SaveProjet', component: SaveProjetComponent},
+    {path: '/projects/archives', name: 'Archives', component: ArchiveProjetsComponent},
+    {path: '/teams', name: 'Teams', component: TeamListComponent},
+    {path: '/teams/newmember', name: 'NewMember', component: NewMemberComponent}    
 ])
 
 export class HomeComponent{

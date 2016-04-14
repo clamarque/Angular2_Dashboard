@@ -1,0 +1,23 @@
+ <div class="row">
+		<div class="col-sm-offset-3 col-sm-6 ">
+                <h2><span class="glyph glyphicon glyphicon-user colorTextSogeti"></span>
+                New Member</h2>
+                <div class="jumbotron">
+                      <form class="form-member">
+                     
+            			<label class="col-sm-1 control-label" for="inputDefault">Name</label>
+           				    <div class=" col-sm-9">
+                			<input type="text"required autofocus class="form-control" id="inputDefault"  #name placeholder="User1	(défini depuis le back office)" >
+            			    </div><br><br><br>
+       				
+                  
+            			<label class="col-sm-1 control-label" for="inputDefault">Statut*</label>
+           				 <div class=" col-sm-9">
+                			<input type="text" class="form-control" id="inputDefault" required #role  placeholder="READER (non modifiable)">
+            			<br><br><br>
+       			        </div><br><br><br>
+                            				
+                 <button (click)="onAddMember(name.value, role.value)"    class="btn btn-lg btn-primary center-block">Create Member</button>                                     
+                    </form>         
+        </div>
+    </div> 

@@ -60,3 +60,152 @@ h1, h2{
 
 
 
+body{
+    font-family: Verdana;   
+}
+label{
+    width: 100px;
+}
+h1, h2{
+    font-family: Trebuchet MS;
+}
+
+.clicked {
+    background-color: #CCBBAA;
+    color:white;
+    
+}
+
+.margtop{
+    margin-top: 120px;
+}
+.margTopTab{
+    margin-top: 40px;
+}
+.highMin{
+    height:90px;
+}
+.img{
+	height:90px;
+	width:78px;
+}
+.colorSogetiSecondary{
+    background-color: #CCBBAA;
+}
+.colorSogeti{
+	background-color: #FF4411;
+}
+.textWhite{
+	color: #FFFFFF;
+}
+.marginTopImg{
+	margin-top: 13px; 
+}
+.colorTextSogeti{
+    color:#FF4411;
+}
+
+p
+{color : red;
+font-size: 5px;}
+ 
+h1,h2,h3,h4
+{	
+	color: black;
+}
+
+.page-header
+{
+
+	border-width : 1px; 
+	border-color : #FF4411;
+	border-style : solid;
+	border-collapse: separate;
+    border-spacing: 1px;
+	background-color: #FF4411;
+	border-style: outset;
+	border-bottom-width: 15px;
+	background: -webkit-linear-gradient(left, #FF4411,#FFCCCC); /*Safari 5.1-6*/
+  	background: -o-linear-gradient(right, #FF4411,#FFCCCC); /*Opera 11.1-12*/
+  	background: -moz-linear-gradient(right,#FF4411,#FFCCCC); /*Fx 3.6-15*/
+  	background: linear-gradient(to right, #FF4411,#FFCCCC); /*Standard*/
+  	color : #FFFFFF;
+  	font-weight: bold;
+  	 margin:0px;
+  }
+
+.form-signin-heading
+{
+	text-align: center;
+	
+}
+
+
+
+.langues
+{
+	margin-top: 15%;
+	
+}
+.nav navbar-nav
+{
+text-align: center;
+}
+
+.mention
+{
+	text-align: center;
+}
+
+.Res_soc
+{
+	text-align: right;
+}
+
+
+
+
+
+
+/*img
+{
+max-width: 90px;
+height: auto ;
+}
+*/
+
+.jumbotron
+{
+border : 5px solid;
+border-radius: 10%;	
+border-bottom: inherit;
+border-top: inherit;
+border-color: #008844
+background-color : #CCBBAA;
+min-height : 500px;
+}
+h2
+{
+	text-align: center;
+}
+
+#projet1,#projet2
+
+{
+    border-width : 1px; 
+	border-color  : black;
+	border-style : solid;
+    
+}
+footer
+{
+	color : red;
+	margin-bottom: 0px;
+}
+
+.disabled
+{
+    
+    
+    background-color: red;
+}

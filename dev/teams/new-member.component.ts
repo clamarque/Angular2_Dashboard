@@ -4,25 +4,7 @@ import {Team} from "./team";
 import {Router} from "angular2/router";
 
 @Component({
-    template:`
-    <div class="container margtop">
-        <div class="col-lg-offset-4 col-lg-4 col-lg-offset-4">
-        <h2><span class="glyph glyphicon glyphicon-user colorTextSogeti"></span>
-        New team mate</h2>
-            <div class="margTopTab">
-                <label for="name">Name:</label>
-                <input type="text" id="name" #name>
-            </div>
-            <div>
-                <label for="role">role:</label>
-                <input type="text" id="role" #role>
-            </div>
-            <button (click)="onAddMember(name.value, role.value)"
-                    class="btn btn-warning center-block"
-            >Create Member</button>
-        </div>
-    </div>
-    `,
+    templateUrl : 'dev/teams/new-member.html',
     providers:[TeamService]
 })
 

@@ -1,33 +1,71 @@
-<div id="head-nav" class="navbar navbar-default">
+
+<nav class="navbar navbar-default">
     <div class="container-fluid">
-      <div class="navbar-collapse">
-        <ul class="nav navbar-nav navbar-right user-nav"> 
-          <li>
-            <a [routerLink]="['Projets']">Projects</a>
-          </li>
-          <li>
-            <a [routerLink]="['Team']">Team</a>
-          </li>
-          <li class="dropdown profile_menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-2x" aria-hidden="true"></i><span> {{username}}</span> <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">My Account</a></li>
-              <li><a href="#">Profile</a></li>
-              <li><a href="#">Messages</a></li>
-              <li class="divider"></li>
-              <li><a href="" (click)="logout()">Sign Out</a></li>
-            </ul>
-          </li>
-        </ul>			
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+       <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+            <li class="dropdown" >
+                    <a class="dropdown-toggle" data-toggle="dropdown">TEAMS
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li ><a [routerLink]="['Teams']">Teams</a></li>
+                        <li ><a [routerLink]="['NewMember']">NewMember</a></li>		        		
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">PROJECT
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a [routerLink]="['NewProjet']">NewProjet</a></li>
+                        <li><a [routerLink]="['ImportProjet']">ImportProjet</a></li>
+                        <li><a [routerLink]="['ExportProjet']">ExportProjet</a></li> 
+                        <li><a [routerLink]="['SaveProjet']">SaveProjet</a></li>
+                        <li><a [routerLink]="['Archives']">Archives</a></li>
+                    </ul>
+                </li> 
+                <li class="dropdown" >
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">BUILD
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">All build plans</a></li>
+                        <li><a href="#">Build activity</a></li>		        		
+                    </ul>
+                </li>
+                <li class="dropdown" >
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">DEPLOY
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">All deployements</a></li>
+                        <li><a href="#">Activities</a></li>		        		
+                    </ul>
+                </li>
+                <li><a href="#">REPORT</a></li>
+           </ul>
+           
+           <ul class="nav navbar-nav navbar-right">                                  
+                <li class="dropdown profile_menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-2x" aria-hidden="true"></i><span> {{username}}</span> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Messages</a></li>
+                        <li class="divider"></li>
+                        <li><a href="" (click)="logout()">Sign Out</a></li>
+                    </ul>
+                </li>
+        	</ul>	
       </div>
     </div>
-  </div>
-  
-<div class="section__home">
+ </nav>
    
-    <h1>hello {{username}}</h1>
-    <p>password : {{password}}</p>
-</div>
  <div class="inner-outler">
      <router-outlet></router-outlet>
  </div>
