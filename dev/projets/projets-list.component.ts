@@ -12,22 +12,22 @@ import {Component} from "angular2/core";
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Environment</th>
+                        <th>Name</th>
                         <th>Status</th> 
                         <th>Release</th>
-                        <th>Release Branch</th>
+                        <th>Url</th>
                         <th>Completed</th>
-                        <th>Actions</th>
+                        <th>Members</th>
                     </tr>
                 </thead>
                 <tbody >
                     <tr *ngFor="#projet of projets" >
-                        <th>{{projet.environment}}</th>
+                        <th>{{projet.name}}</th>
                         <th>{{projet.status}}</th>
                         <th>{{projet.release}}</th>
-                        <th>{{projet.releaseBranch}}</th>
+                        <th><a>{{projet.url}}</a></th>
                         <th>{{projet.completed}}</th>
-                        <th>{{projet.actions}}</th>
+                        <th><button type="button" class="btn btn-warning">See Members</button></th>
                     </tr>
                 </tbody>
             </table>
@@ -38,10 +38,10 @@ import {Component} from "angular2/core";
 
 export class ProjetsListComponent {
     public projets =[
-		{environment: "Production", status: "DEPLOYED", release: "release-7", releaseBranch: "new", completed: "15 january 2014", actions: "blabla"},
-		{environment: "Staging", status: "DEPLOYED", release: "release-7", releaseBranch: "new", completed: "07 january 2014", actions: "blabla"},
-		{environment: "Production", status: "DEPLOYED", release: "release-7", releaseBranch: "new", completed: "15 january 2014", actions: "blabla"},
-		{environment: "Staging", status: "DEPLOYED", release: "release-7", releaseBranch: "new", completed: "07 january 2014", actions: "blabla"},
+		{name: "PIC", status: "DEPLOYED", release: "release-7", url: "www.github.com", completed: "15 january 2014", member: "blabla"},
+		{name: "BRCP", status: "DEPLOYED", release: "release-7", url: "www.bitbucket.com", completed: "07 january 2014", member: "blabla"},
+		{name: "PRODUCT", status: "DEPLOYED", release: "release-7", url: "www.github.com", completed: "15 january 2014", member: "blabla"},
+		{name: "STOL", status: "DEPLOYED", release: "release-7", url: "www.bitbucket.com", completed: "07 january 2014", member: "blabla"},
     ];
     
 }
