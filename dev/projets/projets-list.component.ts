@@ -3,7 +3,6 @@ import {Component} from "angular2/core";
 @Component({
     selector:'projets-list',
     template:`
-    <app-header></app-header>
     <div class="container margtop">
         <h2 class="text-center">
             <span class="glyph glyphicon glyphicon-folder-open colorTextSogeti"></span>

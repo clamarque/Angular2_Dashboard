@@ -2,27 +2,25 @@
 import { Component } from 'angular2/core';
 import { CORE_DIRECTIVES } from 'angular2/common';
 import { Http, Headers} from 'angular2/http';
-import { Router, ROUTER_DIRECTIVES, RouteConfig } from 'angular2/router';
+import { Router, RouteConfig, RouterOutlet,RouterLink, ROUTER_DIRECTIVES} from 'angular2/router';
+
 import {ProjetsListComponent} from '../projets/projets-list.component';
+import {TeamListComponent} from '../teams/team-list.component';
 
 @Component({
     selector: 'home',
     templateUrl: './dev/home/home.html',
-    directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES]
+    directives: [RouterOutlet, RouterLink,ROUTER_DIRECTIVES]
 
 })
 @RouteConfig([   
-    {   
-        path: '/projets',
-        component: ProjetsListComponent,
-        name: 'Projets',
-        useAsDefault: true
-    }
+    { path: '/', component: ProjetsListComponent,as: 'Projets', useAsDefault: true}
+    { path: '/team', component: TeamListComponent, as: 'Team'}
 ])
 
 export class HomeComponent{
     
-        
+       
     public username: String;
     public password: String;
     
@@ -34,7 +32,7 @@ export class HomeComponent{
     
     logout() {
         event.preventDefault();
-        
+            
         localStorage.removeItem('username');
         localStorage.removeItem('password');
         

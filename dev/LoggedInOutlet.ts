@@ -10,7 +10,7 @@ export class LoggedInRouterOutlet extends RouterOutlet {
   publicRoutes: any;
   private parentRouter: Router;
 
-  constructor(_elementRef: ElementRef,_loader: DynamicComponentLoader,_parentRouter: Router,@Attribute('name') nameAttr: string) {
+  constructor(_elementRef: ElementRef,_loader: DynamicComponentLoader,_parentRouter: Router,@Attribute('as') nameAttr: string) {
       super(_elementRef, _loader, _parentRouter, nameAttr);
       
       this.parentRouter = _parentRouter;
