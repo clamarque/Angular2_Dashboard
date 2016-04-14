@@ -16,8 +16,8 @@ import {HomeComponent} from "./home/home.component";
 })
 @RouteConfig([ 
     
-    { path: '/login', component: LoginComponent, as: 'LoginComponent', useAsDefault: true}
-    { path: '/home/...', component: HomeComponent, as: 'HomeComponent'},
+    { path: '/login', component: LoginComponent, name: 'LoginComponent', useAsDefault: true}
+    { path: '/home/...', component: HomeComponent, name: 'HomeComponent'},
     
 ])
 
