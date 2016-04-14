@@ -1,20 +1,32 @@
-    <div class="container margtop">
+   <div class="container margtop">
         <div class="row">			
             <div class="col-lg-offset-4 col-lg-4">
-                <form class="form-signin" role="form" (submit)="login($event,username.value, password.value)">
-                    <h2 class="form-signin-heading">Login</h2><br>
-                    <label for="Identifiant" class="">Identifiant</label>
-                    <input type="email" #username id="username" class="form-control" placeholder="Identifiant" required><br>
-                    <label for="password" class="">Password</label>
-                    <input type="password" #password id="password" class="form-control" placeholder="Password" required>
+                <form class="form-signin" role="form"
+                      (submit)="login($event, username.value, password.value)">
+                    <h2 class="form-signin-heading text-center">Login</h2><br>
+                    <label for="Identifiant">Identifiant</label>
+                    <input type="text" id="username" class="form-control" placeholder="Identifiant"
+                            #username
+                            required
+                            autofocus
+                    >
                     <br>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="remember-me"> Remember me
-                        </label>&nbsp;&nbsp;
-                        <a href="#">Forgot your password</a>
-                    </div><br>
-                <button class="btn btn-primary" type="submit">Sign in</button>
+                    <label for="password" class="">Password</label>
+                    <input type="password" id="password" placeholder="Password" 
+                             #password
+                             class="form-control" 
+                             required
+                             pattern="^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9]).{6,})\S$" 
+                             minlength="8"                         
+                    >
+                    <br>
+                    <div>
+                        <input type="checkbox" id="Remember"><label for="Remember">&nbsp;Remember me</label>
+                    </div>
+                    <br>
+                    <p class="text-center"><a href="#">Forgot your password</a></p>
+                    
+                <button class="btn btn-primary btn-block" type="submit">Sign in</button>
                 </form>
             </div>
 	    </div>
