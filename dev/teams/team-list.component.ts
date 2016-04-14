@@ -3,6 +3,7 @@ import {TeamService} from "./team.service";
 import {Team} from "./team";
 import {OnInit} from "angular2/core";
 
+
 @Component({
     selector:'team-list',
     template:`
