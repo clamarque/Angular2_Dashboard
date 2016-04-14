@@ -14,8 +14,8 @@ import {TeamListComponent} from '../teams/team-list.component';
 
 })
 @RouteConfig([   
-    { path: '/', component: ProjetsListComponent,as: 'Projets', useAsDefault: true}
-    { path: '/team', component: TeamListComponent, as: 'Team'}
+    { path: '/', component: ProjetsListComponent,name: 'Projets', useAsDefault: true}
+    { path: 'team', component: TeamListComponent, name: 'Team'}
 ])
 
 export class HomeComponent{
