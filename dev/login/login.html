@@ -3,6 +3,7 @@
             <div class="col-lg-offset-4 col-lg-4">
                 <form class="form-signin" role="form" (ngSubmit)="login($event,username.value, password.value)">
                     <h2 class="form-signin-heading">Login</h2><br>
+                    <div id="error" *ngIf="error===true">Login Error</div>	 
                     <label for="Identifiant" class="">Identifiant</label>
                     <input type="text" #username id="username" class="form-control" placeholder="Identifiant" required><br>
                     <label for="password" class="">Password</label>
@@ -14,7 +15,7 @@
                         </label>&nbsp;&nbsp;
                         <a href="#">Forgot your password</a>
                     </div><br>
-                <button class="btn btn-primary" type="submit">Sign in</button>
+                <button class="btn btn-primary btn-block"  type="submit">Sign in</button>
                 </form>
             </div>
 	    </div>
