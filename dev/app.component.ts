@@ -15,7 +15,7 @@ import {HomeComponent} from "./home/home.component";
     directives:[RouterOutlet,LoggedInRouterOutlet]
 })
 @RouteConfig([ 
-    { path: '/', redirectTo: ['/Home'] },
+    
     { path: '/login', component: LoginComponent, name: 'LoginComponent', useAsDefault: true}
     { path: '/home/...', component: HomeComponent, name: 'HomeComponent'},
     
