@@ -1,28 +1,28 @@
 import {Directive, Attribute, ElementRef, DynamicComponentLoader} from "angular2/core";
-import {Router, RouterOutlet, ComponentInstruction} from "angular2/router";
+import {Router, RouterOutlet, ComponentInstruction,ROUTER_DIRECTIVES} from "angular2/router";
 import {LoginComponent} from "./login/login.component";
 
 @Directive({
-  selector: 'router-outlet'
+  selector: 'loggedin-router-outlet'
 })
 
 export class LoggedInRouterOutlet extends RouterOutlet {
   publicRoutes: any;
   private parentRouter: Router;
 
-  constructor(_elementRef: ElementRef,_loader: DynamicComponentLoader,_parentRouter: Router,@Attribute('as') nameAttr: string) {
+  constructor(_elementRef: ElementRef,_loader: DynamicComponentLoader,_parentRouter: Router,@Attribute('name') nameAttr: string) {
       super(_elementRef, _loader, _parentRouter, nameAttr);
       
       this.parentRouter = _parentRouter;
       this.publicRoutes = {
-          '/login': true;
+          'login': true
      };
   }
 
-  activate(instruction: ComponentInstruction) {
-      let url = this.parentRouter.lastNavigationAttempt;
-      if ( !this.publicRoutes[url] && !localStorage.getItem('username') && !localStorage.getItem('password') ) {
-        this.parentRouter.navigateByUrl('/login');
+ activate(instruction: ComponentInstruction) {
+    let url = instruction.urlPath;
+    if (!this.publicRoutes[url] && !localStorage.getItem('username') && !localStorage.getItem('password')) {
+      this.parentRouter.navigateByUrl('/login');
     }
     return super.activate(instruction);
   }
