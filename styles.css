@@ -162,7 +162,13 @@ text-align: center;
 	text-align: right;
 }
 
-
+#error
+{
+    text-align: center;
+    font-size: 20px;
+    color:red;
+    
+}
 
 
 
