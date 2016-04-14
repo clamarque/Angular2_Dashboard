@@ -16,11 +16,18 @@ import {LoginService} from "./login.service";
 
 export class LoginComponent {
      
+      public error = false;
+       errorMsg : string;
     constructor (public _loginService : LoginService){}
     
     
     login(event,username, password) {
         
-        this._loginService.login(username, password)
+        if (!this._loginService.login(username, password))
+        {
+           this.error=true;
+            this.errorMsg = 'Failed to login';
+                                        
+        }
     }  
 }
