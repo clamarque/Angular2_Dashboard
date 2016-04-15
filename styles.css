@@ -205,13 +205,12 @@ h2
 }
 footer
 {
+   
 	color : red;
-	margin-bottom: 0px;
+	margin-bottom: -110px;
 }
 
 .disabled
 {
-    
-    
     background-color: red;
 }
