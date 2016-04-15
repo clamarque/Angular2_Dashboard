@@ -81,5 +81,3 @@ $RECYCLE.BIN/
 typings
 
 app
-dev/teams/team-list.html
-dev/LoggedInOutlet.ts
