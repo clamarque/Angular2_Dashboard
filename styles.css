@@ -187,9 +187,10 @@ border-radius: 10%;
 border-bottom: inherit;
 border-top: inherit;
 border-color: #008844
-background-color : #CCBBAA;
+background-color: #CCBBAA;
 min-height : 500px;
 }
+
 h2
 {
 	text-align: center;
@@ -204,11 +205,12 @@ h2
     
 }
 footer
-{
-   
-	color : red;
-	margin-bottom: -110px;
+{   position:fixed;
+   bottom: 0;
+   left: 0;
+   right: 0
 }
+
 
 .disabled
 {
