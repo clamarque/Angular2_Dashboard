@@ -3,7 +3,7 @@
                 <h2><span class="glyph glyphicon glyphicon-user colorTextSogeti"></span>
                 New Member</h2>
                 <div class="jumbotron">
-                      <form class="form-member">
+                      <form class="form-member" #NewMember="ngForm" (ngSubmit)="onAddMember(name.value, role.value)">
                      
             			<label class="col-sm-1 control-label" for="inputDefault">Name</label>
            				    <div class=" col-sm-9">
@@ -17,7 +17,7 @@
             			<br><br><br>
        			        </div><br><br><br>
                             				
-                 <button (click)="onAddMember(name.value, role.value)"    class="btn btn-lg btn-primary center-block">Create Member</button>                                     
+                 <button type="submit"    class="btn btn-lg btn-primary center-block">Create Member</button>                                     
                     </form>         
         </div>
     </div> 

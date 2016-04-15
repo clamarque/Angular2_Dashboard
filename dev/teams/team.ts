@@ -1,4 +1,4 @@
-export interface Team {
+export interface Member {
     name:string,
     role:string
 }

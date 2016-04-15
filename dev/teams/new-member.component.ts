@@ -1,6 +1,6 @@
 import {Component} from "angular2/core";
 import {TeamService} from "./team.service"
-import {Team} from "./team";
+import {Member} from "./team";
 import {Router} from "angular2/router";
 
 @Component({
@@ -13,9 +13,10 @@ export class NewMemberComponent {
     constructor(private _teamService: TeamService, private _router:Router) {}
     
     onAddMember (name, role) {
-       let team: Team = {name:name, role:role};
-       this._teamService.insertTeam(team);
+       let member: Member = {name:name, role:role};
+       this._teamService.insertTeam(member);
        this._router.navigate(['Teams']);
        return false;
+      
     }
 }

@@ -1,6 +1,6 @@
-import {Team} from "./team";
+import {Member} from "./team";
 
-export const TEAMS: Team[] = [
+export const TEAMS: Member[] = [
     {name:"polo", role:"editor"},
     {name:"toto", role:"admin"},
     {name:"tata", role:"modo"},

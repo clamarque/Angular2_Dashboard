@@ -91,7 +91,8 @@ header img {
 
 
 .clicked {
-    color: #FF4411;
+     background-color: #CCBBAA;
+    color:white;
 }
 
 .margTopTab {
