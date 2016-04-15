@@ -21,40 +21,37 @@ export class LoginService{
  
         userRef="test";
         passwordRef="test";
+        
+        ///////verif identifiants mockés
+       if ((username===userRef)&& (password===passwordRef))
+        {
+           localStorage.setItem('username',username);
+           localStorage.setItem('password', password);
+           
+           this.router.parent.navigateByUrl('/home');
+       }
+        else{
+            localStorage.removeItem('username');
+            localStorage.removeItem('password');
+        }
        
         
-        ///////////////////
-        
+      
+        //call webservice
         /*
         let json = JSON.stringify({username, password});
         let headers = new Headers();
         console.log(headers);
         
-       headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    */
-        localStorage.setItem('username',username);
-        localStorage.setItem('password', password);
-            
-        ///////verif identifiants mockés
-          if ((username===userRef)&& (password===passwordRef))
-    
-     {   localStorage.setItem('username',username);
-        localStorage.setItem('password', password);
-            
-        this.router.parent.navigateByUrl('/home');
-        
-        
-        /////////////////////////////////////////////
-        
-        this.router.parent.navigateByUrl('/home');
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
        
-        /*
-       this._http.post('http://10.226.166.18/PIC_BO/PIC/projet/',json,{ headers })
+    
+       this._http.post('http://10.226.166.13/PIC_BO/auth',json,{ headers })
             .subscribe(
                 response => {
                     console.log('methode post');
                     //localStorage.setItem('username',response.json().data['username']);
-                    this.loggedIn = true;
+                    
                     this.router.parent.navigateByUrl('/home');
                     
                 },
@@ -62,8 +59,7 @@ export class LoginService{
                     console.log(error);
                 },
                 () => console.log('completed')
-            );*/
-
-    }
+            )
+            */
     }
 }
