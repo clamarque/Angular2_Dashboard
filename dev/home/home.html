@@ -22,10 +22,11 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a [routerLink]="['NewProjet']">NewProjet</a></li>
-                        <li><a [routerLink]="['ImportProjet']">ImportProjet</a></li>
-                        <li><a [routerLink]="['ExportProjet']">ExportProjet</a></li> 
-                        <li><a [routerLink]="['SaveProjet']">SaveProjet</a></li>
+                        <li><a [routerLink]="['Projets']">My Project</a></li>
+                        <li><a [routerLink]="['NewProjet']">New Project</a></li>
+                        <li><a [routerLink]="['ImportProjet']">Import Project</a></li>
+                        <li><a [routerLink]="['ExportProjet']">Export Project</a></li> 
+                        <li><a [routerLink]="['SaveProjet']">Save Project</a></li>
                         <li><a [routerLink]="['Archives']">Archives</a></li>
                     </ul>
                 </li> 
@@ -54,6 +55,7 @@
                 <li class="dropdown profile_menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-2x" aria-hidden="true"></i><span> {{username}}</span> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
+                        <li><a [routerLink]="['Projets']">Home</a></li>
                         <li><a href="#">My Account</a></li>
                         <li><a href="#">Profile</a></li>
                         <li><a href="#">Messages</a></li>

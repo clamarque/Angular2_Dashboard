@@ -16,5 +16,6 @@ export class NewMemberComponent {
        let team: Team = {name:name, role:role};
        this._teamService.insertTeam(team);
        this._router.navigate(['Teams']);
+       return false;
     }
 }
