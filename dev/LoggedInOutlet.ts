@@ -22,7 +22,7 @@ export class LoggedInRouterOutlet extends RouterOutlet {
  activate(instruction: ComponentInstruction) {
     let url = instruction.urlPath;
     if (!this.publicRoutes[url] && !localStorage.getItem('username') && !localStorage.getItem('password')) {
-      this.parentRouter.navigateByUrl('/login');
+      this.parentRouter.navigateByUrl('/AUTH');
     }
     return super.activate(instruction);
   }
