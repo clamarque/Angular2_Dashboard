@@ -1,45 +1,100 @@
 body,
 html {
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: 912px;
-    padding: 0;
-    margin: 0;
-    font-size: 14px;
-    line-height: 26px;
     background: #FFF;
+    color: #000;
+    font-size: 14px;
     font-family: Helvetica, Arial, sans-serif;
+    line-height: 26px;
 }
-header{
+
+.row {
+    margin: 0 !important;
+}
+
+
+/*
+* HEADER *
+*/
+
+header {
+    padding: 15px;
+    min-height: 90px;
     background: #FF4411;
     color: #FFF;
-    min-height: 90px;
     text-align: center;
-    padding: 15px;
-}
-header h1{
-    text-align: left;
-    margin-left: -200px;
 }
 
-label {
-    width: 100px;
+header h1 {
+    /*text-align: left;*/
 }
 
-h1,
-h2 {
-    font-family: Trebuchet MS;
+
+/*
+* LOGIN *
+*/
+
+.login {
+    padding: 40px 0;
+    text-align: center;
 }
+
+.login form {
+    margin-top: 20px;
+}
+.login .form-group{
+    margin-bottom: 30px;
+}
+.login form .form-control:focus {
+    border-color: #FF4411 !important;
+    box-shadow: none;
+}
+
+.login h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login input {
+    display: block;
+    outline: none;
+    border: 1px solid #888;
+    border-radius: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.login form .btn-primary {
+    margin-bottom: 15px;
+    border-color: #FF4411;
+    border-radius: inherit;
+    background-color: #FF4411;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.login form .btn-primary:hover,
+.login form .btn-primary:focus,
+.login form .btn-primary:active{
+    outline: inherit;
+    border-color: #FF4411;
+    background-color: #FFF;
+    box-shadow: none;
+    color: #FF4411;
+}
+
+
 
 .clicked {
     color: #FF4411;
 }
 
-
 .margTopTab {
     margin-top: 40px;
 }
-
-
 
 .img {
     height: 90px;
@@ -50,13 +105,9 @@ h2 {
     background-color: #CCBBAA;
 }
 
-
-
 .textWhite {
     color: #FFFFFF;
 }
-
-
 
 .colorTextSogeti {
     color: #FF4411;
@@ -167,39 +218,69 @@ h2 {
 */
 
 footer {
-    text-align: center;
-    font-size: 20px;
-    color: #000;
     position: fixed;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
-}
-
-.footer__love_pic i:hover {
-    color: #FF4411;
-}
-
-.footer__network i {
-    color: #FF4411;
-}
-
-.footer__mention a {
     color: #000;
-    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 20px;
 }
-
-.footer__mention a:hover {
+.footer__social{
+    margin-bottom: 15px;
+    font-size: 16px;
+    margin-right: 20px;
+}
+.footer__social a{
+    color: #FF4411;
+    font-size: 20px;
+}
+.footer__social a:hover{
+    color: #FF4411;
+}
+.footer__copyright{
+    color: #666;
+    font-size: 14px;
+}
+.footer__copyright a {
+    text-decoration: none;
+    color: #666;
+}
+.footer__copyright a:hover {
     color: #FF4411;
     text-decoration: none;
 }
+
 
 /*
 * RESPONSIVE
 */
 
-@media screen and (max-width:480px){
-    header h1{
+@media screen and (min-width: 480px) {
+    .login {
+        margin: 0 auto;
+        max-width: 500px;
+        width: 400px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    header h1 {
+        text-align: center;
+        margin-left: inherit;
+    }
+}
+
+@media screen and (max-width:768px) {
+    header h1 {
+        text-align: center;
+        margin-left: inherit;
+    }
+}
+
+@media only screen and (max-width:970px) {
+    header h1 {
         text-align: center;
         margin-left: inherit;
     }
