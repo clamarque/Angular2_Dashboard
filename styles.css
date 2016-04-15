@@ -28,10 +28,10 @@ header {
     color: #FFF;
     text-align: center;
 }
-
-header h1 {
-    /*text-align: left;*/
+header img {
+    margin: 0 auto
 }
+
 
 
 /*
@@ -41,7 +41,7 @@ header h1 {
 .login {
     padding: 40px 0;
     text-align: center;
-    height: 350px;
+    height: 400px;
 }
 
 .login form {
