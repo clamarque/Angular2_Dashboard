@@ -1,5 +1,6 @@
 body,
 html {
+    overflow: hidden;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -40,6 +41,7 @@ header h1 {
 .login {
     padding: 40px 0;
     text-align: center;
+    height: 600px;
 }
 
 .login form {
@@ -218,14 +220,10 @@ h2 {
 */
 
 footer {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    padding-bottom: 20px;
     color: #000;
     text-align: center;
     font-size: 20px;
-    padding-bottom: 20px;
 }
 .footer__social{
     margin-bottom: 15px;
