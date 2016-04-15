@@ -22,8 +22,8 @@ import {ArchiveProjetsComponent} from "../projets/archive-project.component";
 @RouteConfig([   
     { path: '/', component: ProjetsListComponent,as: 'Projets', useAsDefault: true},
     { path: '/team', component: TeamListComponent, as: 'Team'},
-    {path: '/projects', name: 'Projets', component: ProjetsListComponent},
-    {path: '/projects/newprojet', name: 'NewProjet', component: NewProjetComponent},
+    {path: '/PROJECTS', name: 'Projets', component: ProjetsListComponent},
+    {path: '/PROJECT', name: 'NewProjet', component: NewProjetComponent},
     {path: '/projects/importprojet', name: 'ImportProjet', component: ImportProjetComponent},
     {path: '/projects/exportprojet', name: 'ExportProjet', component: ExportProjetComponent},
     {path: '/projects/saveprojet', name: 'SaveProjet', component: SaveProjetComponent},
@@ -50,6 +50,6 @@ export class HomeComponent{
         localStorage.removeItem('username');
         localStorage.removeItem('password');
         
-	    this.router.parent.navigateByUrl('/login');
+	    this.router.parent.navigateByUrl('/AUTH');
 	}
 }
