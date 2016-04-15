@@ -1,7 +1,7 @@
 {
   "name": "pic_sogeti",
   "version": "1.0.0",
-  "description": "",
+  "description": "a plateforme continous integration",
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
@@ -17,7 +17,7 @@
   "devDependencies": {
     "concurrently": "^2.0.0",
     "lite-server": "^2.2.0",
-    "typescript": "^1.8.9",
+    "typescript": "^1.8.10",
     "typings": "^0.7.12"
   },
   "dependencies": {
@@ -26,7 +26,7 @@
     "es6-shim": "^0.35.0",
     "reflect-metadata": "^0.1.2",
     "rxjs": "^5.0.0-beta.2",
-    "systemjs": "^0.19.25",
+    "systemjs": "^0.19.26",
     "zone.js": "^0.6.10"
   }
 }
