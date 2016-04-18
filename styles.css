@@ -64,9 +64,8 @@ header img {
     display: block;
     outline: none;
     border: 1px solid #888;
-    border-radius: inherit;
-    -webkit-appearance: none;
-    appearance: none;
+    border-radius: inherit;   
+    
 }
 
 .login form .btn-primary {

@@ -1,6 +1,7 @@
 <div class="login">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <h2>Welcome to the continuous integration platform</h2>
+        
         <form class="form-signin" role="form" (ngSubmit)="login($event,username.value, password.value)">
             <div class="form-group">
                 <input type="text" #username id="username" class="form-control" placeholder="Identifiant" required>
@@ -8,10 +9,26 @@
             <div class="form-group">
                 <input type="password" #password id="password" class="form-control" placeholder="Password" required>
             </div>
+            
+                    <div class="checkbox">
+                        <label><input type="checkbox"> Remember me</label>
+                    </div>
+                                        
             <button class="btn btn-primary btn-block" type="submit">Sign in</button>
-            <a href="#"><small>Forgot password?</small></a>
+           
+            <a href="#"><small>Forgot password?</small></a>&nbsp;&nbsp;&nbsp;&nbsp;
 
             <div id="error" *ngIf="error===true">Login Error</div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Language <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Français (France)</a></li>
+                    <li><a href="#">English (Us)</a></li>    
+                </ul>
+           </div>
         </form>
+     
     </div>
 </div>

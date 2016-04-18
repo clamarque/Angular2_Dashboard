@@ -6,73 +6,8 @@ import {NewMemberComponent} from "./new-member.component";
 
 @Component({
     selector:'team-list',
-    template:`
-     <div class="row">
-			<div class="col-sm-offset-3 col-sm-6 ">
-        <h2 class="text-center"><span class="glyph glyphicon glyphicon-user colorTextSogeti"></span>
-        <b>My Team</b></h2>
-       
-            <div class="jumbotron">
-                <table class="table table-condensed ">
-                    <thead>
-                    <tr>
-                       
-                        <th>Name</th>
-                        <th>Role</th>
-                        <th>Modifier</th>
-                        <th>Supprimer</th>
-                        <th>Suspendre</th>
-                    </tr>
-                    </thead>
-                    
-                      <tbody >
-                        <tr *ngFor="#member of Teams"  (click)="onClick(member)"   [class.clicked]="selectedTeam===member">
-                        
-                            
-                            <th [class.disabled]="member.selected">{{member.name}}</th>
-                            <th [class.disabled]="member.selected">{{member.role}}</th>
-                            <th [class.disabled]="member.selected">&nbsp;&nbsp;&nbsp;<button class="btn btn-warning btn-sm" (click)=onModif()><span class="glyphicon glyphicon-pencil"></span></button></th>
-                            <th [class.disabled]="member.selected">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-warning btn-sm" (click)=onSuppr(member)><span class="glyphicon glyphicon-trash"></span></button></th>
-                            <th [class.disabled]="member.selected">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" [(ngModel)]="member.selected" (click)=onDisabled(member) /></th>
-                         </tr>
-                      </tbody>              
-                 </table>                                 
-                          
-                <div class="row">
-                <div class="col-sm-offset-2 col-sm-8 col-sm-offset-2">                
-                    
-                    <div *ngIf="modif===true" >
-                      <form #ModifMembre="ngForm" (ngSubmit)="onSubmit()" >
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label" for="name">Name</label>
-                                <div class=" col-sm-8">
-                                    <input required [(ngModel)]="selectedTeam.name" type="text" ngControl="name" #name class="form-control">
-                                </div><br><br>                      
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label" for="inputDefault">Role</label>
-                                <div class=" col-sm-8">
-                                <input required [(ngModel)]="selectedTeam.role" ngControl="role"  type="text"  #role=ngForm class="form-control" >
-                                </div><br><br><br>
-                            </div>	 
-                                                                               
-                            <div class="row">
-                                <div class="col-sm-offset-2 col-sm-4">                      
-                                    <button class="btn btn-lg btn-danger btn-block">cancel</button>
-                                </div>
-                                <div class=" col-sm-4">                      
-                                    <button type="submit" class="btn btn-lg btn-warning btn-block">save</button>
-                                </div>
-                            </div> 
-                  </form>                  
-                </div>   
-                </div>
-              </div>
-            </div>
-        </div>       
-    `,
-providers:[TeamService]
+    templateUrl : 'dev/teams/team-list.html',   
+    providers:[TeamService]
 })
 
 export class TeamListComponent {
@@ -85,13 +20,7 @@ export class TeamListComponent {
     constructor(private _teamService: TeamService) {}
     
     
-    public onRestart(member:Member)
-    {
-        this.disabled=false;
-        
-    }
-    
-      checkboxes = [{label: 'one'},{label: 'two'}];  
+   /// desactive un membre
     
     public onDisabled(member:Member)
     
@@ -100,29 +29,40 @@ export class TeamListComponent {
                  
     }
     
+    // Modifier un membre
+    
     public onModif(){
         this.modif=true;
     }
     
+    
+    
+    /// supprimer un membre
     public onSuppr(member: Member){
         let index = this.Teams.indexOf (member);
         this.Teams.splice(index,1);
     }
+    
+    
+    /// modifier un membre
     public onSubmit(){
         this.modif=false;
         
     }
     
+    // determine le membre selectioné
     public onClick(member){
         this.selectedTeam=member;
         console.log(member);
         
     }
         
+        // sort la liste des membres de l equipe
     getTeams() {
         this._teamService.getTeams().then((teams:Member[])=> this.Teams=teams);
     }
     
+    /// initialise la liste des membres 
     ngOnInit():any {
         this.getTeams();
     }
