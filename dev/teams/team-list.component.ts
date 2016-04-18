@@ -16,7 +16,7 @@ import {NewMemberComponent} from "./new-member.component";
                 <table class="table table-condensed ">
                     <thead>
                     <tr>
-                        <th>Select</th>
+                       
                         <th>Name</th>
                         <th>Role</th>
                         <th>Suspendre</th>
@@ -28,11 +28,10 @@ import {NewMemberComponent} from "./new-member.component";
                       <tbody >
                         <tr *ngFor="#member of Teams"  (click)="onClick(member)"   [class.clicked]="selectedTeam===member">
                         
-                            <th>&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" [(ngModel)]="member.selected" (click)=onDisabled(member) /></th>
+                            
                             <th [class.disabled]="member.selected">{{member.name}}</th>
                             <th [class.disabled]="member.selected">{{member.role}}</th>
-                            <th *ngIf= "disabled==false" member= [hidden]>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  class="btn btn-warning btn-sm"(click)=onDisabled(member)><span class="glyphicon glyphicon-pause"></span></button></th>
-                            <th *ngIf= "disabled==true" member= [hidden]>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-warning btn-sm" (click)= onRestart(member) ><span class="glyphicon glyphicon-play" ></span></button></th>
+                            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" [(ngModel)]="member.selected" (click)=onDisabled(member) /></th>
                             <th>&nbsp;&nbsp;&nbsp;<button class="btn btn-warning btn-sm" (click)=onModif()><span class="glyphicon glyphicon-pencil"></span></button></th>
                             <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-warning btn-sm" (click)=onSuppr(member)><span class="glyphicon glyphicon-trash"></span></button></th>
                          </tr>
