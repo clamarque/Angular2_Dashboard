@@ -18,7 +18,8 @@
     <script src="node_modules/angular2/bundles/router.dev.js"></script>
     <script src="node_modules/angular2/bundles/http.js"></script>
     <script src="node_modules/angular2/bundles/http.dev.js"></script>
-   
+    
+       
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -27,12 +28,18 @@
     <!-- 2. Configure SystemJS -->
     <script>
       System.config({
-        packages: {        
+        defaultJSExtensions: true,
+        packages: { 
+         '/angular2': {defaultExtension: false},
           app: {
             format: 'register',
             defaultExtension: 'js'
-          }
-        }
+          }           
+        },
+            map: {
+                'ng2-translate': 'node_modules/ng2-translate',
+                'rxjs': 'node_modules/rxjs'
+            }
       });
       System.import('app/main')
             .then(null, console.error.bind(console));
