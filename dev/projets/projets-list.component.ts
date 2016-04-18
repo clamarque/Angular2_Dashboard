@@ -8,7 +8,7 @@ import {Component} from "angular2/core";
             <span class="glyph glyphicon glyphicon-folder-open colorTextSogeti"></span>
             <b> My Projects</b>
         </h2>
-        <div class="margTopTab">
+        <div class="margTopTab projets__list">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -33,7 +33,10 @@ import {Component} from "angular2/core";
             </table>
 		</div>
     </div>
-    `
+    `,
+   
+        
+   
 })
 
 export class ProjetsListComponent {

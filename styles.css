@@ -196,7 +196,8 @@ height: auto ;
     border-radius: 10%;
     border-bottom: inherit;
     border-top: inherit;
-    border-color: #008844 background-color: #CCBBAA;
+    border-color: #008844;
+    background-color: #CCBBAA;
     min-height: 500px;
 }
 
@@ -215,6 +216,12 @@ h2 {
     background-color: red;
 }
 
+/*
+* PROJETS *
+*/
+.projets__list{
+    min-height: 510px;
+}
 
 /*
 * FOOTER *
