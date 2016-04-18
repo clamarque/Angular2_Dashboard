@@ -19,9 +19,9 @@ import {NewMemberComponent} from "./new-member.component";
                        
                         <th>Name</th>
                         <th>Role</th>
-                        <th>Suspendre</th>
                         <th>Modifier</th>
                         <th>Supprimer</th>
+                        <th>Suspendre</th>
                     </tr>
                     </thead>
                     
@@ -31,9 +31,9 @@ import {NewMemberComponent} from "./new-member.component";
                             
                             <th [class.disabled]="member.selected">{{member.name}}</th>
                             <th [class.disabled]="member.selected">{{member.role}}</th>
-                            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" [(ngModel)]="member.selected" (click)=onDisabled(member) /></th>
-                            <th>&nbsp;&nbsp;&nbsp;<button class="btn btn-warning btn-sm" (click)=onModif()><span class="glyphicon glyphicon-pencil"></span></button></th>
-                            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-warning btn-sm" (click)=onSuppr(member)><span class="glyphicon glyphicon-trash"></span></button></th>
+                            <th [class.disabled]="member.selected">&nbsp;&nbsp;&nbsp;<button class="btn btn-warning btn-sm" (click)=onModif()><span class="glyphicon glyphicon-pencil"></span></button></th>
+                            <th [class.disabled]="member.selected">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-warning btn-sm" (click)=onSuppr(member)><span class="glyphicon glyphicon-trash"></span></button></th>
+                            <th [class.disabled]="member.selected">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" [(ngModel)]="member.selected" (click)=onDisabled(member) /></th>
                          </tr>
                       </tbody>              
                  </table>                                 
@@ -97,8 +97,7 @@ export class TeamListComponent {
     
     {     
         this.disabled=true;  
-        console.log("suspendu !!" + this.selectedTeam );
-        return !this.checkboxes.some(_ => _.state);                
+                 
     }
     
     public onModif(){

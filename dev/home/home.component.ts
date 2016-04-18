@@ -3,7 +3,6 @@ import { Component } from 'angular2/core';
 import { CORE_DIRECTIVES } from 'angular2/common';
 import { Http, Headers} from 'angular2/http';
 import { Router, RouteConfig, RouterOutlet,RouterLink, ROUTER_DIRECTIVES} from 'angular2/router';
-
 import {ProjetsListComponent} from '../projets/projets-list.component';
 import {TeamListComponent} from '../teams/team-list.component';
 import {NewProjetComponent} from "../projets/new-project.component";
@@ -12,6 +11,7 @@ import {ImportProjetComponent} from "../projets/import-project.component";
 import {ExportProjetComponent} from "../projets/export-project.component";
 import {SaveProjetComponent} from "../projets/save-project.component";
 import {ArchiveProjetsComponent} from "../projets/archive-project.component";
+import {profileComponent} from "../home/profile.component";
 
 @Component({
     selector: 'home',
@@ -29,7 +29,9 @@ import {ArchiveProjetsComponent} from "../projets/archive-project.component";
     {path: '/projects/saveprojet', name: 'SaveProjet', component: SaveProjetComponent},
     {path: '/projects/archives', name: 'Archives', component: ArchiveProjetsComponent},
     {path: '/teams', name: 'Teams', component: TeamListComponent},
-    {path: '/teams/newmember', name: 'NewMember', component: NewMemberComponent}    
+    {path: '/teams/newmember', name: 'NewMember', component: NewMemberComponent}
+    {path: '/profile', name: 'Profile', component: profileComponent}
+       
 ])
 
 export class HomeComponent{
