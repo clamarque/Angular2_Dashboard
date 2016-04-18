@@ -1,5 +1,6 @@
 {
   "generic":{
+    "welcome-title": "Bienvenue sur la plateforme d'intégration continue",
     "btn-login": "Se connecter"
     }
 }

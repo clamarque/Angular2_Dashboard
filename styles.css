@@ -41,7 +41,7 @@ header img {
 .login {
     padding: 40px 0;
     text-align: center;
-    height: 400px;
+    height: 600px;
 }
 
 .login form {
@@ -227,6 +227,9 @@ h2 {
 * FOOTER *
 */
 
+
+
+
 footer {
     padding-bottom: 20px;
     color: #000;
@@ -256,8 +259,6 @@ footer {
     color: #FF4411;
     text-decoration: none;
 }
-
-
 /*
 * RESPONSIVE
 */

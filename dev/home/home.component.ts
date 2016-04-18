@@ -3,6 +3,9 @@ import { Component } from 'angular2/core';
 import { CORE_DIRECTIVES } from 'angular2/common';
 import { Http, Headers} from 'angular2/http';
 import { Router, RouteConfig, RouterOutlet,RouterLink, ROUTER_DIRECTIVES} from 'angular2/router';
+
+
+//component
 import {ProjetsListComponent} from '../projets/projets-list.component';
 import {TeamListComponent} from '../teams/team-list.component';
 import {NewProjetComponent} from "../projets/new-project.component";
@@ -36,15 +39,16 @@ import {profileComponent} from "../home/profile.component";
 
 export class HomeComponent{
     
-       
+           
     public username: String;
     public password: String;
     
-    constructor(private router: Router, private http: Http ) {
+constructor(private router: Router, private http: Http) {
 	  this.username = localStorage.getItem('username');
 	  this.password = localStorage.getItem('password');
 	  
 	}
+    
     
     logout() {
         event.preventDefault();

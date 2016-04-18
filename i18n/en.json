@@ -1,5 +1,6 @@
 {
   "generic":{
+    "welcome-title": "Welcome to the continuous integration platform",
     "btn-login": "Sign in"
     }
 }
