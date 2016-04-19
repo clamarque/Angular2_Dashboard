@@ -142,7 +142,14 @@ header img {
     color: #676a6c;
     font-weight: 600;
 }
+.project__actions .btn {
+    background: #FFF;
+    color: #666;
 
+}
+.project__actions a:hover {
+    color: #676a6c !important;
+}
 .project__member img {
     width: 32px;
     height: 32px;
