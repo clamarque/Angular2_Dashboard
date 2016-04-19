@@ -21,7 +21,21 @@ html {
     font-weight: 100;
     padding: 0 10px 20px 10px;
 }
-
+.btn {
+    padding: 6px 12px;
+    background-color: #FF4411;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+}
+.btn:hover,
+.btn:focus,
+.btn:active{
+    outline: none;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    color: #FFF !important;
+}
 
 /*
 * HEADER *
@@ -74,9 +88,9 @@ header img {
     border: 1px solid #888;
     border-radius: inherit;
 }
-
-.login form .btn-primary {
+.login .btn {
     margin-bottom: 15px;
+    width: 100%;
     border-color: #FF4411;
     border-radius: inherit;
     background-color: #FF4411;
@@ -84,37 +98,24 @@ header img {
     font-size: 18px;
 }
 
-.login form .btn-primary:hover,
-.login form .btn-primary:focus,
-.login form .btn-primary:active {
-    outline: inherit;
-    border-color: #FF4411;
-    background-color: #FFF;
-    box-shadow: none;
-    color: #FF4411;
-}
-
 
 /*
 * PROJETS *
 */
-
-.ibox-title {
+.project__header{
     padding: 20px 15px;
     border-bottom: 1px solid #777;
 }
-
-.ibox-title h5 {
+.project__header h5 {
     float: left;
-    line-height: 5px;
     color: #FF4411;
+    line-height: 5px;
 }
 
-.ibox-tools {
+.project__header-actions {
     display: block;
     float: none;
     margin-top: 0;
-    /* position: relative; */
     padding: 0;
     text-align: right;
 }

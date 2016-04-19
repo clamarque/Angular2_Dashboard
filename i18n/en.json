@@ -8,6 +8,11 @@
         "btn": "Sign in",
         "forgot": "Forgot password?"
     },
+    "project": {
+        "title": "Project List",
+        "subtitle": "All projects assigned to this account",
+        "new": "Create new project"
+    },
     "footer": {
         "language": "Choose your Language",
         "copyright-notice": "Check our Legal notices",

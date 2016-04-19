@@ -1,41 +1,10 @@
 import {Component} from "angular2/core";
+import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
     selector:'projets-list',
-    template:`
-    <div class="container margtop">
-        <h2 class="text-center">
-            <span class="glyph glyphicon glyphicon-folder-open colorTextSogeti"></span>
-            <b> My Projects</b>
-        </h2>
-        <div class="margTopTab projets__list">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Status</th> 
-                        <th>Release</th>
-                        <th>Url</th>
-                        <th>Completed</th>
-                        <th>Members</th>
-                    </tr>
-                </thead>
-                <tbody >
-                    <tr *ngFor="#projet of projets" >
-                        <th>{{projet.name}}</th>
-                        <th>{{projet.status}}</th>
-                        <th>{{projet.release}}</th>
-                        <th><a>{{projet.url}}</a></th>
-                        <th>{{projet.completed}}</th>
-                        <th><button type="button" class="btn btn-warning">See Members</button></th>
-                    </tr>
-                </tbody>
-            </table>
-		</div>
-    </div>
-    `,
-   
-        
+    templateUrl: '/dev/projets/project.html',
+    directives: [ROUTER_DIRECTIVES]
    
 })
 

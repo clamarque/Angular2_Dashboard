@@ -8,6 +8,11 @@
         "btn": "Se connecter",
         "forgot": "Mot de passe oublié?"
     },
+    "project": {
+        "title": "Liste de projet",
+        "subtitle": "Tous les projets assignés à ce compte",
+        "new": "Créer un nouveau projet"
+    },
     "footer": {
         "language": "Choisissez votre langage",
         "copyright-notice": "Consultez nos Mentions légales",
