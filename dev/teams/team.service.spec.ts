@@ -1,7 +1,7 @@
 import {describe,expect,it,xit, inject, beforeEachProviders} from 'angular2/testing';
 
 import {TeamService} from './team.service';
-import {Team} from "./team";
+import {Member} from "./team";
 
 describe('When a get the data from TeamService', (){
     
