@@ -4,10 +4,16 @@ import {Member} from "./team";
 
 @Injectable()
 
+////  retourne l equipe de maniere assynchrone
+
 export class TeamService {
     getTeams() {
         return Promise.resolve(TEAMS);
     }
+    
+    
+    
+    /// insertion d un membre en assynchrone   
     
     insertTeam(member: Member) {
         Promise.resolve(TEAMS).then((teams: Member[]) => teams.push(member)) ;

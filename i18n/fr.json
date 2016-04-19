@@ -6,7 +6,8 @@
         "username": "nom d'utilisateur",
         "password": "mot de passe",
         "btn": "Se connecter",
-        "forgot": "Mot de passe oublié?"
+        "forgot": "Mot de passe oublié?",        
+		"remember":"Se rappeler de moi"
     },
     "project": {
         "title": "Liste de projet",

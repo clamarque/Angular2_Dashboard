@@ -6,7 +6,8 @@
         "username": "username",
         "password": "password",
         "btn": "Sign in",
-        "forgot": "Forgot password?"
+        "forgot": "Forgot password?",
+        "remember":"remember-me"
     },
     "project": {
         "title": "Project List",
