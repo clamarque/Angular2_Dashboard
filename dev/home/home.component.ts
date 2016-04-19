@@ -23,9 +23,7 @@ import {profileComponent} from "../home/profile.component";
 
 })
 @RouteConfig([   
-    { path: '/', component: ProjetsListComponent,as: 'Projets', useAsDefault: true},
-    { path: '/team', component: TeamListComponent, as: 'Team'},
-    {path: '/PROJECTS', name: 'Projets', component: ProjetsListComponent},
+    { path: '/', component: ProjetsListComponent,name: 'Projets', useAsDefault: true},
     {path: '/PROJECT', name: 'NewProjet', component: NewProjetComponent},
     {path: '/projects/importprojet', name: 'ImportProjet', component: ImportProjetComponent},
     {path: '/projects/exportprojet', name: 'ExportProjet', component: ExportProjetComponent},
