@@ -235,6 +235,16 @@ footer {
     text-align: center;
     font-size: 18px;
 }
+.footer__language {
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #FF4411;
+    color: #777;
+    font-size: 16px;
+    cursor: pointer;
+}
 .footer__social{
     margin-bottom: 15px;
     font-size: 16px;

@@ -1,8 +1,5 @@
-<div class="switch">
-    <label>
-        FR
-        <input type="checkbox" [ngFormControl]="language" (change)="changeLanguage(language.value)">
-        <span class="lever"></span>
-        EN
-    </label>
-</div>
+<select class="footer__language" [ngFormControl]="language" (change)="changeLanguage(language.value)">
+    <option value="" disabled="" selected="">{{'generic.footer-language' | translate}}</option>
+    <option value="EN">EN</option>
+    <option value="FR">FR</option>
+</select>

@@ -10,7 +10,7 @@ import { TranslateService } from 'ng2-translate/ng2-translate';
 })
 
 export class LanguageComponent{
-    language: Control = new Control(false);
+    language: Control = new Control('');
 
     constructor(private translate: TranslateService){
 
@@ -18,7 +18,7 @@ export class LanguageComponent{
 
     changeLanguage(value){
     console.log(value);
-        if(value) {
+        if(value == 'FR') {
             this.translate.use('fr');
         } else {
             this.translate.use('en');
