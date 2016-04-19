@@ -1,7 +1,17 @@
 {
-  "generic":{
-    "welcome-title": "Bienvenue sur la plateforme d'intégration continue",
-    "btn-login": "Se connecter",
-    "footer-language": "Choisissez votre langage"
+    "generic": {
+        "welcome-title": "Bienvenue sur la plateforme d'intégration continue"
+    },
+    "login": {
+        "username": "nom d'utilisateur",
+        "password": "mot de passe",
+        "btn": "Se connecter",
+        "forgot": "Mot de passe oublié?"
+    },
+    "footer": {
+        "language": "Choisissez votre langage",
+        "copyright-notice": "Consultez nos Mentions légales",
+        "copyright-or": "ou",
+        "copyright-contact": "contactez-nous"
     }
 }

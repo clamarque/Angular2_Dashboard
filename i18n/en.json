@@ -1,7 +1,17 @@
 {
-  "generic":{
-    "welcome-title": "Welcome to the continuous integration platform",
-    "btn-login": "Sign in",
-    "footer-language": "Choose your Language"
+    "generic": {
+        "welcome-title": "Welcome to the continuous integration platform"
+    },
+    "login": {
+        "username": "username",
+        "password": "password",
+        "btn": "Sign in",
+        "forgot": "Forgot password?"
+    },
+    "footer": {
+        "language": "Choose your Language",
+        "copyright-notice": "Check our Legal notices",
+        "copyright-or": "or",
+        "copyright-contact": "contact us"
     }
 }

@@ -44,9 +44,10 @@ export class LoginService{
         console.log(headers);
         
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
+         headers.append('Access-Control-Allow-Origin': '*');
        
     
-       this._http.post('http://10.226.166.13/PIC_BO/auth',json,{ headers })
+       this._http.post('http://10.226.166.13/PIC_BO/auth',json,{ headers: headers })
             .subscribe(
                 response => {
                     console.log('methode post');
