@@ -2,7 +2,7 @@
 import { Component } from 'angular2/core';
 import { CORE_DIRECTIVES } from 'angular2/common';
 import { Http, Headers} from 'angular2/http';
-import { Router, RouteConfig, RouterOutlet,RouterLink, ROUTER_DIRECTIVES} from 'angular2/router';
+import { Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 
 //component
@@ -19,7 +19,7 @@ import {profileComponent} from "../home/profile.component";
 @Component({
     selector: 'home',
     templateUrl: './dev/home/home.html',
-    directives: [RouterOutlet, RouterLink,ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES]
 
 })
 @RouteConfig([   

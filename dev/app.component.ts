@@ -1,6 +1,6 @@
 //Angular
 import {Component, OnInit} from 'angular2/core';
-import {Location, RouteConfig, Router,ROUTER_DIRECTIVES, RouterOutlet} from 'angular2/router';
+import {Location, RouteConfig, Router,ROUTER_DIRECTIVES} from 'angular2/router';
 import {TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';
 
 //LoggedInOutlet
@@ -15,7 +15,7 @@ import { LanguageComponent } from './language/language.component';
     selector: 'my-app',
     templateUrl: './dev/app.html',
     pipes: [TranslatePipe],
-    directives:[RouterOutlet,LoggedInRouterOutlet, LanguageComponent]
+    directives:[LoggedInRouterOutlet, LanguageComponent]
 })
 @RouteConfig([ 
     

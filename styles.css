@@ -16,6 +16,12 @@ html {
     margin: 0 !important;
 }
 
+.title {
+    font-size: 24px;
+    font-weight: 100;
+    padding: 0 10px 20px 10px;
+}
+
 
 /*
 * HEADER *
@@ -28,10 +34,10 @@ header {
     color: #FFF;
     text-align: center;
 }
+
 header img {
     margin: 0 auto
 }
-
 
 
 /*
@@ -47,9 +53,11 @@ header img {
 .login form {
     margin-top: 20px;
 }
-.login .form-group{
+
+.login .form-group {
     margin-bottom: 30px;
 }
+
 .login form .form-control:focus {
     border-color: #FF4411 !important;
     box-shadow: none;
@@ -64,8 +72,7 @@ header img {
     display: block;
     outline: none;
     border: 1px solid #888;
-    border-radius: inherit;   
-    
+    border-radius: inherit;
 }
 
 .login form .btn-primary {
@@ -79,7 +86,7 @@ header img {
 
 .login form .btn-primary:hover,
 .login form .btn-primary:focus,
-.login form .btn-primary:active{
+.login form .btn-primary:active {
     outline: inherit;
     border-color: #FF4411;
     background-color: #FFF;
@@ -88,146 +95,68 @@ header img {
 }
 
 
-
-.clicked {
-     background-color: #CCBBAA;
-    color:white;
-}
-
-.margTopTab {
-    margin-top: 40px;
-}
-
-.img {
-    height: 90px;
-    width: 78px;
-}
-
-.colorSogetiSecondary {
-    background-color: #CCBBAA;
-}
-
-.textWhite {
-    color: #FFFFFF;
-}
-
-.colorTextSogeti {
-    color: #FF4411;
-}
-
-.navbar.navbar-static-top {
-    background: #eee;
-}
-
-.section__home {
-    margin-top: 200px;
-    text-align: center;
-    width: 100%;
-    color: #000;
-}
-
-l p {
-    color: red;
-    font-size: 5px;
-}
-
-h1,
-h2,
-h3,
-h4 {
-    color: black;
-}
-
-.page-header {
-    border-width: 1px;
-    border-color: #FF4411;
-    border-style: solid;
-    border-collapse: separate;
-    border-spacing: 1px;
-    background-color: #FF4411;
-    border-style: outset;
-    border-bottom-width: 15px;
-    background: -webkit-linear-gradient(left, #FF4411, #FFCCCC);
-    /*Safari 5.1-6*/
-    background: -o-linear-gradient(right, #FF4411, #FFCCCC);
-    /*Opera 11.1-12*/
-    background: -moz-linear-gradient(right, #FF4411, #FFCCCC);
-    /*Fx 3.6-15*/
-    background: linear-gradient(to right, #FF4411, #FFCCCC);
-    /*Standard*/
-    color: #FFFFFF;
-    font-weight: bold;
-    margin: 0px;
-}
-
-.form-signin-heading {
-    text-align: center;
-}
-
-.langues {
-    margin-top: 15%;
-}
-
-.nav navbar-nav {
-    text-align: center;
-}
-
-.Res_soc {
-    text-align: right;
-}
-
-#error {
-    text-align: center;
-    font-size: 20px;
-    color: red;
-}
-
-
-/*img
-{
-max-width: 90px;
-height: auto ;
-}
-*/
-
-.jumbotron {
-    border: 5px solid;
-    border-radius: 10%;
-    border-bottom: inherit;
-    border-top: inherit;
-    border-color: #008844;
-    background-color: #CCBBAA;
-    min-height: 500px;
-}
-
-h2 {
-    text-align: center;
-}
-
-#projet1,
-#projet2 {
-    border-width: 1px;
-    border-color: black;
-    border-style: solid;
-}
-
-.disabled {
-    background-color: #BD6C4F;
-}
-
 /*
 * PROJETS *
 */
-.projets__list{
-    min-height: 510px;
+
+.ibox-title {
+    padding: 20px 15px;
+    border-bottom: 1px solid #777;
 }
+
+.ibox-title h5 {
+    float: left;
+    line-height: 5px;
+    color: #FF4411;
+}
+
+.ibox-tools {
+    display: block;
+    float: none;
+    margin-top: 0;
+    /* position: relative; */
+    padding: 0;
+    text-align: right;
+}
+
+#project-list {
+    margin-bottom: 60px;
+}
+
+#project-list table tr td {
+    padding: 15px 10px;
+    border-top: none;
+    border-bottom: 1px solid #e7eaec;
+    vertical-align: middle;
+}
+
+#project-list .label-primary,
+.badge-primary {
+    background-color: #FF4411;
+    color: #FFFFFF;
+}
+
+.project__title a {
+    font-size: 14px;
+    color: #676a6c;
+    font-weight: 600;
+}
+
+.project__member img {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-white {
+    color: inherit;
+    background: white;
+    border: 1px solid #e7eaec;
+}
+
 
 /*
 * FOOTER *
 */
-
-
-
 
 footer {
     padding-bottom: 20px;
@@ -235,6 +164,7 @@ footer {
     text-align: center;
     font-size: 18px;
 }
+
 .footer__language {
     margin-bottom: 20px;
     padding-bottom: 8px;
@@ -245,29 +175,37 @@ footer {
     font-size: 16px;
     cursor: pointer;
 }
-.footer__social{
+
+.footer__social {
     margin-bottom: 15px;
     font-size: 16px;
     margin-right: 20px;
 }
-.footer__social a{
+
+.footer__social a {
     color: #FF4411;
 }
-.footer__social a:hover{
+
+.footer__social a:hover {
     color: #FF4411;
 }
-.footer__copyright{
+
+.footer__copyright {
     color: #666;
     font-size: 14px;
 }
+
 .footer__copyright a {
     text-decoration: none;
     color: #666;
 }
+
 .footer__copyright a:hover {
     color: #FF4411;
     text-decoration: none;
 }
+
+
 /*
 * RESPONSIVE
 */
@@ -299,4 +237,81 @@ footer {
         text-align: center;
         margin-left: inherit;
     }
+}
+
+
+/*
+* A TRIER*
+*/
+
+.clicked {
+    background-color: #CCBBAA;
+    color: white;
+}
+
+.img {
+    height: 90px;
+    width: 78px;
+}
+
+.colorSogetiSecondary {
+    background-color: #CCBBAA;
+}
+
+.textWhite {
+    color: #FFFFFF;
+}
+
+.colorTextSogeti {
+    color: #FF4411;
+}
+
+.navbar.navbar-static-top {
+    background: #eee;
+}
+
+.section__home {
+    margin-top: 200px;
+    text-align: center;
+    width: 100%;
+    color: #000;
+}
+
+.form-signin-heading {
+    text-align: center;
+}
+
+.nav navbar-nav {
+    text-align: center;
+}
+
+.Res_soc {
+    text-align: right;
+}
+
+#error {
+    text-align: center;
+    font-size: 20px;
+    color: red;
+}
+
+.jumbotron {
+    border: 5px solid;
+    border-radius: 10%;
+    border-bottom: inherit;
+    border-top: inherit;
+    border-color: #008844;
+    background-color: #CCBBAA;
+    min-height: 500px;
+}
+
+#projet1,
+#projet2 {
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+.disabled {
+    background-color: #BD6C4F;
 }
