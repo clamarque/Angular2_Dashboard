@@ -5,5 +5,6 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 import {provide, PLATFORM_PIPES} from 'angular2/core';
 import {TRANSLATE_PROVIDERS, TranslatePipe} from 'ng2-translate/ng2-translate';
 
-bootstrap(AppComponent, [HTTP_PROVIDERS,ROUTER_PROVIDERS,TRANSLATE_PROVIDERS,provide(LocationStrategy, {useClass: HashLocationStrategy}),  provide(PLATFORM_PIPES, {useValue: [TranslatePipe], multi:true}]);
+bootstrap(AppComponent, [HTTP_PROVIDERS,ROUTER_PROVIDERS,TRANSLATE_PROVIDERS,provide(LocationStrategy, {useClass: HashLocationStrategy}),provide(PLATFORM_PIPES, {useValue: [TranslatePipe], multi:true})]);
+
 
