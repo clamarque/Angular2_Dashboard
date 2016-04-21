@@ -8,7 +8,7 @@ html {
     background: #FFF;
     color: #000;
     font-size: 14px;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
     line-height: 26px;
 }
 
@@ -99,6 +99,18 @@ header img {
     color: #FFFFFF;
     font-size: 18px;
 }
+/*
+* PROJETS *
+*/
+
+
+H2
+{
+    text-align: center;
+    
+}
+
+
 
 
 /*
