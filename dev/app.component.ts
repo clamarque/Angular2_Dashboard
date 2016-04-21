@@ -24,12 +24,12 @@ import { LanguageComponent } from './language/language.component';
     
 ])
 
-export class AppComponent implements OnInit {
+export class AppComponent  {
     
-    constructor(public router: Router , private _translate: TranslateService) {}
-    
-    ngOnInit(){
-        this._translate.setDefaultLang('en');
-        this._translate.use('fr');
+    constructor(translate: TranslateService) {
+        translate.setDefaultLang('en');
+        translate.use('en');
     }
+    
+    
 }
