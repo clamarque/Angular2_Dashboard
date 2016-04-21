@@ -1,6 +1,7 @@
 import {Directive, Attribute, ElementRef, DynamicComponentLoader} from "angular2/core";
 import {Router, RouterOutlet, ComponentInstruction,ROUTER_DIRECTIVES} from "angular2/router";
-import {LoginComponent} from "./login/login.component";
+
+
 
 @Directive({
   selector: 'loggedin-router-outlet'
@@ -15,7 +16,7 @@ export class LoggedInRouterOutlet extends RouterOutlet {
       
       this.parentRouter = _parentRouter;
       this.publicRoutes = {
-          'login': true
+          'AUTH': true
      };
   }
 
