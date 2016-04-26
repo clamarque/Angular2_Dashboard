@@ -3,6 +3,7 @@ import {TeamService} from "./team.service";
 import {Member} from "./team";
 import {OnInit} from "angular2/core";
 import {NewMemberComponent} from "./new-member.component";
+import {TranslatePipe, TranslateService} from 'ng2-translate/ng2-translate';
 
 @Component({
     selector:'team-list',
@@ -17,7 +18,7 @@ export class TeamListComponent {
     public modif=false;
     public disabled=false;
     
-    constructor(private _teamService: TeamService) {}
+    constructor(private _teamService: TeamService, public translate: TranslateService) {}
     
     
    /// desactive un membre

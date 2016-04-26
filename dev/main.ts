@@ -1,10 +1,22 @@
 import {bootstrap} from 'angular2/platform/browser';
-import {AppComponent} from "./app.component";
-import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
-import {HTTP_PROVIDERS} from 'angular2/http';
+import {HTTP_PROVIDERS, Http} from 'angular2/http';
+import {ROUTER_PROVIDERS} from 'angular2/router';
 import {provide, PLATFORM_PIPES} from 'angular2/core';
-import {TRANSLATE_PROVIDERS, TranslatePipe} from 'ng2-translate/ng2-translate';
+import {TranslateLoader,TranslateStaticLoader,TRANSLATE_PROVIDERS,TranslateService} from 'ng2-translate/ng2-translate';
 
-bootstrap(AppComponent, [HTTP_PROVIDERS,ROUTER_PROVIDERS,TRANSLATE_PROVIDERS,provide(LocationStrategy, {useClass: HashLocationStrategy}),provide(PLATFORM_PIPES, {useValue: [TranslatePipe], multi:true})]);
-
+import {AuthenticationComponent} from './authentication/authentication.component';
+import {FirebaseService} from './login/firebase.service';
+//bootstrap(AuthenticationComponent, [HTTP_PROVIDERS,ROUTER_PROVIDERS,TRANSLATE_PROVIDERS,provide(LocationStrategy, {useClass: HashLocationStrategy}),provide(PLATFORM_PIPES, {useValue: [TranslatePipe], multi:true})]);
+bootstrap(AuthenticationComponent, [
+    HTTP_PROVIDERS,
+    ROUTER_PROVIDERS,
+    FirebaseService,
+    provide(TranslateLoader, {
+        useFactory: (http:Http) => new TranslateStaticLoader(http, 'assets/i18n', '.json'),
+        deps: [Http]
+    }),
+    TRANSLATE_PROVIDERS,
+    TranslateService
+])
+  .catch(err => console.error(err));
 

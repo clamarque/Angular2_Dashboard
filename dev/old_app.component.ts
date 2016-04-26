@@ -14,8 +14,8 @@ import { LanguageComponent } from './language/language.component';
 @Component({
     selector: 'my-app',
     templateUrl: './dev/app.html',
-    pipes: [TranslatePipe],
-    directives:[LoggedInRouterOutlet, LanguageComponent]
+    directives:[LoggedInRouterOutlet, LanguageComponent],
+    pipes: [TranslatePipe]
 })
 @RouteConfig([ 
     

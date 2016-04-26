@@ -1,12 +1,13 @@
 import { Component } from 'angular2/core';
 import { FORM_DIRECTIVES, Control } from 'angular2/common';
-import { TranslateService } from 'ng2-translate/ng2-translate';
+import { TranslateService,TranslatePipe } from 'ng2-translate/ng2-translate';
 
 
 @Component({
     selector: 'language-chooser',
     templateUrl: './dev/language/language.html',
-    directives: [FORM_DIRECTIVES]
+    directives: [FORM_DIRECTIVES],
+    pipes:[TranslatePipe]
 })
 
 export class LanguageComponent{

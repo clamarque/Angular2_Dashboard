@@ -6,29 +6,39 @@ import {TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';
 
 
 //Service
-import {LoginService} from "./login.service";
+import {FirebaseService} from "./firebase.service";
 
 @Component({
     selector:'login',
+    providers:[FirebaseService],
     templateUrl: './dev/login/login.html',
-    pipes: [TranslatePipe],
-    providers:[LoginService],
-    directives: [CORE_DIRECTIVES,FORM_DIRECTIVES, ROUTER_DIRECTIVES]
+    directives: [CORE_DIRECTIVES,FORM_DIRECTIVES, ROUTER_DIRECTIVES],
+    pipes: [TranslatePipe]
     
 })
 
 export class LoginComponent {
-     
-      public error = false;
-       errorMsg : string;
-    constructor (public _loginService : LoginService){}
-    login(event,username, password) {
-        
-        if (!this._loginService.login(username, password))
-        {
-           this.error=true;
-           this.errorMsg = 'Failed to login';
-                                        
-        }
+    
+    msg: string;
+    logged: boolean;
+    
+    constructor (public translate: TranslateService, private _firebaseService : FirebaseService,private _router: Router ){}
+    
+    login(email, password) {
+        let self = this;
+        this._firebaseService.login(email, password, function(data){
+            if(data){
+                localStorage.setItem('username',email);
+                self.msg = "Login Successful";
+                self.logged = true;
+                self._router.parent.navigateByUrl('/home');
+                console.log('Login success');
+            }
+            else{
+                console.log('error login');
+                self.msg ="Login Failed!";
+                self.logged =false;
+            }
+        })
     }  
 }

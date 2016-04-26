@@ -22,10 +22,10 @@
     
        
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+   <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    
+    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
     
     <!-- 2. Configure SystemJS -->
     <script>
@@ -41,7 +41,8 @@
             map: {
                 'angular2': 'node_modules/angular2',
                 'ng2-translate': 'node_modules/ng2-translate',
-                'rxjs': 'node_modules/rxjs'
+                'rxjs': 'node_modules/rxjs',
+                'firebase': '/node_modules/firebase/lib/firebase-web.js',
             }
       });
       System.import('app/main')
