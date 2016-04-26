@@ -1,7 +1,7 @@
 {
-  "name": "pic_sogeti",
+  "name": "project dashboard",
   "version": "1.0.0",
-  "description": "a plateforme continous integration",
+  "description": "a dashboard",
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
