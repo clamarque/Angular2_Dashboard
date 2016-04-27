@@ -1,4 +1,3 @@
-
 <!--<nav class="navbar navbar-default">
     <div class="container-fluid">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -65,49 +64,54 @@
  </nav>
 -->
 <nav class="navbar-default navbar-static-side" role="navigation">
-     
-                <ul class="nav">
-                    <li class="nav__profile">
-                        <div class="dropdown profile-element"> <span>
-                            <i class="fa fa-user fa-2x" aria-hidden="true"></i>
-                             </span>
-                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear">
-                            <h1>{{username}}</h1>
-                               <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
-                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                <li><a href="profile.html">Profile</a></li>
-                                <li><a href="contacts.html">Contacts</a></li>
-                                <li><a href="mailbox.html">Mailbox</a></li>
-                                <li class="divider"></li>
-                                <li><a (click)="logout()" >Sign Out</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="active">
-                        <a ><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> <span class="fa arrow"></span></a>
-                    </li>
-                    <li>
-                        <a [routerLink]="['Projets']"><i class="fa fa-folder" aria-hidden="true"></i><span class="nav-label">Projects </span><span class="fa arrow"></span></a>
-                        <ul class="nav subnav hidden">
-                            <li><a href="#">Project details</a></li>
-                        </ul>
-                    </li>
-                       <li>
-                        <a ><i class="fa fa-users" aria-hidden="true"></i><span class="nav-label">Teams </span><span class="fa arrow"></span></a>
-                        <ul class="nav subnav hidden">
-                            <li><a href="#">Teams details</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a >Currently v1</a>
-                    </li>
-                </ul>
 
-       
-        </nav>   
- <div id="wrap">
-     <router-outlet></router-outlet>
- </div>
-  
-    
+    <ul class="nav">
+        <li class="nav__profile">
+            <div class="dropdown"> <span>
+                            <img src="/assets/img/a4.jpg" alt="" class="img__circle">
+                             </span>
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                    <span class="clear">
+                            <h1>{{username}}</h1>
+                               <span class="text-muted text-xs block">Front-end Developer</span> </span>
+                </a>
+                <ul class="dropdown-menu hidden">
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                    <li><a href="mailbox.html">Mailbox</a></li>
+                    <li class="divider"></li>
+                    <li><a (click)="logout()">Sign Out</a></li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <a><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+        </li>
+        <li>
+            <a [routerLink]="['Projets']"><i class="fa fa-folder" aria-hidden="true"></i><span class="nav-label">Projects </span><span class="fa arrow"></span></a>
+            <ul class="nav subnav hidden">
+                <li><a href="#">Project details</a></li>
+            </ul>
+        </li>
+        <li>
+            <a><i class="fa fa-users" aria-hidden="true"></i><span class="nav-label">Teams </span><span class="fa arrow"></span></a>
+            <ul class="nav subnav hidden">
+                <li><a href="#">Teams details</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href=""><i class="fa fa-comment-o" aria-hidden="true"></i> Feedbacks</a>
+        </li>
+        <li>
+            <a><i class="fa fa-code-fork" aria-hidden="true"></i> Currently v1</a>
+        </li>
+        <li class="nav__copyright">
+            Made with <i class="fa fa-heart" aria-hidden="true"></i> by <strong>clamarque</strong>
+        </li>
+    </ul>
+
+
+</nav>
+<div id="wrap">
+    <router-outlet></router-outlet>
+</div>
