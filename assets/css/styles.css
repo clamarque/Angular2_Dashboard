@@ -1,6 +1,6 @@
 body,
 html {
-    overflow-x: hidden;
+    overflow: hidden;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -8,10 +8,12 @@ html {
     background: #FFF;
     color: #000;
     font-size: 14px;
-    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 26px;
 }
-
+home{
+    display: flex;
+}
 .row {
     margin: 0 !important;
 }
@@ -19,7 +21,9 @@ html {
 .hidden {
     display: none;
 }
-
+.img__circle{
+    border-radius: 50%;
+}
 .title {
     padding: 0 10px 20px 10px;
     font-weight: 100;
@@ -57,6 +61,19 @@ input[type=password] {
     height: 3rem;
 }
 
+/*
+* CONTAINER GLOBALE*
+*/
+
+#wrap {
+    padding: 0 15px;
+    height: auto;
+    position: relative !important;
+    width: 100%;
+}
+.container{
+    margin-top: 3rem;
+}
 
 /*
 * HEADER *
@@ -70,6 +87,10 @@ input[type=password] {
     margin: 0;
     padding-left: 0;
     list-style: none;
+}
+.navbar-default li {
+    padding: 1rem 1rem;
+    border-top: 1px solid rgba(255,255,255,.1);
 }
 
 .navbar-default li a {
@@ -89,13 +110,16 @@ input[type=password] {
 }
 
 .nav__profile {
-    padding: 33px 25px;
     background: #FF5A52;
+    text-align: center;
 }
 
 .nav__profile h1 {
     font-size: 14px;
     font-weight: bold;
+}
+.nav__copyright{
+    color: #FFF;
 }
 
 header {
@@ -150,16 +174,6 @@ form .form-control:focus {
 }
 
 
-/*
-* CONTAINER GLOBALE*
-*/
-
-#wrap {
-    padding: 0 15px;
-    min-height: 568px;
-    position: relative !important;
-    width: 100%;
-}
 
 
 /*
@@ -302,18 +316,8 @@ footer {
 
 @media (min-width: 768px) {
     .navbar-static-side {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 2001;
         width: 220px;
-        width: 220px;
-    }
-    #wrap {
-        position: inherit;
-        margin: 0 0 0 220px;
-        min-height: 1200px;
+        height: 100%;
     }
 }
 
