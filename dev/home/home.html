@@ -63,8 +63,8 @@
     </div>
  </nav>
 -->
-<nav class="navbar-default navbar-static-side" role="navigation">
-
+<div id="sidebar">
+<nav class="sidebar" role="navigation">
     <ul class="nav">
         <li class="nav__profile">
             <div class="dropdown"> <span>
@@ -88,7 +88,7 @@
             <a><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
         </li>
         <li>
-            <a [routerLink]="['Projets']"><i class="fa fa-folder" aria-hidden="true"></i><span class="nav-label">Projects </span><span class="fa arrow"></span></a>
+            <a [routerLink]="['Projects']"><i class="fa fa-folder" aria-hidden="true"></i><span class="nav-label">Projects </span><span class="fa arrow"></span></a>
             <ul class="nav subnav hidden">
                 <li><a href="#">Project details</a></li>
             </ul>
@@ -112,6 +112,7 @@
 
 
 </nav>
-<div id="wrap">
+</div>
+<div class="wrap">
     <router-outlet></router-outlet>
 </div>

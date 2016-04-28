@@ -1,6 +1,6 @@
 body,
 html {
-    overflow: hidden;
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -13,6 +13,9 @@ html {
 }
 home{
     display: flex;
+    flex-direction: row;
+    min-height: 100%;
+    align-items: stretch;
 }
 .row {
     margin: 0 !important;
@@ -65,11 +68,11 @@ input[type=password] {
 * CONTAINER GLOBALE*
 */
 
-#wrap {
+.wrap {
+    position: relative;
     padding: 0 15px;
-    height: auto;
-    position: relative !important;
     width: 100%;
+    height: auto;
 }
 .container{
     margin-top: 3rem;
@@ -78,22 +81,26 @@ input[type=password] {
 /*
 * HEADER *
 */
-
-.navbar-default {
+#sidebar{
+    flex: 0 0 217px;
+}
+.sidebar {
     background-color: #E55E4B;
+    position: fixed;
+    min-height: 100%;
 }
 
-.navbar-default ul {
+.sidebar ul {
     margin: 0;
     padding-left: 0;
     list-style: none;
 }
-.navbar-default li {
+.sidebar li {
     padding: 1rem 1rem;
     border-top: 1px solid rgba(255,255,255,.1);
 }
 
-.navbar-default li a {
+.sidebar li a {
     color: #FFF;
     text-decoration: none;
     cursor: pointer;
@@ -315,9 +322,13 @@ footer {
 }
 
 @media (min-width: 768px) {
-    .navbar-static-side {
+    .sidebar {
         width: 220px;
         height: 100%;
+        /*position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;*/
     }
 }
 

@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {RouteConfig, Router,ROUTER_DIRECTIVES, Location} from 'angular2/router';
+import {Component, onInit} from 'angular2/core';
+import {RouteConfig, Router,ROUTER_DIRECTIVES} from 'angular2/router';
 import {TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';
 
 import {LoggedInRouterOutlet} from './LoggedInOutlet';
@@ -16,15 +16,17 @@ import {LanguageComponent} from '../language/language.component';
 })
 @RouteConfig([ 
     
-    { path: '/AUTH', component: LoginComponent, name: 'LoginComponent', useAsDefault: true},
-    { path: '/home/...', component: HomeComponent, name: 'HomeComponent'}
+    { path: '/Login', component: LoginComponent, name: 'LoginComponent', useAsDefault: true},
+    { path: '/Home/...', component: HomeComponent, name: 'HomeComponent'}
     
 ])
 
-export class AuthenticationComponent  {
+export class AuthenticationComponent implements onInit  {
     
-    constructor(public translate: TranslateService) {
-        translate.setDefaultLang('en');
-        translate.use('en');
+constructor(public _translate: TranslateService) {}
+    
+    ngOnInit(){
+        this._translate.setDefaultLang('en');
+        this._translate.use('en');
     }
 }

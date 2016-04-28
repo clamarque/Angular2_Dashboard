@@ -8,26 +8,48 @@ import {Project} from './project';
 
 @Injectable()
 
-export class ProjectService{
+export class ProjectService {
     private _postUrl;
-    private _http: Http;
-    
-constructor(@Inject(Http) http: Http,private _firebaseService: FirebaseService,){
-     //this._postUrl = this._firebaseService.appUrl + "project.json"
-     this._http = http;
-}
-    
-    Create(name: string, description: string){
+
+    constructor(private _firebaseService: FirebaseService, private _http: Http) {
+        //this._postUrl = this._firebaseService.appUrl + "project.json"
+
+    }
+
+    Create(name: string, description: string) {
         //console.log('function create');
-        const body = JSON.stringify({name: name, description: description});
+        const body = JSON.stringify({ name: name, description: description });
 
         return this._http.post('https://blazing-inferno-9370.firebaseio.com/project.json', body)
-        .map(response => response.json());
+            .map(response => response.json());
+    }
+
+    getProjects(): Observable<Project[]> {
+        return this._http.get('https://blazing-inferno-9370.firebaseio.com/project.json')
+            .map(res => {
+                let data = res.json();
+                let result: Array<Project> = [];
+                Object.keys(data).forEach(function (key) {
+                    let postObject: Project;
+                    postObject = { id: key, name: data[key].name, description: data[key].description };
+                    result.push(postObject);
+                })
+                return result
+            })
+    }
+
+    getProject(id: string): Observable<Project> {
+        var url: string;
+        url = "https://blazing-inferno-9370.firebaseio.com/" + "project/" + id + ".json"
+        return this._http.get(url)
+            .map(response => response.json());
     }
     
-    getProjects(){
-         return this._http.get('https://blazing-inferno-9370.firebaseio.com/project.json')
-        .map(response => response.json());
-        //.map((res) => { return <Project[]>res.json(); });
-    } 
+    deleteProject(id: string): Observable<Project> {
+        var url: string;
+        url = "https://blazing-inferno-9370.firebaseio.com/" + "project/" + id + ".json"
+        return this._http.delete(url)
+            .map(response => response.json());
+    }
+
 }

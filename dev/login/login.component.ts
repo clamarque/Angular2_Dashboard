@@ -31,7 +31,7 @@ export class LoginComponent {
                 localStorage.setItem('username',email);
                 self.msg = "Login Successful";
                 self.logged = true;
-                self._router.parent.navigateByUrl('/home');
+                self._router.parent.navigateByUrl('/Home');
                 console.log('Login success');
             }
             else{

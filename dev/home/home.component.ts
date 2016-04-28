@@ -9,9 +9,9 @@ import {LoggedInRouterOutlet} from '../authentication/LoggedInOutlet';
 
 
 //component
-import {ProjetsListComponent} from '../projets/projets-list.component';
-import {NewProjetComponent} from "../projets/new-project.component";
-
+import {ProjectIndexComponent} from '../projets/project-index.component';
+import {ProjectCreateComponent} from "../projets/project-create.component";
+import {ProjectViewComponent} from "../projets/Project-view.component";
 //Service
 import {FirebaseService} from "../login/firebase.service"
 
@@ -23,9 +23,9 @@ import {FirebaseService} from "../login/firebase.service"
     pipes : [TranslatePipe]
 })
 @RouteConfig([   
-    {path: '/', component: ProjetsListComponent,name: 'Projets', useAsDefault: true},
-    {path: '/PROJECT', component: NewProjetComponent , name: 'NewProjet'}
-        
+    {path: '/', component: ProjectIndexComponent,name: 'Projects', useAsDefault: true},
+    {path: '/CreateProject', component: ProjectCreateComponent , name: 'NewProjet'},
+    {path: '/ViewProject/:id',component:  ProjectViewComponent, name: "ProjectView"}
 ])
 
 export class HomeComponent{
