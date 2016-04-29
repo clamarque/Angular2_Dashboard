@@ -1,0 +1,20 @@
+<div class="container"  *ngIf="project">
+    <div class="project__header">
+        <h2>{{project.name}}</h2>
+        <div class="project__header-actions">
+            <a class="btn" (click)="deleteProject()">delete</a>
+        </div>
+    </div>
+    <div class="project__content">
+        <div class="project-view__created">
+            <p>Created by: {{username}}</p>
+            <p>Client:</p>
+            <p>Version:</p>
+        </div>
+        <div class="project-view__info">
+            <p>Created: {{project.date}}</p>
+            <p>Description: {{project.description}}</p>
+        </div>
+
+    </div>
+</div>

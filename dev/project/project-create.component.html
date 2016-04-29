@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="project__header">
+        <h2>Create a project</h2>
+    </div>
+    <div class="project__content">
+        <form class="form-horizontal" role="form" (ngSubmit)="CreateProject(name.value, description.value,date.value)">
+            <div class="form-group">
+                <label class="control-label" for="Name">Name:</label>
+                <input type="text" #name class="form-control" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="description">Description:</label>
+                <textarea #description class="form-control" rows="3" colomns="3" id="description"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="description">Date début:</label>
+                <input type="date" #date class="form-control" required>
+            </div>
+            <button class="btn" type="submit">Valider</button>
+        </form>
+    </div>
+</div>
