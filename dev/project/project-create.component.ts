@@ -17,13 +17,10 @@ export class ProjectCreateComponent {
 
     constructor(public translate: TranslateService, private _projectService: ProjectService, private _router: Router) { }
 
-    CreateProject(name, description,date) {
-        let self = this;
-
-        this._projectService.Create(name, description,date)
+    CreateProject(name, description, date) {
+        this._projectService.Create(name, description, date)
             .subscribe(
-            self._router.parent.navigateByUrl('/Home')
+            this._router.parent.navigateByUrl('/Home/Project')
             );
-
     }
 }

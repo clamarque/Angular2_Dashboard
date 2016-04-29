@@ -26,11 +26,10 @@ export class ProjectIndexComponent implements OnInit {
     ViewProject(project: Project) {
         this._router.navigate(["ProjectView", { id: project.id }])
     }
-    
+
     deleteProject(project: Project) {
-        let self = this;
         this._projectService.deleteProject(project.id).subscribe(
-            this._router.parent.navigateByUrl('/Home/...')
+            this._router.parent.navigateByUrl('/Home/Project')
         );
     }
 

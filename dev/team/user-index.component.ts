@@ -22,9 +22,16 @@ export class UserIndexComponent implements OnInit {
     users_list: User[];
 
     constructor(private _userService: UserService, private _router: Router) { }
-
+    
+    deleteUser(user: User) {
+        this._userService.deleteUser(user.id).subscribe(
+             this._router.parent.navigateByUrl('/Home/Team'),
+            error => console.error('Error: ' + error)
+        );
+    }
 
     ngOnInit() {
+        
         console.log('ngoninit');
         this._userService.getUsers()
             .subscribe(

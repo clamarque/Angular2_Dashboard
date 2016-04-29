@@ -90,8 +90,10 @@ textarea {
 }
 
 .container {
+    display: block;
     margin-top: 3rem;
     padding: 6px 12px;
+    text-align: center;
 }
 
 
@@ -139,11 +141,17 @@ textarea {
 .nav__profile {
     background: #FF5A52;
     text-align: center;
+    color: #FFF;
 }
 
 .nav__profile h1 {
+    font-size: 12px;
+    font-weight: normal;
+    overflow: hidden;
+}
+
+.nav__profile h2 {
     font-size: 14px;
-    font-weight: bold;
 }
 
 .nav__copyright {
@@ -231,6 +239,7 @@ form .form-control:focus {
 #project__content {
     margin: 50px 0;
 }
+
 #Team__content .card,
 #project__content .card {
     margin: 0.5rem 0 1rem 0;
@@ -261,6 +270,7 @@ form .form-control:focus {
     color: #888;
     letter-spacing: 1px;
 }
+
 #Team__content .card__action,
 #project__content .card__action {
     border-top: 1px solid rgba(160, 160, 160, 0.2);
@@ -272,35 +282,42 @@ form .form-control:focus {
     margin: 0 5px;
 }
 
+
 /*
 * TEAMS
 */
-#Team__content .card__img{
+
+#Team__content .card__img {
     text-align: center;
 }
-#Team__content .card__img img{
+
+#Team__content .card__img img {
     border-radius: 50%;
     width: 150px;
     height: 150px;
     padding: 20px 0;
 }
-#Team__content .card__content{
+
+#Team__content .card__content {
     padding: 0;
 }
-#Team__content .card__title{
-     text-align: center;
+
+#Team__content .card__title {
+    text-align: center;
     display: block;
     color: #E5554B;
     font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
 #Team__content .card__date {
     text-align: center;
     display: block;
     font-size: 14px;
     color: #3C3C43;
 }
+
 
 /*
 * FOOTER *
@@ -355,8 +372,7 @@ footer {
 
 .col-3,
 .col-lg-4 {
-    padding-right: 15px;
-    padding-left: 15px
+    padding: 15px;
 }
 
 
@@ -390,7 +406,7 @@ footer {
     }
     .col-3 {
         width: 25%;
-        float: left;
+        display: inline-block;
     }
 }
 

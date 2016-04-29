@@ -17,17 +17,15 @@ export class ProjectViewComponent implements OnInit {
     public username: String;
 
     constructor(private _routeParams: RouteParams, private _projectService: ProjectService, private _router: Router) {
-         this.username = localStorage.getItem('username');
-     }
-    
-    
-    deleteProject(){
-        let self = this;
-         let id = this._routeParams.get('id');
+        this.username = localStorage.getItem('username');
+    }
+
+
+    deleteProject() {
+        let id = this._routeParams.get('id');
         this._projectService.deleteProject(id).subscribe(
-            self._router.parent.navigateByUrl('/Home')
+           this._router.parent.navigateByUrl('/Home/Project')
         );
-   
     }
 
     ngOnInit() {

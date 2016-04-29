@@ -36,6 +36,12 @@ export class UserService {
                 return result
             })
     }
+    deleteUser(id: string): Observable<User> {
+        var url: string;
+        url = "https://blazing-inferno-9370.firebaseio.com/" + "user/" + id + ".json"
+        return this._http.delete(url)
+            .map(response => response.json());
+    }
     
      
      
