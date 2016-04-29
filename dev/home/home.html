@@ -67,14 +67,10 @@
 <nav class="sidebar" role="navigation">
     <ul class="nav">
         <li class="nav__profile">
-            <div class="dropdown"> <span>
-                            <img src="/assets/img/a4.jpg" alt="" class="img__circle">
-                             </span>
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                    <span class="clear">
-                            <h1>{{username}}</h1>
-                               <span class="text-muted text-xs block">Front-end Developer</span> </span>
-                </a>
+            <img src="/assets/img/a4.jpg" alt="" class="img__circle">
+            <h1>{{username}}</h1>
+            <h2>Front-end Developer <i class="fa fa-angle-down" aria-hidden="true"></i></h2>
+       
                 <ul class="dropdown-menu hidden">
                     <li><a href="profile.html">Profile</a></li>
                     <li><a href="contacts.html">Contacts</a></li>
@@ -85,19 +81,19 @@
             </div>
         </li>
         <li>
-            <a><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+            <a [routerLink]="['Home']"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
         </li>
         <li>
             <a [routerLink]="['Projects']"><i class="fa fa-folder" aria-hidden="true"></i><span class="nav-label">Projects </span><span class="fa arrow"></span></a>
-            <ul class="nav subnav hidden">
-                <li><a href="#">Project details</a></li>
-            </ul>
         </li>
         <li>
-            <a><i class="fa fa-users" aria-hidden="true"></i><span class="nav-label">Teams </span><span class="fa arrow"></span></a>
-            <ul class="nav subnav hidden">
-                <li><a href="#">Teams details</a></li>
-            </ul>
+            <a [routerLink]="['Teams']"><i class="fa fa-users" aria-hidden="true"></i><span class="nav-label">Teams </span><span class="fa arrow"></span></a>
+        </li>
+        <li>
+            <a href=""><i class="fa fa-users" aria-hidden="true"></i> Customers</a>
+        </li>
+        <li>
+            <a href=""><i class="fa fa-cogs" aria-hidden="true"></i> Settings</a>
         </li>
         <li>
             <a href=""><i class="fa fa-comment-o" aria-hidden="true"></i> Feedbacks</a>
@@ -107,6 +103,9 @@
         </li>
         <li class="nav__copyright">
             Made with <i class="fa fa-heart" aria-hidden="true"></i> by <strong>clamarque</strong>
+             <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href=""><i class="fa fa-google-plus" arias-hidden="true"></i></a>
         </li>
     </ul>
 
