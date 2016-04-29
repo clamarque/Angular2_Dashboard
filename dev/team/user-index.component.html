@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="project__header">
+        <h2>Teams</h2>
+        <div class="project__header-actions">
+            <a [routerLink]="['CreateTeam']" class="btn">New</a>
+        </div>
+    </div>
+    <div id="Team__content">
+        <div class="col-3" *ngFor="let user of users_list">
+            <div class="card">
+                <div class="card__img">
+                    <img src="/assets/img/a4.jpg">
+                </div>
+                <div class="card__content">
+                    <span class="card__title">{{user.username}}</span>
+                    <small class="card__date">{{user.role}}</small>
+                </div>
+                <div class="card__action">
+                    <a (click)="ViewProject(project)" class="btn"><i class="fa fa-eye" aria-hidden="true"></i> View </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
