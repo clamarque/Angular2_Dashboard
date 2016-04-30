@@ -156,6 +156,11 @@ textarea {
 
 .nav__copyright {
     color: #FFF;
+    text-align: center;
+}
+.nav__copyright a {
+    padding: 13px !important;
+    display: inline-block;
 }
 
 header {
