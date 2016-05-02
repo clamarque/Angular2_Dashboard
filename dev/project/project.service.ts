@@ -46,29 +46,12 @@ export class ProjectService {
             .map(response => response.json());
     }
 
-    deleteProject(id: string): Observable<Project> {
-        var url: string;
-        url = "https://blazing-inferno-9370.firebaseio.com/" + "project/" + id + ".json"
-        return this._http.delete(url)
-            .map(response => response.json());
+    deleteProject(id: string) {
+        this.firebase.child('project').child(id).remove();
     }
-    getHeader() {
-	    var headers = new Headers();
-	    headers.append("Content-Type","application/x-www-form-urlencoded");
-	    return headers;
-	}
-    
-   /* setProject(id:string,name: string, description: string, date: string) {
-        const body = JSON.stringify({ name: name, description: description, date: date });
-           alert(body);
-        return this._http.post("https://blazing-inferno-9370.firebaseio.com/" + "project/" + id,body, {headers: this.getHeader()})
-            .map(response => response.json());
 
-    }*/
-    setProject(id:string,name: string, description: string, date: string){
-       // const body = JSON.stringify({ name: name, description: description, date: date });
-        this.firebase.child('project').child(id).set({name:name,description: description, date:date});
+    setProject(id: string, name: string, description: string, date: string) {
+        this.firebase.child('project').child(id).set({ name: name, description: description, date: date });
     }
-    
 
 }

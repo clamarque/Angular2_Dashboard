@@ -24,9 +24,11 @@ export class ProjectViewComponent implements OnInit {
 
     deleteProject() {
         let id = this._routeParams.get('id');
-        this._projectService.deleteProject(id).subscribe(
+        this._projectService.deleteProject(id);
+        this._router.parent.navigateByUrl('/Home/Project');
+        /*.subscribe(
            this._router.parent.navigateByUrl('/Home/Project')
-        );
+        );*/
     }
    SetProject(name, description, date){
        let id = this._routeParams.get('id');

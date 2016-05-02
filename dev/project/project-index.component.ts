@@ -28,9 +28,9 @@ export class ProjectIndexComponent implements OnInit {
     }
 
     deleteProject(project: Project) {
-        this._projectService.deleteProject(project.id).subscribe(
-            this._router.parent.navigateByUrl('/Home/Project')
-        );
+        this._projectService.deleteProject(project.id);
+
+        this._router.parent.navigateByUrl('/Home')
     }
 
     ngOnInit() {
