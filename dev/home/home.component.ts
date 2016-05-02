@@ -17,6 +17,7 @@ import {ProjectViewComponent} from "../project/Project-view.component";
 
 import {UserIndexComponent} from '../team/user-index.component';
 import {UserCreateComponent} from '../team/user-create.component';
+import {UserViewComponent} from '../team/user-view.component';
 
 //Service
 import {FirebaseService} from "../login/firebase.service"
@@ -34,7 +35,10 @@ import {FirebaseService} from "../login/firebase.service"
     {path: '/CreateProject', component: ProjectCreateComponent , name: 'CreateProject'},
     {path: '/ViewProject/:id',component:  ProjectViewComponent, name: "ProjectView"},
     {path: '/Team', component: UserIndexComponent, name: 'Teams' },
-    {path: '/CreateTeam', component: UserCreateComponent, name: 'CreateTeam'}
+    {path: '/CreateTeam', component: UserCreateComponent, name: 'CreateTeam'},
+    {path: '/ViewUser/:id',component:  UserViewComponent, name: "UserView"},
+
+    
 ])
 
 export class HomeComponent{

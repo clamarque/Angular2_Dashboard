@@ -1,0 +1,9 @@
+<div class="container"  *ngIf="user">
+    <form (ngSubmit)="SetUser(username.value, role.value)">
+        <input type="text" #username  value="{{user.username}}">
+        <input type="text" #role value="{{user.role}}" >
+      
+        <button type="submit" class="btn">Submit</button>
+    </form>
+      <a class="btn" (click)="deleteUser()">delete</a>
+</div>

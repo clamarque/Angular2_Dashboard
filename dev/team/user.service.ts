@@ -8,9 +8,10 @@ import {User} from './user';
 
 @Injectable()
 
-////  retourne l equipe de maniere assynchrone
 
 export class UserService {
+    
+    firebase = new Firebase("https://blazing-inferno-9370.firebaseio.com/");
 
   constructor(private _firebaseService: FirebaseService, private _http: Http) {}
     
@@ -36,13 +37,20 @@ export class UserService {
                 return result
             })
     }
-    deleteUser(id: string): Observable<User> {
-        var url: string;
+    
+    getUser(id: string): Observable<User>{
+        let url: string;
         url = "https://blazing-inferno-9370.firebaseio.com/" + "user/" + id + ".json"
-        return this._http.delete(url)
+        return this._http.get(url)
             .map(response => response.json());
+        
     }
-     
-     
+    deleteUser(id: string) {
+        this.firebase.child('user').child(id).remove();
+    }
+    
+     setUser(id: string, username: string, role: string) {
+        this.firebase.child('user').child(id).set({ username: username, role: role });
+    }
      
 }
