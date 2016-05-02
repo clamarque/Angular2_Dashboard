@@ -15,6 +15,7 @@ import {Project} from './project';
 export class ProjectViewComponent implements OnInit {
     project: Project;
     public username: String;
+    
 
     constructor(private _routeParams: RouteParams, private _projectService: ProjectService, private _router: Router) {
         this.username = localStorage.getItem('username');
@@ -26,6 +27,15 @@ export class ProjectViewComponent implements OnInit {
         this._projectService.deleteProject(id).subscribe(
            this._router.parent.navigateByUrl('/Home/Project')
         );
+    }
+   SetProject(name, description, date){
+       let id = this._routeParams.get('id');
+        this._projectService.setProject(id,name, description, date);
+        this._router.parent.navigateByUrl('/Home/Project');
+        /*.subscribe(
+         this._router.parent.navigateByUrl('/Home'),
+          error => console.log(error)
+        );*/
     }
 
     ngOnInit() {

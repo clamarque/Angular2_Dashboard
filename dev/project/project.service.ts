@@ -1,5 +1,5 @@
 import {Injectable, Inject} from 'angular2/core';
-import {Http} from 'angular2/http';
+import {Http, Headers} from 'angular2/http';
 import {Observable} from 'rxjs/Observable';
 
 import {FirebaseService} from "../login/firebase.service";
@@ -10,6 +10,7 @@ import {Project} from './project';
 
 export class ProjectService {
     private _postUrl;
+    firebase = new Firebase("https://blazing-inferno-9370.firebaseio.com/");
 
     constructor(private _firebaseService: FirebaseService, private _http: Http) {
         //this._postUrl = this._firebaseService.appUrl + "project.json"
@@ -18,7 +19,7 @@ export class ProjectService {
 
     Create(name: string, description: string, date: string) {
         //console.log('function create');
-        const body = JSON.stringify({ name: name, description: description, date: date});
+        const body = JSON.stringify({ name: name, description: description, date: date });
 
         return this._http.post('https://blazing-inferno-9370.firebaseio.com/project.json', body)
             .map(response => response.json());
@@ -44,12 +45,30 @@ export class ProjectService {
         return this._http.get(url)
             .map(response => response.json());
     }
-    
+
     deleteProject(id: string): Observable<Project> {
         var url: string;
         url = "https://blazing-inferno-9370.firebaseio.com/" + "project/" + id + ".json"
         return this._http.delete(url)
             .map(response => response.json());
     }
+    getHeader() {
+	    var headers = new Headers();
+	    headers.append("Content-Type","application/x-www-form-urlencoded");
+	    return headers;
+	}
+    
+   /* setProject(id:string,name: string, description: string, date: string) {
+        const body = JSON.stringify({ name: name, description: description, date: date });
+           alert(body);
+        return this._http.post("https://blazing-inferno-9370.firebaseio.com/" + "project/" + id,body, {headers: this.getHeader()})
+            .map(response => response.json());
+
+    }*/
+    setProject(id:string,name: string, description: string, date: string){
+       // const body = JSON.stringify({ name: name, description: description, date: date });
+        this.firebase.child('project').child(id).set({name:name,description: description, date:date});
+    }
+    
 
 }

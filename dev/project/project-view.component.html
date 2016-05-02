@@ -1,4 +1,11 @@
 <div class="container"  *ngIf="project">
+    <form (ngSubmit)="SetProject(name.value, description.value,date.value)">
+        <input type="text" #name placeholder="{{project.name}}" value="{{project.name}}">
+        <input type="text" #description value="{{project.description}}" >
+        <input type="date" #date value="{{project.date}}">
+        <button type="submit" class="btn">Submit</button>
+    </form>
+    <!--
     <div class="project__header">
         <h2>{{project.name}}</h2>
         <div class="project__header-actions">
@@ -17,4 +24,5 @@
         </div>
 
     </div>
+    -->
 </div>
