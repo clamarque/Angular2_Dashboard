@@ -40,7 +40,7 @@ export class ProjectService {
     }
 
     getProject(id: string): Observable<Project> {
-        var url: string;
+        let url: string;
         url = "https://blazing-inferno-9370.firebaseio.com/" + "project/" + id + ".json"
         return this._http.get(url)
             .map(response => response.json());
