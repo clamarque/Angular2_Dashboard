@@ -45,6 +45,7 @@ home {
     text-align: center;
     text-decoration: none;
     cursor: pointer;
+    border: none;
 }
 
 input[type=date],
