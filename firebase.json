@@ -1,0 +1,16 @@
+{
+  "firebase": "blazing-inferno-9370",
+  "headers": [ {
+    "source" : "*",
+    "headers" : [ {
+      "key" : "Access-Control-Allow-Origin",
+      "value" : "*"
+    } ]
+  } ],
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
