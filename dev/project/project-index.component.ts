@@ -1,6 +1,7 @@
 import {Component, OnInit} from "angular2/core";
 import {ROUTER_DIRECTIVES, Router} from 'angular2/router';
 import { CORE_DIRECTIVES, FORM_DIRECTIVES } from 'angular2/common';
+import {TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';
 
 //Service
 import {ProjectService} from "./project.service";
@@ -10,7 +11,8 @@ import {Project} from './project';
     selector: 'projets-index',
     templateUrl: '/dev/project/project-index.component.html',
     directives: [ROUTER_DIRECTIVES, FORM_DIRECTIVES, CORE_DIRECTIVES],
-    providers: [ProjectService]
+    providers: [ProjectService],
+    pipes: [TranslatePipe]
 })
 
 export class ProjectIndexComponent implements OnInit {
