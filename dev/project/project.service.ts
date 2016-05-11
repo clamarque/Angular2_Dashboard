@@ -1,5 +1,5 @@
-import {Injectable, Inject} from 'angular2/core';
-import {Http, Headers} from 'angular2/http';
+import {Injectable, Inject} from '@angular/core';
+import {Http, Headers} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 
 import {FirebaseService} from "../login/firebase.service";

@@ -1,6 +1,7 @@
-import {Component, OnInit} from 'angular2/core';
-import {RouteParams, Router} from 'angular2/router';
-import { CORE_DIRECTIVES, FORM_DIRECTIVES } from 'angular2/common';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {RouteParams} from '@angular/router-deprecated'
+import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
 
 import {ProjectService} from './project.service';
 import {Project} from './project';

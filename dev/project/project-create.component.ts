@@ -1,7 +1,6 @@
-import {Component} from "angular2/core";
+import {Component} from '@angular/core';
+import {Router} from '@angular/router';
 import {TranslatePipe, TranslateService} from 'ng2-translate/ng2-translate';
-import {Router} from 'angular2/router'
-
 //Service
 import {ProjectService} from "./project.service";
 

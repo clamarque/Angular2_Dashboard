@@ -1,5 +1,5 @@
-import { Component } from 'angular2/core';
-import { FORM_DIRECTIVES, Control } from 'angular2/common';
+import { Component } from '@angular/core';
+import { FORM_DIRECTIVES, Control } from '@angular/common';
 import { TranslateService,TranslatePipe } from 'ng2-translate/ng2-translate';
 
 

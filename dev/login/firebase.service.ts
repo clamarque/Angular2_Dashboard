@@ -1,6 +1,6 @@
-import {Injectable} from 'angular2/core';
-import {Http} from 'angular2/http';
-import {Router, ROUTER_DIRECTIVES} from "angular2/router";
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+import {Router, ROUTER_DIRECTIVES} from '@angular/router';
 
 @Injectable()
 export class FirebaseService {

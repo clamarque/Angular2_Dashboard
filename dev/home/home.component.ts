@@ -1,7 +1,8 @@
 //Angular
-import { Component } from 'angular2/core';
-import { CORE_DIRECTIVES } from 'angular2/common';
-import { Router, RouteConfig,RouterOutlet, ROUTER_DIRECTIVES} from 'angular2/router';
+import { Component } from '@angular/core';
+import { CORE_DIRECTIVES } from '@angular/common';
+import { Router, ROUTER_DIRECTIVES} from '@angular/router';
+import {RouteConfig, RouterOutlet} from '@angular/router-deprecated';
 import {TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';
 
 //LoggedInOutlet

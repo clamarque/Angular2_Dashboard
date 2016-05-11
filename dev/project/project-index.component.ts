@@ -1,6 +1,6 @@
-import {Component, OnInit} from "angular2/core";
-import {ROUTER_DIRECTIVES, Router} from 'angular2/router';
-import { CORE_DIRECTIVES, FORM_DIRECTIVES } from 'angular2/common';
+import {Component, OnInit} from '@angular/core';
+import {ROUTER_DIRECTIVES, Router} from '@angular/router';
+import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
 import {TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';
 
 //Service
