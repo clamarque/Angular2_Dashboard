@@ -1,49 +1,32 @@
 <html>
-  <head>
-    <title>Dashboard</title>
-     <base href="/">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">    
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 
-    <!-- 1. Load libraries -->
-    <!-- IE required polyfills, in this exact order -->
-    <!--<script src="node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
-    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>   
+<head>
+  <title>Angular Dashboard</title>
+  <base href="/">
+  <!--<script>document.write('<base href="' + document.location + '" />');</script>-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <!-- 1. Load libraries -->
+  <!-- Polyfill(s) for older browsers -->
+  <script src="node_modules/es6-shim/es6-shim.min.js"></script>
 
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-    
-    <script src="node_modules/angular2/bundles/router.dev.js"></script>
-    <script src="node_modules/angular2/bundles/http.dev.js"></script>
-    -->
-       
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-   <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="assets/js/firebase.js"></script>
-    <script src="assets/js/main.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.0/es6-shim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.26/system-polyfills.js"></script>
-    <script src="https://npmcdn.com/angular2@2.0.0-beta.17/es6/dev/src/testing/shims_for_IE.js"></script>
-   
-    <script src="https://code.angularjs.org/2.0.0-beta.17/angular2-polyfills.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.26/system.js"></script>
-    <script src="https://npmcdn.com/typescript@1.8.10/lib/typescript.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-beta.17/Rx.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-beta.17/angular2.dev.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-beta.17/router.dev.js"></script>
-    
-    
-    <!-- 2. Configure SystemJS -->
-    <script>
-      System.config({
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/reflect-metadata/Reflect.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+  <script src="assets/js/firebase.js"></script>
+
+
+
+  <!-- 2. Configure SystemJS -->
+  <script src="systemjs.config.js"></script>
+ <!-- <script>
+    System.config({
         defaultJSExtensions: true,
         packages: { 
          '/angular2': {defaultExtension: false},
@@ -60,13 +43,18 @@
             }
       });
       System.import('app/main')
-            .then(null, console.error.bind(console));
+            then(null, console.error.bind(console));
+  </script>-->
+  <script>
+      System.import('app/main').catch(function(err){ console.error(err);  });
     </script>
-  </head>
+</head>
 
-  <!-- 3. Display the application -->
-  <body>
-   
-    <my-app>Loading...</my-app>
-  </body>
+<!-- 3. Display the application -->
+
+<body>
+
+  <my-app>Loading...</my-app>
+</body>
+
 </html>
