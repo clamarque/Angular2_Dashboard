@@ -1,6 +1,6 @@
 # Angular2_Dashboard
 
-Angular2_Dashboard is a platform of Directors to build projects and assign users to these project. This platform was developed with Angular 2.0.0-beta.17 and Firebase and it is still developing.
+Angular2_Dashboard is a platform of Directors to build projects and assign users to these project. This platform was developed with Angular RC.1 and Firebase and it is still developing.
 
 ##DEMO
 
