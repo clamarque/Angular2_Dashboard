@@ -1,6 +1,6 @@
 //Angular
 import {Component} from '@angular/core';
-import {Router, ROUTER_DIRECTIVES} from '@angular/router';
+import {Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
 
 import {TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';

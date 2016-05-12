@@ -1,6 +1,6 @@
 import { bootstrap }    from '@angular/platform-browser-dynamic';
 import {HTTP_PROVIDERS, Http} from '@angular/http';
-import {ROUTER_PROVIDERS} from '@angular/router';
+import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
 import {provide, PLATFORM_PIPES} from '@angular/core';
 import {TranslateLoader,TranslateStaticLoader,TRANSLATE_PROVIDERS,TranslateService} from 'ng2-translate/ng2-translate';
 

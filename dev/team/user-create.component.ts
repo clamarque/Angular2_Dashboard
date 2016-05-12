@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Router} from '@angular/router';
+import {Router} from '@angular/router-deprecated';
 
 //Service
 import {UserService} from "./user.service";

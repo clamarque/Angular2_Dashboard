@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
-import {Router, ROUTER_DIRECTIVES} from '@angular/router';
+import {Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
 @Injectable()
 export class FirebaseService {

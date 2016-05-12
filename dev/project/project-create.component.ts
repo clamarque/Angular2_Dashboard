@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Router} from '@angular/router';
+import {Router} from '@angular/router-deprecated';
 import {TranslatePipe, TranslateService} from 'ng2-translate/ng2-translate';
 //Service
 import {ProjectService} from "./project.service";
