@@ -5,7 +5,7 @@ html {
     padding: 0;
     width: 100%;
     height: 100%;
-    background: #FFF;
+    background: #3C3C43;
     color: #000;
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
@@ -18,7 +18,10 @@ home {
     min-height: 100%;
     align-items: stretch;
 }
-
+a{
+    color: #FF5A4E;
+    text-decoration: none;
+}
 .row {
     margin: 0 !important;
 }
@@ -62,6 +65,10 @@ textarea {
     font-size: 1rem;
     margin: 0 0 15px 0;
     padding: 0;
+    color: #FF5A4E;
+}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: transparent !important;
 }
 
 textarea {
@@ -89,6 +96,7 @@ textarea {
     padding: 0 15px;
     width: 100%;
     height: auto;
+    background: #FFF;
 }
 
 .container {
@@ -202,8 +210,9 @@ form .form-control:focus {
 }
 
 .login h2 {
-    text-align: center;
     margin-top: 20px;
+    color: #FFF;
+    text-align: center;
 }
 
 .login .btn {
@@ -214,6 +223,10 @@ form .form-control:focus {
     background-color: #FF4411;
     color: #FFFFFF;
     font-size: 18px;
+}
+.login__img{
+    width: 200px;
+    height: 200px;
 }
 .login__error {
     color: #FF5A4E;
