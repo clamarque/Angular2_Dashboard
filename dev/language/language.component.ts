@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { FORM_DIRECTIVES, Control } from '@angular/common';
-import { TranslateService,TranslatePipe } from 'ng2-translate/ng2-translate';
+//Angular
+import {Component} from '@angular/core';
+import {FORM_DIRECTIVES, Control} from '@angular/common';
 
+import {TranslateService,TranslatePipe} from 'ng2-translate/ng2-translate';
 
 @Component({
     selector: 'language-chooser',
@@ -11,11 +12,10 @@ import { TranslateService,TranslatePipe } from 'ng2-translate/ng2-translate';
 })
 
 export class LanguageComponent{
+    
     language: Control = new Control('');
 
-    constructor(private _translate: TranslateService){
-
-    }
+    constructor(private _translate: TranslateService){}
 
     changeLanguage(value){
     console.log(value);
@@ -25,5 +25,4 @@ export class LanguageComponent{
             this._translate.use('en');
         }
     }
-
 }
