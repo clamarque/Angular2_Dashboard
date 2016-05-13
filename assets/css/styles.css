@@ -53,6 +53,7 @@ input[type=text],
 input[type=email],
 input[type=password],
 textarea {
+    background: transparent;
     border: none;
     border-bottom: 1px solid #9e9e9e;
     outline: none;
@@ -214,7 +215,12 @@ form .form-control:focus {
     color: #FFFFFF;
     font-size: 18px;
 }
-
+.login__error {
+    color: #FF5A4E;
+    letter-spacing: 1px;
+    margin: 10px;
+    font-size: 18px;
+}
 
 /*
 * PROJETS *
