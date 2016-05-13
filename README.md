@@ -11,4 +11,15 @@ you can run the app: https://blazing-inferno-9370.firebaseapp.com
 * **password**:test
 
 
+##Quick Start
+
+`$ git clone https://github.com/clamarque/Angular2_Dashboard.git`
+
+`$ cd Angular2_Dashboard`
+
+`$ npm install`
+
+`$ npm start`
+
+
 
