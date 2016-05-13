@@ -13,16 +13,16 @@ import { TranslateService,TranslatePipe } from 'ng2-translate/ng2-translate';
 export class LanguageComponent{
     language: Control = new Control('');
 
-    constructor(private translate: TranslateService){
+    constructor(private _translate: TranslateService){
 
     }
 
     changeLanguage(value){
     console.log(value);
         if(value == 'FR') {
-            this.translate.use('fr');
+            this._translate.use('fr');
         } else {
-            this.translate.use('en');
+            this._translate.use('en');
         }
     }
 
