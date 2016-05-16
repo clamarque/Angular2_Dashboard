@@ -2,7 +2,7 @@ import {Injectable, Inject} from '@angular/core';
 import {Http, Headers} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 
-import {FirebaseService} from "../login/firebase.service";
+import {LoginService} from "../login/login.service";
 
 import {Project} from './project';
 
@@ -12,14 +12,14 @@ export class ProjectService {
     private _postUrl;
     firebase = new Firebase("https://blazing-inferno-9370.firebaseio.com/");
 
-    constructor(private _firebaseService: FirebaseService, private _http: Http) {
+    constructor(private _loginService: LoginService, private _http: Http) {
         //this._postUrl = this._firebaseService.appUrl + "project.json"
 
     }
 
-    Create(name: string, description: string, date: string) {
+    Create(name: string, description: string, date: string, member: string) {
         //console.log('function create');
-        const body = JSON.stringify({ name: name, description: description, date: date });
+        const body = JSON.stringify({ name: name, description: description, date: date, member:member });
 
         return this._http.post('https://blazing-inferno-9370.firebaseio.com/project.json', body)
             .map(response => response.json());
@@ -32,7 +32,7 @@ export class ProjectService {
                 let result: Array<Project> = [];
                 Object.keys(data).forEach(function (key) {
                     let postObject: Project;
-                    postObject = { id: key, name: data[key].name, description: data[key].description, date: data[key].date };
+                    postObject = { id: key, name: data[key].name, description: data[key].description, date: data[key].date, member: data[key].member };
                     result.push(postObject);
                 })
                 return result
@@ -50,8 +50,8 @@ export class ProjectService {
         this.firebase.child('project').child(id).remove();
     }
 
-    setProject(id: string, name: string, description: string, date: string) {
-        this.firebase.child('project').child(id).set({ name: name, description: description, date: date });
+    setProject(id: string, name: string, description: string, date: string, member: string) {
+        this.firebase.child('project').child(id).set({ name: name, description: description, date: date, member: member});
     }
-
+  
 }

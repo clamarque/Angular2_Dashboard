@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RouteParams, Router} from '@angular/router-deprecated'
-import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
+import {CORE_DIRECTIVES, FORM_DIRECTIVES} from '@angular/common';
 
 //Service
 import {UserService} from "./user.service";
@@ -21,14 +21,14 @@ export class UserViewComponent implements OnInit {
     deleteUser() {
         let id = this._routeParams.get('id');
         this._userService.deleteUser(id);
-        this._router.parent.navigateByUrl('/Home')
+        this._router.parent.navigateByUrl('/Home/Team')
     }
     SetUser(username, role) {
         let id = this._routeParams.get('id');
         this._userService.setUser(id, username, role);
         this._router.parent.navigateByUrl('/Home/Team');
     }
-
+  
     ngOnInit() {
         let id = this._routeParams.get('id');
         this._userService.getUser(id)

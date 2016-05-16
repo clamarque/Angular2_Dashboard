@@ -1,60 +1,47 @@
 <html>
 
 <head>
-  <title>Angular Dashboard</title>
-  <base href="/">
-  <!--<script>document.write('<base href="' + document.location + '" />');</script>-->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-  <!-- 1. Load libraries -->
-  <!-- Polyfill(s) for older browsers -->
-  <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <title>Angular Dashboard</title>
+    <base href="/">
 
-  <script src="node_modules/zone.js/dist/zone.js"></script>
-  <script src="node_modules/reflect-metadata/Reflect.js"></script>
-  <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
-  <script src="assets/js/firebase.js"></script>
-
-
-
-  <!-- 2. Configure SystemJS -->
-  <script src="systemjs.config.js"></script>
- <!-- <script>
-    System.config({
-        defaultJSExtensions: true,
-        packages: { 
-         '/angular2': {defaultExtension: false},
-          app: {
-            format: 'register',
-            defaultExtension: 'js'
-          }           
-        },
-            map: {
-                'angular2': 'node_modules/angular2',
-                'ng2-translate': 'node_modules/ng2-translate',
-                'rxjs': 'node_modules/rxjs',
-                'firebase': '/node_modules/firebase/lib/firebase-web.js',
-            }
-      });
-      System.import('app/main')
-            then(null, console.error.bind(console));
-  </script>-->
-  <script>
-      System.import('app/main').catch(function(err){ console.error(err);  });
+    <script>
+        System.import('app/main').catch(function (err) {
+            console.error(err);
+        });
     </script>
+    <script src="assets/js/firebase.js"></script>
+    
 </head>
 
 <!-- 3. Display the application -->
 
 <body>
-
-  <my-app>Loading...</my-app>
+    <my-app>
+        <div id="container__spinner">
+            <i class="fa fa-spinner fa-pulse fa-5x fa-fw spinner__icon"></i>
+            <span class="spinner__txt">Loading...</span>
+        </div>
+    </my-app>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/wave.js"></script>
+ 
 </body>
 
+    
 </html>

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RouteParams, Router} from '@angular/router-deprecated'
-import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
+import {CORE_DIRECTIVES, FORM_DIRECTIVES} from '@angular/common';
 
 import {ProjectService} from './project.service';
 import {Project} from './project';
@@ -16,28 +16,21 @@ export class ProjectViewComponent implements OnInit {
     project: Project;
     public username: String;
     
-
     constructor(private _routeParams: RouteParams, private _projectService: ProjectService, private _router: Router) {
         this.username = localStorage.getItem('username');
     }
-
 
     deleteProject() {
         let id = this._routeParams.get('id');
         this._projectService.deleteProject(id);
         this._router.parent.navigateByUrl('/Home/Project');
-        /*.subscribe(
-           this._router.parent.navigateByUrl('/Home/Project')
-        );*/
+      
     }
-   SetProject(name, description, date){
+    
+   SetProject(name, description, date,member){
        let id = this._routeParams.get('id');
-        this._projectService.setProject(id,name, description, date);
+        this._projectService.setProject(id,name, description, date,member);
         this._router.parent.navigateByUrl('/Home/Project');
-        /*.subscribe(
-         this._router.parent.navigateByUrl('/Home'),
-          error => console.log(error)
-        );*/
     }
 
     ngOnInit() {

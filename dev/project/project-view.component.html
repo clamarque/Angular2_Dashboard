@@ -1,11 +1,20 @@
 <div class="container"  *ngIf="project">
-    <form (ngSubmit)="SetProject(name.value, description.value,date.value)">
-        <input type="text" #name placeholder="{{project.name}}" value="{{project.name}}">
-        <input type="text" #description value="{{project.description}}" >
-        <input type="date" #date value="{{project.date}}">
-        <button type="submit" class="btn">Submit</button>
+    <form (ngSubmit)="SetProject(name.value, description.value,date.value,member.value)">
+         <div class="field">
+             <input class="field-input" type="text" #name placeholder="{{project.name}}" value="{{project.name}}">
+         </div>
+          <div class="field">
+              <input class="field-input" type="text" #description value="{{project.description}}" >
+          </div>
+           <div class="field">
+               <input class="field-input" type="date" #date value="{{project.date}}">
+          </div>
+          <div class="field">
+              <input class="field-input" type="text" #member value="{{project.member}}">
+          </div>
+        <button class="btn" type="submit">save</button>
     </form>
-      <a class="btn" (click)="deleteProject()">delete</a>
+    <button class="btn" (click)="deleteProject()">Delete</button>
     <!--
     <div class="project__header">
         <h2>{{project.name}}</h2>

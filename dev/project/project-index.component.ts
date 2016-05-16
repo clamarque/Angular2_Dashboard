@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
-import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
+import {CORE_DIRECTIVES, FORM_DIRECTIVES} from '@angular/common';
 
 import {TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';
 
@@ -21,13 +21,13 @@ export class ProjectIndexComponent implements OnInit {
 
     constructor(private _projectService: ProjectService, private _router: Router) { }
 
-    ViewProject(project: Project) {
+    viewProject(project: Project) {
         this._router.navigate(["ProjectView", { id: project.id }])
     }
 
     deleteProject(project: Project) {
         this._projectService.deleteProject(project.id);
-        this._router.parent.navigateByUrl('/Home')
+        location.reload();
     }
 
     ngOnInit() {

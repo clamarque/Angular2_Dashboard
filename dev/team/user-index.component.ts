@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
-import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
+import {CORE_DIRECTIVES, FORM_DIRECTIVES} from '@angular/common';
 
 //Service
 import {UserService} from "./user.service";
@@ -25,7 +25,7 @@ export class UserIndexComponent implements OnInit {
     
     deleteUser(user: User) {
         this._userService.deleteUser(user.id);
-        this._router.parent.navigateByUrl('/Home')
+        location.reload();
     }
 
     ngOnInit() {

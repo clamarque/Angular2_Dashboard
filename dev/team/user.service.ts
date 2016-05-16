@@ -2,7 +2,7 @@ import {Injectable, Inject} from '@angular/core';
 import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 
-import {FirebaseService} from "../login/firebase.service";
+import {LoginService} from "../login/login.service";
 
 import {User} from './user';
 
@@ -13,7 +13,7 @@ export class UserService {
     
     firebase = new Firebase("https://blazing-inferno-9370.firebaseio.com/");
 
-  constructor(private _firebaseService: FirebaseService, private _http: Http) {}
+  constructor(private _loginService: LoginService, private _http: Http) {}
     
     
     createUser(username: string, role: string) {

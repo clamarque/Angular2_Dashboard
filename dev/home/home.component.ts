@@ -1,12 +1,12 @@
 //Angular
 import { Component } from '@angular/core';
 import { CORE_DIRECTIVES } from '@angular/common';
-import {RouteConfig, RouterOutlet,Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {RouteConfig,Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
 import {TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';
 
 //LoggedInOutlet
-import {LoggedInRouterOutlet} from '../authentication/LoggedInOutlet';
+//import {LoggedInRouterOutlet} from '../authentication/LoggedInOutlet';
 
 
 //component
@@ -21,12 +21,12 @@ import {UserCreateComponent} from '../team/user-create.component';
 import {UserViewComponent} from '../team/user-view.component';
 
 //Service
-import {FirebaseService} from "../login/firebase.service"
+import {LoginService} from "../login/login.service"
 
 
 @Component({
     selector: 'home',
-    templateUrl: './dev/home/home.html',
+    templateUrl: './dev/home/home.component.html',
     directives: [ROUTER_DIRECTIVES],
     pipes : [TranslatePipe]
 })

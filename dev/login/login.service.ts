@@ -3,7 +3,7 @@ import {Http} from '@angular/http';
 import {Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
 @Injectable()
-export class FirebaseService {
+export class LoginService {
     
     appUrl: string = "https://blazing-inferno-9370.firebaseio.com/";
 
