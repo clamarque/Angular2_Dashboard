@@ -2,7 +2,7 @@
 
 Angular2_Dashboard is a platform of Directors to build projects and assign users to these project. This platform was developed with Angular RC.1 and Firebase and it is still developing.
 
-##DEMO
+##Demo
 
 you can run the app: https://blazing-inferno-9370.firebaseapp.com 
 
