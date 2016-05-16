@@ -7,9 +7,13 @@
       "value" : "*"
     } ]
   } ],
-  "public": ".",
+  "public": "public",
   "ignore": [
     "firebase.json",
     "**/.*"
-  ]
+  ],
+  "rewrites": [{
+    "source": "**",
+    "destination": "/index.html"
+  }]
 }
