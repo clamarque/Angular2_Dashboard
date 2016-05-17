@@ -1,4 +1,7 @@
 <div class="container"  *ngIf="project">
+   <div class="container__header">
+        <h2>Edit</h2>
+    </div>
     <form (ngSubmit)="SetProject(name.value, description.value,date.value,member.value)">
          <div class="field">
              <input class="field-input" type="text" #name placeholder="{{project.name}}" value="{{project.name}}">

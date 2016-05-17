@@ -10,7 +10,7 @@ import {ProjectService} from "./project.service";
 import {Project} from './project';
 
 @Component({
-    selector: 'projets-index',
+    selector: 'project-index',
     templateUrl: '/dev/project/project-index.component.html',
     directives: [ROUTER_DIRECTIVES, FORM_DIRECTIVES, CORE_DIRECTIVES],
     providers: [ProjectService],
