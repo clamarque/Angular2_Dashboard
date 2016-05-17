@@ -547,7 +547,6 @@ tr {
 }
 
 td {
-    display: block;
     min-width: 10vw;
     text-align: center;
     line-height: 50px;
