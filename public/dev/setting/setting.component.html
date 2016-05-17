@@ -1,0 +1,19 @@
+<div class="container">
+   <div class="container__header">
+       <h2>Settings</h2>
+   </div>
+    <table>
+        <tbody>
+            <tr>
+                <td>Language</td>
+                <td>
+                    <div class="switch">
+                        <label>FR
+                            <input checked="checked" type="checkbox" [ngFormControl]="language" (change)="changeLanguage(language.value)"><span class="lever"></span> EN </label>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
