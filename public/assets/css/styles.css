@@ -279,6 +279,7 @@ textarea {
 }
 
 .container {
+    position:relative;
     display: block;
     margin-top: 3rem;
     padding: 6px 12px;
@@ -508,6 +509,7 @@ user-index .btn-floating,
 project-index .btn-floating{
     position: absolute;
     right: 0;
+    bottom: 0;
     margin: 20px;
 }
 
