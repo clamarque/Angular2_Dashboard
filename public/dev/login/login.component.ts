@@ -11,7 +11,7 @@ import {LoginService} from "./login.service";
 @Component({
     selector:'login',
     providers:[LoginService],
-    templateUrl: './dev/login/login.html',
+    templateUrl: './dev/login/login.component.html',
     directives: [CORE_DIRECTIVES,FORM_DIRECTIVES, ROUTER_DIRECTIVES],
     pipes: [TranslatePipe]
     
