@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    console.log('ready');
+    
     setTimeout(function(){
         $('.field-input').focus(function(){
         console.log('field-input');
