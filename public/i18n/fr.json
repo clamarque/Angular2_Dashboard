@@ -19,5 +19,12 @@
         "copyright-notice": "Consultez nos Mentions légales",
         "copyright-or": "ou",
         "copyright-contact": "contactez-nous"
+    },
+    "index": {
+        "Dashboard": "Tableau de bord",
+        "Customer": "Clients",
+        "Member": "Membres",
+        "Project": "Projets",
+        "Setting": "Paramètres"
     }
 }

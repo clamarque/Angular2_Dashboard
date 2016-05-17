@@ -7,12 +7,12 @@ import {LoggedInRouterOutlet} from './LoggedInOutlet';
 
 import {LoginComponent} from '../login/login.component';
 import {HomeComponent} from '../home/home.component';
-import {LanguageComponent} from '../language/language.component';
+import {SettingComponent} from '../setting/setting.component';
 
 @Component({
     selector: 'my-app',
     templateUrl: './dev/authentication/authentication.html',
-    directives:[ROUTER_DIRECTIVES, LanguageComponent],
+    directives:[ROUTER_DIRECTIVES, SettingComponent],
     pipes: [TranslatePipe]
 })
 @RouteConfig([ 
@@ -27,7 +27,7 @@ export class AuthenticationComponent implements onInit  {
 constructor(public _translate: TranslateService) {}
     
     ngOnInit(){
-        this._translate.setDefaultLang('en');
-        this._translate.use('en');
+        this._translate.setDefaultLang('fr');
+        this._translate.use('fr');
     }
 }

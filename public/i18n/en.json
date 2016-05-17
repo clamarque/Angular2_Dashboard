@@ -19,5 +19,12 @@
         "copyright-notice": "Check our Legal notices",
         "copyright-or": "or",
         "copyright-contact": "contact us"
+    },
+    "index": {
+        "Dashboard": "Dashboard",
+        "Customer": "Customers",
+        "Member": "Members",
+        "Project": "Projects",
+        "Setting": "Settings"
     }
 }
