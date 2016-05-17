@@ -1,3 +1,4 @@
+//Angular
 import {Component} from '@angular/core';
 import {Router} from '@angular/router-deprecated';
 
@@ -16,11 +17,9 @@ export class UserCreateComponent {
     constructor(private _userService: UserService, private _router: Router) { }
 
     CreateProject(username, role) {
-        let self = this;
-
+        
         this._userService.createUser(username,role)
             .subscribe(
-                
                 this._router.parent.navigateByUrl('/Home/Team')
                 )
     }
