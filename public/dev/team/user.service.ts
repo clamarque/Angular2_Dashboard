@@ -1,3 +1,4 @@
+//Angular
 import {Injectable, Inject} from '@angular/core';
 import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
@@ -8,7 +9,6 @@ import {User} from './user';
 
 @Injectable()
 
-
 export class UserService {
     
     firebase = new Firebase("https://blazing-inferno-9370.firebaseio.com/");
@@ -17,7 +17,6 @@ export class UserService {
     
     
     createUser(username: string, role: string) {
-        //console.log('function create');
         const body = JSON.stringify({ username: username, role: role});
 
         return this._http.post('https://blazing-inferno-9370.firebaseio.com/user.json', body)
