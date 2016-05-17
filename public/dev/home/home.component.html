@@ -16,19 +16,19 @@
           
         </li>
         <li>
-            <a [routerLink]="['Home']"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+            <a [routerLink]="['Home']"><i class="fa fa-th-large"></i> <span class="nav-label">{{'index.Dashboard' | translate}}</span></a>
         </li>
         <li>
-            <a [routerLink]="['Projects']"><i class="fa fa-folder" aria-hidden="true"></i><span class="nav-label">Projects </span></a>
+            <a [routerLink]="['Customers']"><i class="fa fa-users" aria-hidden="true"></i>{{'index.Customer' | translate}}</a>
         </li>
         <li>
-            <a [routerLink]="['Teams']"><i class="fa fa-users" aria-hidden="true"></i><span class="nav-label">Teams </span></a>
+            <a [routerLink]="['Teams']"><i class="fa fa-users" aria-hidden="true"></i><span class="nav-label">{{'index.Member' | translate}}</span></a>
         </li>
         <li>
-            <a href=""><i class="fa fa-users" aria-hidden="true"></i> Customers</a>
+            <a [routerLink]="['Projects']"><i class="fa fa-folder" aria-hidden="true"></i><span class="nav-label">{{'index.Project' | translate}}</span></a>
         </li>
         <li>
-            <a href=""><i class="fa fa-cogs" aria-hidden="true"></i> Settings</a>
+            <a [routerLink]="['Setting']"><i class="fa fa-cogs" aria-hidden="true"></i>{{'index.Setting' | translate}}</a>
         </li>
         <li>
             <a href="mailto:chabox59@gmail.com"><i class="fa fa-comment-o" aria-hidden="true"></i> Feedbacks</a>

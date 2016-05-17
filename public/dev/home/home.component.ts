@@ -9,7 +9,7 @@ import {TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';
 //import {LoggedInRouterOutlet} from '../authentication/LoggedInOutlet';
 
 
-//component
+//Component
 import {HomeIndexComponent} from './home-index.component';
 
 import {ProjectIndexComponent} from '../project/project-index.component';
@@ -19,6 +19,10 @@ import {ProjectViewComponent} from "../project/Project-view.component";
 import {UserIndexComponent} from '../team/user-index.component';
 import {UserCreateComponent} from '../team/user-create.component';
 import {UserViewComponent} from '../team/user-view.component';
+
+import {CustomerIndexComponent} from '../customer/customer-index.component';
+
+import {SettingComponent} from '../setting/setting.component';
 
 //Service
 import {LoginService} from "../login/login.service"
@@ -38,6 +42,8 @@ import {LoginService} from "../login/login.service"
     {path: '/Team', component: UserIndexComponent, name: 'Teams' },
     {path: '/CreateTeam', component: UserCreateComponent, name: 'CreateTeam'},
     {path: '/ViewUser/:id',component:  UserViewComponent, name: "UserView"},
+    {path: '/Customer', component: CustomerIndexComponent, name: 'Customers'}
+    {path: '/Setting', component: SettingComponent, name: 'Setting'}
 
     
 ])
