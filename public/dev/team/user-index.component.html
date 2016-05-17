@@ -1,25 +1,19 @@
 <div class="container">
-    <div class="project__header">
-        <h2>Teams</h2>
-        <div class="project__header-actions">
-            <button class="btn" [routerLink]="['CreateTeam']">Create</button>
-        </div>
+    <div class="container__header">
+        <h2>Members</h2>
     </div>
     <div id="Team__content">
-        <div class="col-3" *ngFor="let user of users_list">
-            <div class="card">
-                <div class="card__img">
-                    <img src="/assets/img/a4.jpg">
-                </div>
-                <div class="card__content">
-                    <span class="card__title">{{user.username}}</span>
-                    <small class="card__date">{{user.role}}</small>
-                </div>
-                <div class="card__action">
-                    <button class="btn" (click)="viewUser(user)"><i class="fa fa-eye" aria-hidden="true"></i> view</button>
-                     <button class="btn" (click)="deleteUser(user)"><i class="fa fa-times" aria-hidden="true"></i> delete</button>
-                </div>
-            </div>
-        </div>
+        <table>
+            <tbody>
+                <tr *ngFor="let user of users_list">
+                    <td class="card__img"><img src="/assets/img/a4.jpg" alt="profil"></td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.role}}</td>
+                    <td><button class="btn" (click)="viewUser(user)"><i class="fa fa-eye" aria-hidden="true"></i> view</button></td>
+                    <td><button class="btn" (click)="deleteUser(user)"><i class="fa fa-times" aria-hidden="true"></i> delete</button></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    <button class="btn-floating wave-effect" [routerLink]="['CreateTeam']">+</button> 
 </div>

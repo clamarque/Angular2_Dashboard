@@ -42,19 +42,25 @@ a {
     font-size: 24px;
 }
 
+
+/*
+* BUTTON *
+*/
+
 .btn {
     padding: 0 16px;
+    min-width: 88px;
+    height: 36px;
+    border: none;
+    border-radius: 2px;
     background-color: #FF4411;
     color: #FFF;
     text-align: center;
     text-decoration: none;
-    cursor: pointer;
-    border: none;
-    border-radius: 2px;
-    height: 36px;
-    min-width: 88px;
     text-transform: uppercase;
+    cursor: pointer;
 }
+
 .btn:hover,
 .btn:focus,
 .btn:active {
@@ -64,53 +70,73 @@ a {
     text-decoration: none;
 }
 
+.btn-floating {
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+    color: #FFF;
+    background: #FF5A4E;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+}
+
 .wave-effect {
-    z-index: 1;
     position: relative;
+    z-index: 1;
+    overflow: hidden;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    overflow: hidden
 }
 
 .wave {
     position: absolute;
-    border-radius: 50%;
-    opacity: 1;
     z-index: -1;
+    border-radius: 50%;
     background: rgba(255, 255, 255, 0.25);
+    opacity: 1;
     transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1), opacity 2s cubic-bezier(0.23, 1, 0.32, 1);
     transform: scale(0);
     pointer-events: none;
 }
+
 /*
-input[type=date],
-input[type=password],
-textarea {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #9e9e9e;
-    outline: none;
-    height: 3rem;
-    width: 100%;
-    font-size: 1rem;
-    margin: 0 0 15px 0;
-    padding: 0;
-    color: #FF5A4E;
-}
+** INPUT **
 */
+
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
     background-color: transparent !important;
 }
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    outline:0;
+    border: 1px solid #FF5A4E;
+    border-radius: 50%;
+    -webkit-appearance: none;
+}
 
+input[type="checkbox"]:checked {
+    background: #FF5A4E;
+}
+
+input[type="radio"]:not(:checked){
+    background: transparent;
+}
 textarea {
     overflow-y: hidden;
     resize: none;
     min-height: 3rem;
 }
 
+/*
+* FORM *
+*/
 
 .field {
     position: relative;
@@ -198,6 +224,48 @@ textarea {
 }
 
 
+.switch label .lever {
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 15px;
+    background-color: #818181;
+    border-radius: 15px;
+    margin-right: 10px;
+    transition: background 0.3s ease;
+    vertical-align: middle;
+    margin: 0 16px;
+}
+
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: #84c7c1;
+}
+.switch label [type="checkbox"]:not(:checked),
+.switch label [type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+}
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: #26a69a;
+    left: 24px;
+}
+.switch label .lever:after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    background-color: #F1F1F1;
+    border-radius: 21px;
+    box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4);
+    left: -5px;
+    top: -3px;
+    transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease;
+}
+
+
 /*
 * CONTAINER GLOBALE*
 */
@@ -215,6 +283,20 @@ textarea {
     margin-top: 3rem;
     padding: 6px 12px;
     text-align: center;
+}
+
+.container__header {
+    margin-bottom: 15px;
+    padding: 0 15px 50px;
+    border-bottom: 1px solid #777;
+}
+.container__header h2 {
+    float: left;
+    color: #FF4411;
+    letter-spacing: 1px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 5px;
 }
 
 
@@ -370,27 +452,6 @@ form .form-control:focus {
 * PROJETS *
 */
 
-.project__header {
-    padding: 20px 15px;
-    border-bottom: 1px solid #777;
-}
-
-.project__header h2 {
-    float: left;
-    color: #FF4411;
-    letter-spacing: 1px;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 5px;
-}
-
-.project__header-actions {
-    display: block;
-    float: none;
-    margin-top: 0;
-    padding: 0;
-    text-align: right;
-}
 
 #project__content {
     margin: 50px 0;
@@ -443,14 +504,32 @@ form .form-control:focus {
 * TEAMS
 */
 
+user-index .btn-floating,
+project-index .btn-floating{
+    position: absolute;
+    right: 0;
+    margin: 20px;
+}
+
 #Team__content .card__img {
     text-align: center;
 }
 
+#Team__content button {
+    background: transparent;
+    color: #FF5A4E !important;
+    border: 1px solid;
+}
+
+#Team__content button:hover {
+    box-shadow: none;
+    color: #FF5A4E !important;
+}
+
 #Team__content .card__img img {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 80px;
+    height: 80px;
     padding: 20px 0;
 }
 
@@ -458,20 +537,25 @@ form .form-control:focus {
     padding: 0;
 }
 
-#Team__content .card__title {
-    text-align: center;
-    display: block;
-    color: #E5554B;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+table {
+    width: 100%;
 }
 
-#Team__content .card__date {
-    text-align: center;
+tr {
     display: block;
-    font-size: 14px;
-    color: #3C3C43;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+td {
+    display: block;
+    min-width: 10vw;
+    text-align: center;
+    line-height: 50px;
+}
+
+td:nth-child(2) {
+    color: #FF5A4E;
+    padding: 0 10px;
 }
 
 

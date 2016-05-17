@@ -17,6 +17,7 @@ import {User} from './user';
 
 export class UserIndexComponent implements OnInit {
     users_list: User[];
+public disabled : false;
 
     constructor(private _userService: UserService, private _router: Router) { }
     
@@ -25,10 +26,11 @@ export class UserIndexComponent implements OnInit {
     }
     
     deleteUser(user: User) {
+        
         this._userService.deleteUser(user.id);
         location.reload();
     }
-
+    
     ngOnInit() {
         this._userService.getUsers()
             .subscribe(
