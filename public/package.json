@@ -12,7 +12,7 @@
     "postinstall": "typings install",
     "test": "karma start"
   },
-  "author": "",
+  "author": "Charles Lamarque",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^2.0.0",
