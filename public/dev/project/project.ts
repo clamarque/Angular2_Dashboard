@@ -4,5 +4,4 @@ export class Project{
     description: string;
     date: string;
     member: string;
-    status: boolean;
 }

@@ -9,11 +9,11 @@
                     <td class="card__img"><img src="/assets/img/a4.jpg" alt="profil"></td>
                     <td>{{user.username}}</td>
                     <td>{{user.role}}</td>
-                    <td><button class="btn" (click)="viewUser(user)"><i class="fa fa-eye" aria-hidden="true"></i> view</button></td>
+                    <td><a class="btn" [routerLink]="['../ViewUser', user.id]"><i class="fa fa-eye" aria-hidden="true"></i> view</a></td>
                     <td><button class="btn" (click)="deleteUser(user)"><i class="fa fa-times" aria-hidden="true"></i> delete</button></td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <button class="btn-floating wave-effect" [routerLink]="['CreateTeam']">+</button> 
+    <a class="btn-floating wave-effect" [routerLink]="['../CreateTeam']">+</a>
 </div>

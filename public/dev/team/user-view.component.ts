@@ -1,6 +1,6 @@
 //Angular
 import {Component, OnInit} from '@angular/core';
-import {RouteParams, Router} from '@angular/router-deprecated'
+import {Router, RouteSegment, OnActivate} from '@angular/router';
 import {CORE_DIRECTIVES, FORM_DIRECTIVES} from '@angular/common';
 
 //User
@@ -14,28 +14,25 @@ import {User} from './user';
     providers: [UserService]
 })
 
-export class UserViewComponent implements OnInit {
+export class UserViewComponent implements OnActivate {
     user: User[];
+    
+    constructor(private _userService: UserService, private _router: Router, private _routeSegment: RouteSegment) { }
 
-    constructor(private _userService: UserService, private _routeParams: RouteParams,private _router: Router) { }
+    routerOnActivate(current: RouteSegment) {
+        let id = current.parameters['id'];
+        this._userService.getUser(id).subscribe(data => this.user = data, error => console.log(erro))
+    }
 
     deleteUser() {
-        let id = this._routeParams.get('id');
+        let id = this._routeSegment.getParam('id');
         this._userService.deleteUser(id);
-        this._router.parent.navigateByUrl('/Home/Team')
+        this._router.navigate(['/Home/Team'])
     }
-    SetUser(username, role) {
-        let id = this._routeParams.get('id');
+
+    setUser(username, role) {
+        let id = this._routeSegment.getParam('id');
         this._userService.setUser(id, username, role);
-        this._router.parent.navigateByUrl('/Home/Team');
-    }
-  
-    ngOnInit() {
-        let id = this._routeParams.get('id');
-        this._userService.getUser(id)
-            .subscribe(
-            data => this.user = data,
-            error => console.log(error)
-            )
+        this._router.navigate(['/Home/Team'])
     }
 }

@@ -1,6 +1,6 @@
 //Angular
 import {Component, OnInit} from '@angular/core';
-import {ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
+import {ROUTER_DIRECTIVES, Router, RouteSegment} from '@angular/router';
 import {CORE_DIRECTIVES, FORM_DIRECTIVES} from '@angular/common';
 
 //User
@@ -17,20 +17,14 @@ import {User} from './user';
 
 export class UserIndexComponent implements OnInit {
     users_list: User[];
-public disabled : false;
 
     constructor(private _userService: UserService, private _router: Router) { }
-    
-    viewUser(user: User){
-        this._router.navigate(["UserView", { id: user.id }]) 
-    }
-    
+
     deleteUser(user: User) {
-        
         this._userService.deleteUser(user.id);
         location.reload();
     }
-    
+
     ngOnInit() {
         this._userService.getUsers()
             .subscribe(

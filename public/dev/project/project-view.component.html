@@ -2,7 +2,7 @@
    <div class="container__header">
         <h2>Edit</h2>
     </div>
-    <form (ngSubmit)="SetProject(name.value, description.value,date.value,member.value)">
+    <form (ngSubmit)="setProject(name.value, description.value,date.value,member.value)">
          <div class="field">
              <input class="field-input" type="text" #name placeholder="{{project.name}}" value="{{project.name}}">
          </div>
@@ -18,24 +18,4 @@
         <button class="btn" type="submit">save</button>
     </form>
     <button class="btn" (click)="deleteProject()">Delete</button>
-    <!--
-    <div class="project__header">
-        <h2>{{project.name}}</h2>
-        <div class="project__header-actions">
-            <a class="btn" (click)="deleteProject()">delete</a>
-        </div>
-    </div>
-    <div class="project__content">
-        <div class="project-view__created">
-            <p>Created by: {{username}}</p>
-            <p>Client:</p>
-            <p>Version:</p>
-        </div>
-        <div class="project-view__info">
-            <p>Created: {{project.date}}</p>
-            <p>Description: {{project.description}}</p>
-        </div>
-
-    </div>
-    -->
 </div>

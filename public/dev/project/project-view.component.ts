@@ -1,6 +1,6 @@
 //Angular
 import {Component, OnInit} from '@angular/core';
-import {RouteParams, Router} from '@angular/router-deprecated'
+import {Router, RouteSegment, OnActivate} from '@angular/router';
 import {CORE_DIRECTIVES, FORM_DIRECTIVES} from '@angular/common';
 
 //Project
@@ -14,33 +14,25 @@ import {Project} from './project';
     providers: [ProjectService]
 })
 
-export class ProjectViewComponent implements OnInit {
+export class ProjectViewComponent implements OnActivate {
     project: Project;
-    public username: String;
-    
-    constructor(private _routeParams: RouteParams, private _projectService: ProjectService, private _router: Router) {
-        this.username = localStorage.getItem('username');
+
+    constructor(private _projectService: ProjectService, private _router: Router, private _routeSegment: RouteSegment) { }
+
+    routerOnActivate(current: RouteSegment) {
+        let id = current.parameters['id'];
+        this._projectService.getProject(id).subscribe(data => this.project = data, error => console.log(erro))
     }
 
     deleteProject() {
-        let id = this._routeParams.get('id');
+        let id = this._routeSegment.getParam('id');
         this._projectService.deleteProject(id);
-        this._router.parent.navigateByUrl('/Home/Project');
-      
-    }
-    
-   SetProject(name, description, date,member){
-       let id = this._routeParams.get('id');
-        this._projectService.setProject(id,name, description, date,member);
-        this._router.parent.navigateByUrl('/Home/Project');
+        this._router.navigate(['/Home/Project'])
     }
 
-    ngOnInit() {
-        let id = this._routeParams.get('id');
-        this._projectService.getProject(id)
-            .subscribe(
-            data => this.project = data,
-            error => console.log(error)
-            )
+    setProject(name, description, date, member) {
+        let id = this._routeSegment.getParam('id');
+        this._projectService.setProject(id, name, description, date, member);
+        this._router.navigate(['/Home/Project'])
     }
 }

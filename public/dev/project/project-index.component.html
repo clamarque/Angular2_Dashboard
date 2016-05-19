@@ -13,11 +13,11 @@
                     <small class="card__date">Created {{project.date}}</small>
                 </div>
                 <div class="card__action">
-                    <button class="btn" (click)="viewProject(project)"><i class="fa fa-eye" aria-hidden="true"></i> view</button>
+                    <a class="btn" [routerLink]="['../ViewProject', project.id]"><i class="fa fa-eye" aria-hidden="true"></i> view</a>
                     <button class="btn" (click)="deleteProject(project)"><i class="fa fa-times" aria-hidden="true"></i> delete</button>
                 </div>
             </div>
         </div>
     </div>
-    <button class="btn-floating wave-effect" [routerLink]="['CreateProject']">+</button>
+    <a class="btn-floating wave-effect" [routerLink]="['../CreateProject']">+</a>
 </div>

@@ -9,18 +9,16 @@ import { TranslateService } from 'ng2-translate/ng2-translate';
     directives: [FORM_DIRECTIVES]
 })
 
-export class SettingComponent{
+export class SettingComponent {
     language: Control = new Control(false);
 
-    constructor(private translate: TranslateService){
+    constructor(private _translate: TranslateService) { }
 
-    }
-
-    changeLanguage(value){
-        if(value) {
-            this.translate.use('fr');
+    changeLanguage(value) {
+        if (value) {
+            this._translate.use('fr');
         } else {
-            this.translate.use('en');
+            this._translate.use('en');
         }
     }
 
