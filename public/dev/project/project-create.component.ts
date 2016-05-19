@@ -22,10 +22,8 @@ export class ProjectCreateComponent implements OnInit {
     constructor(private _projectService: ProjectService, private _router: Router, private _userService: UserService) { }
 
     CreateProject(name, description, date, member) {
-        this._projectService.Create(name, description, date, member)
-            .subscribe(
-            this._router.navigate(['/Home/Project'])
-            )
+        this._projectService.Create(name, description, date, member);
+        this._router.navigate(['/Home/Project'])
     }
     ngOnInit() {
         this._userService.getUsers()

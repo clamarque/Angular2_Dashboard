@@ -15,13 +15,13 @@ import {User} from './user';
 })
 
 export class UserViewComponent implements OnActivate {
-    user: User[];
+    user: User;
     
     constructor(private _userService: UserService, private _router: Router, private _routeSegment: RouteSegment) { }
 
     routerOnActivate(current: RouteSegment) {
         let id = current.parameters['id'];
-        this._userService.getUser(id).subscribe(data => this.user = data, error => console.log(erro))
+        this._userService.getUser(id).subscribe(data => this.user = data, error => console.log(error))
     }
 
     deleteUser() {

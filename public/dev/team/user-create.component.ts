@@ -9,7 +9,6 @@ import {UserService} from "./user.service";
     selector: 'new-projet',
     templateUrl: './dev/team/user-create.component.html',
     providers: [UserService]
-
 })
 
 export class UserCreateComponent {
@@ -17,9 +16,7 @@ export class UserCreateComponent {
     constructor(private _userService: UserService, private _router: Router) { }
 
     CreateProject(username, role) {
-        this._userService.createUser(username, role)
-            .subscribe(
-            this._router.navigate(['/Home/Team'])
-            )
+        this._userService.createUser(username, role);
+        this._router.navigate(['/Home/Team'])
     }
 }

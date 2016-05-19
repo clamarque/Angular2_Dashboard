@@ -21,7 +21,7 @@ export class ProjectViewComponent implements OnActivate {
 
     routerOnActivate(current: RouteSegment) {
         let id = current.parameters['id'];
-        this._projectService.getProject(id).subscribe(data => this.project = data, error => console.log(erro))
+        this._projectService.getProject(id).subscribe(data => this.project = data, error => console.log(error))
     }
 
     deleteProject() {

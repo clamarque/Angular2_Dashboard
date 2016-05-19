@@ -21,16 +21,13 @@ import {SettingComponent} from '../setting/setting.component';
 //Service
 import {LoginService} from "../login/login.service"
 
-import {TranslatePipe} from 'ng2-translate/ng2-translate';
-
 @Component({
     selector: 'home',
     templateUrl: './dev/home/home.component.html',
-    directives: [ROUTER_DIRECTIVES],
-    pipes: [TranslatePipe]
+    directives: [ROUTER_DIRECTIVES]
 })
 @Routes([
-    { path: '/', component: HomeIndexComponent, useAsDefault: true },
+    { path: '/', component: HomeIndexComponent},
     { path: '/Project', component: ProjectIndexComponent },
     { path: '/CreateProject', component: ProjectCreateComponent },
     { path: '/ViewProject/:id', component: ProjectViewComponent },
@@ -46,17 +43,16 @@ export class HomeComponent {
     logged: boolean;
     public username: String;
 
-    constructor(private router: Router) {
+    constructor(private _router: Router) {
         this.username = localStorage.getItem('username');
     }
 
     logout() {
         event.preventDefault();
 
-        //this.logged = false;
         localStorage.removeItem('username');
         localStorage.removeItem('password');
 
-        this.router.parent.navigateByUrl('/AUTH');
+       // this.router.navigate(['/login']);
     }
 }
