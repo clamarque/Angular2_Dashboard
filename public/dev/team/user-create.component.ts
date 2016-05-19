@@ -15,7 +15,8 @@ export class UserCreateComponent {
 
     constructor(private _userService: UserService, private _router: Router) { }
 
-    CreateProject(username, role) {
+    createUser(username, role) {
+        console.log(username,role);
         this._userService.createUser(username, role);
         this._router.navigate(['/Home/Team'])
     }
