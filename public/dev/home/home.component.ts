@@ -1,13 +1,7 @@
 //Angular
-import { Component } from '@angular/core';
-import { CORE_DIRECTIVES } from '@angular/common';
-import {RouteConfig,Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
-
-import {TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';
-
-//LoggedInOutlet
-//import {LoggedInRouterOutlet} from '../authentication/LoggedInOutlet';
-
+import {Component} from '@angular/core';
+import {CORE_DIRECTIVES} from '@angular/common';
+import {Router, Routes, ROUTER_DIRECTIVES} from '@angular/router';
 
 //Component
 import {HomeIndexComponent} from './home-index.component';
@@ -27,49 +21,42 @@ import {SettingComponent} from '../setting/setting.component';
 //Service
 import {LoginService} from "../login/login.service"
 
+import {TranslatePipe} from 'ng2-translate/ng2-translate';
 
 @Component({
     selector: 'home',
     templateUrl: './dev/home/home.component.html',
     directives: [ROUTER_DIRECTIVES],
-    pipes : [TranslatePipe]
+    pipes: [TranslatePipe]
 })
-@RouteConfig([
-    {path: '/', component: HomeIndexComponent,name: 'Home', useAsDefault: true},   
-    {path: '/Project', component: ProjectIndexComponent,name: 'Projects'},
-    {path: '/CreateProject', component: ProjectCreateComponent , name: 'CreateProject'},
-    {path: '/ViewProject/:id',component:  ProjectViewComponent, name: "ProjectView"},
-    {path: '/Team', component: UserIndexComponent, name: 'Teams' },
-    {path: '/CreateTeam', component: UserCreateComponent, name: 'CreateTeam'},
-    {path: '/ViewUser/:id',component:  UserViewComponent, name: "UserView"},
-    {path: '/Customer', component: CustomerIndexComponent, name: 'Customers'}
-    {path: '/Setting', component: SettingComponent, name: 'Setting'}
-
-    
+@Routes([
+    { path: '/', component: HomeIndexComponent, useAsDefault: true },
+    { path: '/Project', component: ProjectIndexComponent },
+    { path: '/CreateProject', component: ProjectCreateComponent },
+    { path: '/ViewProject/:id', component: ProjectViewComponent },
+    { path: '/Team', component: UserIndexComponent },
+    { path: '/CreateTeam', component: UserCreateComponent },
+    { path: '/ViewUser/:id', component: UserViewComponent },
+    { path: '/Customer', component: CustomerIndexComponent },
+    { path: '/Setting', component: SettingComponent }
 ])
 
-export class HomeComponent{
-    
+export class HomeComponent {
+
     logged: boolean;
-    
-           
     public username: String;
-    public password: String;
-    
-constructor(private router: Router, public translate: TranslateService) {
-	  this.username = localStorage.getItem('username');
-	  this.password = localStorage.getItem('password');
-	  
-	}
-    
-    
+
+    constructor(private router: Router) {
+        this.username = localStorage.getItem('username');
+    }
+
     logout() {
         event.preventDefault();
-  
+
         //this.logged = false;
         localStorage.removeItem('username');
         localStorage.removeItem('password');
-        
-	    this.router.parent.navigateByUrl('/AUTH');
-	}
+
+        this.router.parent.navigateByUrl('/AUTH');
+    }
 }
