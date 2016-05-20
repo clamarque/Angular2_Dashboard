@@ -16,16 +16,23 @@
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     
-    <!-- 2. Configure SystemJS -->
-    <script src="systemjs.config.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script>
-        System.import('app/main').catch(function (err) {
-            console.error(err);
-        });
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDa9PUFcHzAf7vtUtLVGGaQzo-9EVv0FrI",
+        authDomain: "blazing-inferno-9370.firebaseapp.com",
+        databaseURL: "https://blazing-inferno-9370.firebaseio.com",
+        storageBucket: "blazing-inferno-9370.appspot.com",
+    };
+    firebase.initializeApp(config);
     </script>
-    <script src="assets/js/firebase.js"></script>
-    
+    <!-- 2. Configure SystemJS -->
+     <script>
+            System.import('systemjs.config.js').then(function () {
+                System.import('app/main');
+            }).catch(console.error.bind(console));
+        </script>
 </head>
 
 <!-- 3. Display the application -->

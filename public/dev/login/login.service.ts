@@ -4,10 +4,9 @@ import {Http} from '@angular/http';
 
 @Injectable()
 export class LoginService {
-
     appUrl: string = "https://blazing-inferno-9370.firebaseio.com/";
 
-    firebase = new Firebase("https://blazing-inferno-9370.firebaseio.com/");
+   // firebase = new Firebase("https://blazing-inferno-9370.firebaseio.com/");
 
 
     /* setUser(username: string, password: string){
@@ -18,7 +17,7 @@ export class LoginService {
        */
 
     login(email: string, password: string, callback) {
-        this.firebase.authWithPassword({
+        firebase.auth().signInWithEmailAndPassword({
             email: email,
             password: password
         }, function (error, data) {

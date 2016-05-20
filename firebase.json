@@ -1,19 +1,13 @@
 {
-  "firebase": "blazing-inferno-9370",
-  "headers": [ {
-    "source" : "*",
-    "headers" : [ {
-      "key" : "Access-Control-Allow-Origin",
-      "value" : "*"
-    } ]
-  } ],
-  "public": "public",
-  "ignore": [
-    "firebase.json",
-    "**/.*"
-  ],
-  "rewrites": [{
-    "source": "**",
-    "destination": "/index.html"
-  }]
+  "hosting": {
+    "public": "public",
+    "rewrites": [{
+            "source": "**",
+            "destination": "/index.html"
+        }],
+    "ignore": [
+      "firebase.json",
+      "**/.*"
+    ]
+  }
 }
