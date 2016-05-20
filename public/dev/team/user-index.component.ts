@@ -26,10 +26,11 @@ export class UserIndexComponent implements OnInit {
     }
 
     ngOnInit() {
-        this._userService.getUsers()
-            .subscribe(
+
+        this._userService.getUsers().subscribe(
             projects_list => this.users_list = projects_list,
             error => console.log(error)
-            );
+        )
     }
+
 }
