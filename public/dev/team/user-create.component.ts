@@ -17,7 +17,7 @@ export class UserCreateComponent {
 
     createUser(username, role) {
         console.log(username,role);
-        this._userService.createUser(username, role);
+        this._userService.postUser(username, role);
         this._router.navigate(['/Home/Team'])
     }
 }

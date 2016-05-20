@@ -14,15 +14,10 @@ export class ProjectService {
 
     constructor(private _loginService: LoginService, private _http: Http) {
         //this._postUrl = this._firebaseService.appUrl + "project.json"
-
     }
 
-    Create(name: string, description: string, date: string, member: string) {
-        //console.log('function create');
-        const body = JSON.stringify({ name: name, description: description, date: date, member:member });
-
-        return this._http.post('https://blazing-inferno-9370.firebaseio.com/project.json', body)
-            .map(response => response.json());
+    postProject(name: string, description: string, date: string, member: string) {
+        this.firebase.child('project').push({ name: name, description: description, date: date, member: member })
     }
 
     getProjects(): Observable<Project[]> {
@@ -51,7 +46,7 @@ export class ProjectService {
     }
 
     setProject(id: string, name: string, description: string, date: string, member: string) {
-        this.firebase.child('project').child(id).set({ name: name, description: description, date: date, member: member});
+        this.firebase.child('project').child(id).set({ name: name, description: description, date: date, member: member });
     }
-  
+
 }

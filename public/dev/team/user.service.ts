@@ -16,11 +16,8 @@ export class UserService {
   constructor(private _loginService: LoginService, private _http: Http) {}
     
     
-    createUser(username: string, role: string) {
-        const body = JSON.stringify({ username: username, role: role});
-        console.log('body'+body);
-        return this._http.post('https://blazing-inferno-9370.firebaseio.com/user.json', body)
-            .map(response => response.json());
+    postUser(username: string, role: string) {
+        this.firebase.child('user').push({username:username,role: role})
     }
     
     getUsers(): Observable<User[]> {

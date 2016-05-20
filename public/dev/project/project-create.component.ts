@@ -21,8 +21,8 @@ export class ProjectCreateComponent implements OnInit {
 
     constructor(private _projectService: ProjectService, private _router: Router, private _userService: UserService) { }
 
-    CreateProject(name, description, date, member) {
-        this._projectService.Create(name, description, date, member);
+    createProject(name, description, date, member) {
+        this._projectService.postProject(name, description, date, member);
         this._router.navigate(['/Home/Project'])
     }
     ngOnInit() {
@@ -32,5 +32,4 @@ export class ProjectCreateComponent implements OnInit {
             error => console.log(error)
             );
     }
-
 }
