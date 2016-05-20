@@ -34,6 +34,9 @@ a {
 
 .img__circle {
     border-radius: 50%;
+    border: 2px solid #FFF;
+    width: 150px;
+    height: auto;
 }
 
 .title {
@@ -533,9 +536,10 @@ project-index .btn-floating{
 
 #Team__content .card__img img {
     border-radius: 50%;
-    width: 80px;
+    border: 1px solid #e7e7e7;
+    width: auto;
     height: 80px;
-    padding: 20px 0;
+    
 }
 
 #Team__content .card__content {
@@ -547,6 +551,7 @@ table {
 }
 
 tr {
+    padding: 10px 0;
     display: block;
     border-bottom: 1px solid #e7e7e7;
 }
