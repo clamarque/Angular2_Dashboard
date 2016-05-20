@@ -3,6 +3,9 @@
         <h2>Edit</h2>
     </div>
     <form (ngSubmit)="setUser(username.value, role.value)">
+        <div class="div">
+            <img class="img__circle" src="https://robohash.org/+{{user.username}}+.png">
+        </div>
         <div class="field">
             <input class="field-input" type="text" #username value="{{user.username}}">
         </div>
