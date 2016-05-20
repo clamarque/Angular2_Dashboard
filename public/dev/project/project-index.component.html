@@ -2,22 +2,23 @@
     <div class="container__header">
         <h2>{{'project.subtitle' | translate}}</h2>
     </div>
-    <div id="project__content">
-        <div class="col-3" *ngFor="let project of projects_list">
-            <div class="card">
-                <div class="card__img">
-                    <img src="/assets/img/office.jpg">
-                </div>
-                <div class="card__content">
-                    <span class="card__title">{{project.name}}</span>
-                    <small class="card__date">Created {{project.date}}</small>
-                </div>
-                <div class="card__action">
-                    <a class="btn" [routerLink]="['/Home/ViewProject', project.id]"><i class="fa fa-eye" aria-hidden="true"></i> view</a>
-                    <button class="btn" (click)="deleteProject(project)"><i class="fa fa-times" aria-hidden="true"></i> delete</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name project</th>
+                <th>Created</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let project of projects_list">
+                <td>{{project.name}}</td>
+                <td>{{project.date}}</td>
+                <td><a [routerLink]="['/Home/ViewProject', project.id]"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+                <td><button (click)="deleteProject(project)"><i class="fa fa-times" aria-hidden="true"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
     <a class="btn-floating wave-effect" [routerLink]="['../CreateProject']">+</a>
 </div>
