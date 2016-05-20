@@ -21,14 +21,13 @@ export class ProjectIndexComponent implements OnInit {
 
     deleteProject(project: Project) {
         this._projectService.deleteProject(project.id);
-        location.reload();
+        this.ngOnInit();
     }
 
     ngOnInit() {
-        this._projectService.getProjects()
-            .subscribe(
+        this._projectService.getProjects().subscribe(
             projects_list => this.projects_list = projects_list,
             error => console.log(error)
-            );
+        );
     }
 }

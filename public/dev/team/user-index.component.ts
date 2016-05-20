@@ -12,7 +12,6 @@ import {User} from './user';
     templateUrl: '/dev/team/user-index.component.html',
     directives: [ROUTER_DIRECTIVES, FORM_DIRECTIVES, CORE_DIRECTIVES],
     providers: [UserService]
-
 })
 
 export class UserIndexComponent implements OnInit {
@@ -22,15 +21,13 @@ export class UserIndexComponent implements OnInit {
 
     deleteUser(user: User) {
         this._userService.deleteUser(user.id);
-        location.reload();
+        this.ngOnInit();
     }
 
     ngOnInit() {
-
         this._userService.getUsers().subscribe(
             projects_list => this.users_list = projects_list,
             error => console.log(error)
         )
     }
-
 }
