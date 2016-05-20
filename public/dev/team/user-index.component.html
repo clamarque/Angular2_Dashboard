@@ -6,7 +6,7 @@
         <table>
             <tbody>
                 <tr *ngFor="let user of users_list">
-                    <td class="card__img"><img src="/assets/img/a4.jpg" alt="profil"></td>
+                    <td class="card__img"><img src="https://robohash.org/+{{user.username}}+.png"></td>
                     <td>{{user.username}}</td>
                     <td>{{user.role}}</td>
                     <td><a class="btn" [routerLink]="['/Home/ViewUser', user.id]"><i class="fa fa-eye" aria-hidden="true"></i> view</a></td>
