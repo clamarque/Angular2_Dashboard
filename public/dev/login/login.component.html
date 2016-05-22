@@ -1,14 +1,14 @@
 <div class="login">
         <img class="login__img" src="assets/img/C.png" alt="Clamarque">
         <h2>{{'generic.welcome-title' | translate}}</h2>
-        <form class="form-signin" role="form" (ngSubmit)="login(email.value, password.value)">
+        <form role="form">
             <div class="field">
-                <input type="email" #email id="email" name="email" class="field-input" placeholder="Email" required>
+                <input [(ngModel)]="email" type="email" class="field-input" placeholder="Email" required>
             </div>
             <div class="field">
-                <input type="password" #password id="password" class="field-input" placeholder="Password" required>
+                <input [(ngModel)]="password" type="password" class="field-input" placeholder="Password" required>
             </div>
-            <button class="btn wave-effect" type="submit">{{'login.btn' | translate}}</button>            
+            <button class="btn wave-effect" (click)="login()">{{'login.btn' | translate}}</button>            
             <div class="login__error">{{msg}}</div>
         </form>
 </div>

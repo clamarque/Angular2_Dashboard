@@ -8,33 +8,34 @@ import {LoginService} from "./login.service";
 
 @Component({
     selector: 'login',
-    providers: [LoginService],
+    providers: [LoginService, ROUTER_DIRECTIVES],
     templateUrl: './dev/login/login.component.html',
     directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, ROUTER_DIRECTIVES],
 })
 
 export class LoginComponent {
-
+    email: string;
+    password: string;
+    
     msg: string;
-    logged: boolean;
 
     constructor(private _loginService: LoginService, private _router: Router) { }
 
-    login(email, password) {
-        let self = this;
-        this._loginService.login(email, password, function (data) {
-            if (data) {
-                localStorage.setItem('username', email);
-                self.msg = "Login Successful";
-                self.logged = true;
-                self._router.navigate(['/Home']);
-                console.log('Login success');
-            }
-            else {
-                console.log('error login');
-                self.msg = "Login Failed!";
-                self.logged = false;
-            }
-        })
+    login() {
+        if(this.email != '' && this.password != ''){
+            this._loginService.login(this.email, this.password, (error: any) => {
+                if (error) {
+                    console.log('error login');
+                    this.msg = "Failed Login!";
+                }
+                else {
+                    localStorage.setItem('username', this.email);
+                    this._router.navigate(['/Home']);
+                }
+            })
+        } else {
+            this.msg = "Remplir les champs nécessaires";
+            console.log('error function');
+        }
     }
 }
