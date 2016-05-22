@@ -13,7 +13,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let user of users_list">
+            <tr *ngFor="let user of users_list | keys">
                 <td><img class="img__circle" src="https://robohash.org/+{{user.username}}+.png"></td>
                 <td>{{user.username}}</td>
                 <td>{{user.role}}</td>
