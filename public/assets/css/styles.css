@@ -195,7 +195,7 @@ textarea {
     position: absolute;
     bottom: 30px;
     left: 0;
-    background-color: #424242;
+    background-color: #BDBDBD;
 }
 
 .field::after {
