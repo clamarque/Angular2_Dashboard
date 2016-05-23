@@ -3,8 +3,10 @@ import {Injectable, Inject} from '@angular/core';
 import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 
+//User
 import {User} from './user';
 
+//Firebase
 declare var firebase: any;
 
 @Injectable()
@@ -16,37 +18,6 @@ export class UserService {
     postUser(username: string, role: string) {
         firebase.database().ref('user/').push({ username: username, role: role })
     }
-    /*
-    getUsers(): Observable<User[]> {
-        return this._http.get('https://blazing-inferno-9370.firebaseio.com/user.json')
-            .map(res => {
-                let data = res.json();
-                let result: Array<User> = [];
-                Object.keys(data).forEach(function (key) {
-                    let postObject: User;
-                    postObject = { id: key, username: data[key].username, role: data[key].role};
-                    result.push(postObject);
-                })
-                return result
-            })
-    }*/
-    getUsers() {
-        return Observable.create((observer) => {
-            firebase.database().ref('user/').once('value').then(function (snapshot) {
-                console.log(snapshot.val());
-                observer.next(snapshot.val());
-            })
-        })
-
-    }
-
-    getUser(id: string): Observable<User> {
-        let url: string;
-        url = "https://blazing-inferno-9370.firebaseio.com/" + "user/" + id + ".json"
-        return this._http.get(url)
-            .map(response => response.json());
-
-    }
 
     deleteUser(id: string) {
         firebase.database().ref('user/' + id).remove();
@@ -54,6 +25,12 @@ export class UserService {
 
     setUser(id: string, username: string, role: string) {
         firebase.database().ref('user/' + id).set({ username: username, role: role });
+    }
+    getUser(id: string): Observable<User> {
+       let url: string;
+        url = "https://blazing-inferno-9370.firebaseio.com/" + "user/" + id + ".json"
+        return this._http.get(url)
+            .map(response => response.json());
     }
 
 }
