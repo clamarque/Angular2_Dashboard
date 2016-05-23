@@ -458,9 +458,10 @@ form .form-control:focus {
 }
 
 /*
-* TEAMS | PROJECT
+* TEAMS | PROJECT | CUSTOMER
 */
 
+customer-index .btn-floating,
 user-index .btn-floating,
 project-index .btn-floating{
     position: absolute;
@@ -468,6 +469,8 @@ project-index .btn-floating{
     bottom: 0;
     margin: 20px;
 }
+customer-index a,
+customer-index button,
 project-index a,
 project-index button,
 user-index a,
@@ -478,6 +481,7 @@ user-index button {
     cursor: pointer;
 }
 
+customer-index img,
 user-index img {
     width: 60px !important;
 }
