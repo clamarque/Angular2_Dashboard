@@ -550,6 +550,9 @@ td:nth-child(2) {
         width: 100px;
         height: 100px;
     }
+    .container{
+        padding: 0px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -571,6 +574,26 @@ td:nth-child(2) {
     header h1 {
         text-align: center;
         margin-left: inherit;
+    }
+    home {
+        display: block;
+    }
+    #sidebar{
+        flex: none;
+    }
+    .sidebar{
+        position: inherit;
+    }
+    .wrap{
+        position: inherit;
+        padding: 0;
+    }
+    .container {
+        margin-top: 0;
+    }
+    th:nth-child(4n-7), 
+    td:nth-child(4n-7) {
+        display: none;
     }
 }
 
