@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="container__header">
+        <h2>Create a customer</h2>
+    </div>
+    <div class="project__content">
+        <form role="form" (ngSubmit)="createProject(name.value, project.value)">
+            <div class="field">
+                <input class="field-input" type="text" #name placeholder="Name" required>
+            </div>
+           
+            <div class="field">
+                <select class="field-input" #project >
+                    <option value="" disabled="" selected="">project</option>
+                    <option *ngFor="let project of project_list" value="{{project.name}}">{{project.name}}</option>
+                </select>
+            </div>
+            <button class="btn" type="submit">save</button>
+        </form>
+    </div>
+</div>

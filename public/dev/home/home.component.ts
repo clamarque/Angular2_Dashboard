@@ -15,6 +15,8 @@ import {UserCreateComponent} from '../team/user-create.component';
 import {UserViewComponent} from '../team/user-view.component';
 
 import {CustomerIndexComponent} from '../customer/customer-index.component';
+import {CustomerCreateComponent} from '../customer/customer-create.component';
+import {CustomerViewComponent} from '../customer/customer-view.component';
 
 import {SettingComponent} from '../setting/setting.component';
 
@@ -35,6 +37,8 @@ import {LoginService} from "../login/login.service"
     { path: '/CreateTeam', component: UserCreateComponent },
     { path: '/ViewUser/:id', component: UserViewComponent },
     { path: '/Customer', component: CustomerIndexComponent },
+    { path: '/CreateCustomer', component: CustomerCreateComponent},
+    { path: '/ViewCustomer/:id', component: CustomerViewComponent},
     { path: '/Setting', component: SettingComponent }
 ])
 

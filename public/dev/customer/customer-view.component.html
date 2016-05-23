@@ -1,0 +1,22 @@
+<div class="container" *ngIf="customer">
+    <div class="container__header">
+        <h2>Edit</h2>
+    </div>
+    <form (ngSubmit)="setProject(name.value, project.value)">
+        <div class="field">
+            <input class="field-input" type="text" #name placeholder="{{customer.name}}" value="{{project.name}}">
+        </div>
+        <div class="field">
+            <select class="field-input" #project>
+                  <option value="" disabled="" selected="">{{customer.project}}</option>
+                  <option *ngFor="let project of projects" value="{{project.name}}">{{project.name}}</option>
+
+
+             </select>
+        </div>
+
+
+        <button class="btn" type="submit">save</button>
+    </form>
+    <button class="btn" (click)="deleteProject()">Delete</button>
+</div>
