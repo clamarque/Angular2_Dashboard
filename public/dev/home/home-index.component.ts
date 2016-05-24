@@ -3,7 +3,7 @@ import {ROUTER_DIRECTIVES, Router} from '@angular/router';
 import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
 
 @Component({
-    selector: 'projets-index',
+    selector: 'home-index',
     templateUrl: '/dev/home/home-index.component.html',
     directives: [ROUTER_DIRECTIVES, FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
