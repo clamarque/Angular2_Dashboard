@@ -1,7 +1,7 @@
 //Angular
 import {Component} from '@angular/core';
 import {Router, ROUTER_DIRECTIVES} from '@angular/router';
-import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
+import { FORM_DIRECTIVES } from '@angular/common';
 
 //Service
 import {LoginService} from "./login.service";
@@ -10,7 +10,7 @@ import {LoginService} from "./login.service";
     selector: 'login',
     providers: [LoginService, ROUTER_DIRECTIVES],
     templateUrl: './dev/login/login.component.html',
-    directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, ROUTER_DIRECTIVES],
+    directives: [FORM_DIRECTIVES, ROUTER_DIRECTIVES],
 })
 
 export class LoginComponent {

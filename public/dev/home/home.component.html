@@ -13,7 +13,6 @@
                     <li class="divider"></li>
                     <li><a (click)="logout()">Sign Out</a></li>
                 </ul>
-          
         </li>
         <li>
             <a [routerLink]="['/Home']"><i class="fa fa-th-large"></i> <span class="nav-label">{{'index.Dashboard' | translate}}</span></a>
@@ -22,7 +21,7 @@
             <a [routerLink]="['Customer']"><i class="fa fa-users" aria-hidden="true"></i>{{'index.Customer' | translate}}</a>
         </li>
         <li>
-            <a [routerLink]="['Team']"><i class="fa fa-users" aria-hidden="true"></i><span class="nav-label">{{'index.Member' | translate}}</span></a>
+            <a [routerLink]="['Member']"><i class="fa fa-users" aria-hidden="true"></i><span class="nav-label">{{'index.Member' | translate}}</span></a>
         </li>
         <li>
             <a [routerLink]="['Project']"><i class="fa fa-folder" aria-hidden="true"></i><span class="nav-label">{{'index.Project' | translate}}</span></a>

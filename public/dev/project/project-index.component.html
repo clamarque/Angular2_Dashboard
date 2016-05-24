@@ -5,6 +5,7 @@
     <table>
         <thead>
             <tr>
+                <th></th>
                 <th>Name project</th>
                 <th>Created</th>
                 <th>Edit</th>
@@ -13,6 +14,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let project of projects_list">
+                <th><img class="img__circle" src="https://robohash.org/+{{project.name}}+.png"></th>
                 <td>{{project.name}}</td>
                 <td>{{project.date}}</td>
                 <td><a [routerLink]="['/Home/ViewProject', project.id]"><i class="fa fa-eye" aria-hidden="true"></i></a></td>

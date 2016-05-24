@@ -1,7 +1,7 @@
 //Angular
 import {Component, OnInit} from '@angular/core';
-import {ROUTER_DIRECTIVES, Router} from '@angular/router';
-import {CORE_DIRECTIVES, FORM_DIRECTIVES} from '@angular/common';
+import {ROUTER_DIRECTIVES} from '@angular/router';
+import {CORE_DIRECTIVES} from '@angular/common';
 
 //Firebase
 declare var firebase: any;
@@ -15,7 +15,7 @@ import {ObjectToArrayPipe} from '../pipes/object-to-array.pipe'
 @Component({
     selector: 'project-index',
     templateUrl: '/dev/project/project-index.component.html',
-    directives: [ROUTER_DIRECTIVES, FORM_DIRECTIVES, CORE_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES, CORE_DIRECTIVES],
     providers: [ProjectService, ObjectToArrayPipe]
 })
 
@@ -24,7 +24,7 @@ export class ProjectIndexComponent implements OnInit {
     projects_list: any[];
     temp: any;
     
-    constructor(private _projectService: ProjectService, private _router: Router, private _objectToArrayPipe: ObjectToArrayPipe) { }
+    constructor(private _projectService: ProjectService, private _objectToArrayPipe: ObjectToArrayPipe) { }
 
     deleteProject(project: Project) {
         this._projectService.deleteProject(project.id);

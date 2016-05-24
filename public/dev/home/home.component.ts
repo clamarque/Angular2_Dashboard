@@ -10,9 +10,9 @@ import {ProjectIndexComponent} from '../project/project-index.component';
 import {ProjectCreateComponent} from "../project/project-create.component";
 import {ProjectViewComponent} from "../project/project-view.component";
 
-import {UserIndexComponent} from '../team/user-index.component';
-import {UserCreateComponent} from '../team/user-create.component';
-import {UserViewComponent} from '../team/user-view.component';
+import {UserIndexComponent} from '../member/user-index.component';
+import {UserCreateComponent} from '../member/user-create.component';
+import {UserViewComponent} from '../member/user-view.component';
 
 import {CustomerIndexComponent} from '../customer/customer-index.component';
 import {CustomerCreateComponent} from '../customer/customer-create.component';
@@ -33,9 +33,9 @@ import {LoginService} from "../login/login.service"
     { path: '/Project', component: ProjectIndexComponent },
     { path: '/CreateProject', component: ProjectCreateComponent },
     { path: '/ViewProject/:id', component: ProjectViewComponent },
-    { path: '/Team', component: UserIndexComponent },
-    { path: '/CreateTeam', component: UserCreateComponent },
-    { path: '/ViewUser/:id', component: UserViewComponent },
+    { path: '/Member', component: UserIndexComponent },
+    { path: '/CreateMember', component: UserCreateComponent },
+    { path: '/ViewMember/:id', component: UserViewComponent },
     { path: '/Customer', component: CustomerIndexComponent },
     { path: '/CreateCustomer', component: CustomerCreateComponent},
     { path: '/ViewCustomer/:id', component: CustomerViewComponent},
