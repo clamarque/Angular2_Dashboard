@@ -481,6 +481,7 @@ user-index button {
     cursor: pointer;
 }
 
+project-index img,
 customer-index img,
 user-index img {
     width: 60px !important;
