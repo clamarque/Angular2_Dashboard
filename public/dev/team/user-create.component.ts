@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
 import {UserService} from "./user.service";
 
 @Component({
-    selector: 'new-projet',
+    selector: 'project-create',
     templateUrl: './dev/team/user-create.component.html',
     providers: [UserService]
 })
