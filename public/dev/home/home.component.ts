@@ -8,7 +8,7 @@ import {HomeIndexComponent} from './home-index.component';
 
 import {ProjectIndexComponent} from '../project/project-index.component';
 import {ProjectCreateComponent} from "../project/project-create.component";
-import {ProjectViewComponent} from "../project/Project-view.component";
+import {ProjectViewComponent} from "../project/project-view.component";
 
 import {UserIndexComponent} from '../team/user-index.component';
 import {UserCreateComponent} from '../team/user-create.component';
