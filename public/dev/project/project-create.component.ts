@@ -12,7 +12,7 @@ import {Project} from './project'
 import {ObjectToArrayPipe} from '../pipes/object-to-array.pipe'
 
 @Component({
-    selector: 'new-projet',
+    selector: 'project-create',
     templateUrl: './dev/project/project-create.component.html',
     providers: [ProjectService, ObjectToArrayPipe]
 })
