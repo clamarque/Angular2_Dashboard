@@ -10,7 +10,7 @@ import {LoginService} from "./login.service";
     selector: 'login',
     providers: [LoginService, ROUTER_DIRECTIVES],
     templateUrl: './dev/login/login.component.html',
-    directives: [FORM_DIRECTIVES, ROUTER_DIRECTIVES],
+    directives: [FORM_DIRECTIVES, ROUTER_DIRECTIVES]
 })
 
 export class LoginComponent {
