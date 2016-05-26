@@ -1,13 +1,13 @@
 //Angular
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 //Firebase
 declare var firebase: any;
 
 //Project
-import {CustomerService} from "./customer.service";
-import {Customer} from './customer'
+import { CustomerService } from "./customer.service";
+import { Customer } from './customer'
 
 import {ObjectToArrayPipe} from '../pipes/object-to-array.pipe'
 
