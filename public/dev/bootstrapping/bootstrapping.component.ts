@@ -2,12 +2,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Routes, Router, ROUTER_DIRECTIVES } from '@angular/router';
 
-import {TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';
+import { TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
 
 //Component
-import {LoginComponent} from '../login/login.component';
-import {HomeComponent} from '../home/home.component';
-import {SettingComponent} from '../setting/setting.component';
+import { LoginComponent } from '../login/login.component';
+import { HomeComponent } from '../home/home.component';
+import { SettingComponent } from '../setting/setting.component';
 
 
 @Component({
@@ -29,7 +29,5 @@ export class BootstrappingComponent implements OnInit {
     ngOnInit() {
         this._translate.setDefaultLang('fr');
         this._translate.use('fr');
-
-
     }
 }
