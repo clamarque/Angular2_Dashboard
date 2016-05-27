@@ -1,9 +1,9 @@
 //Angular
-import {Component} from '@angular/core';
-import {Router} from '@angular/router';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 //Service
-import {UserService} from "./user.service";
+import { UserService } from "./user.service";
 
 @Component({
     selector: 'user-create',
