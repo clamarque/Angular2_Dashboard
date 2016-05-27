@@ -1,10 +1,10 @@
 //Angular
-import {Injectable, Inject} from '@angular/core';
-import {Http} from '@angular/http';
-import {Observable} from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 
 //Project
-import {Project} from './project';
+import { Project } from './project';
 
 //Firebase
 declare var firebase: any;
