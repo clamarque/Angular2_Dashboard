@@ -1,22 +1,22 @@
 //Angular
-import {Component, OnInit} from '@angular/core';
-import {Router, RouteSegment, OnActivate} from '@angular/router';
-import {CORE_DIRECTIVES, FORM_DIRECTIVES} from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouteSegment, OnActivate } from '@angular/router';
+import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
 
 //User
-import {UserService} from "./user.service";
-import {User} from './user';
+import { UserService } from "./user.service";
+import { User } from './user';
 
 //Firebase
 declare var firebase: any;
 
-import {ObjectToArrayPipe} from '../pipes/object-to-array.pipe'
+import { ObjectToArrayPipe } from '../pipes/object-to-array.pipe'
 
 @Component({
     selector: "user-view",
     templateUrl: "/dev/member/user-view.component.html",
     directives: [CORE_DIRECTIVES],
-    providers: [UserService,ObjectToArrayPipe]
+    providers: [UserService, ObjectToArrayPipe]
 })
 
 export class UserViewComponent implements OnActivate {
