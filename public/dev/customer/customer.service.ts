@@ -1,10 +1,10 @@
 //Angular
-import {Injectable, Inject} from '@angular/core';
-import {Http} from '@angular/http';
-import {Observable} from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 
 //Customer
-import {Customer} from './customer';
+import { Customer } from './customer';
 
 //Firebase
 declare var firebase: any;
@@ -32,5 +32,4 @@ export class CustomerService {
         return this._http.get(url)
             .map(response => response.json());
     }
-
 }
