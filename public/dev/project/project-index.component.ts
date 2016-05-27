@@ -1,16 +1,16 @@
 //Angular
-import {Component, OnInit} from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router';
-import {CORE_DIRECTIVES} from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+import { CORE_DIRECTIVES } from '@angular/common';
 
 //Firebase
 declare var firebase: any;
 
 //Project
-import {ProjectService} from "./project.service";
-import {Project} from './project';
+import { ProjectService } from "./project.service";
+import { Project } from './project';
 
-import {ObjectToArrayPipe} from '../pipes/object-to-array.pipe'
+import { ObjectToArrayPipe } from '../pipes/object-to-array.pipe'
 
 @Component({
     selector: 'project-index',
