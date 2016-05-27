@@ -1,16 +1,16 @@
 //Angular
-import {Component, OnInit} from '@angular/core';
-import {ROUTER_DIRECTIVES, Router, RouteSegment} from '@angular/router';
-import {CORE_DIRECTIVES} from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { ROUTER_DIRECTIVES, Router, RouteSegment } from '@angular/router';
+import { CORE_DIRECTIVES } from '@angular/common';
 
 //Firebase
 declare var firebase: any;
 
 //User
-import {UserService} from "./user.service";
-import {User} from './user';
+import { UserService } from "./user.service";
+import { User } from './user';
 
-import {ObjectToArrayPipe} from '../pipes/object-to-array.pipe'
+import { ObjectToArrayPipe } from '../pipes/object-to-array.pipe'
 
 @Component({
     selector: 'user-index',
