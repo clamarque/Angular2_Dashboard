@@ -1,16 +1,16 @@
 //Angular
 import { Component, OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES} from '@angular/router';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 import { CORE_DIRECTIVES } from '@angular/common';
 
 //Firebase
 declare var firebase: any;
 
 //CustomerIndexComponent
-import {CustomerService} from './customer.service';
-import {Customer} from './customer';
+import { CustomerService } from './customer.service';
+import { Customer } from './customer';
 
-import {ObjectToArrayPipe} from '../pipes/object-to-array.pipe'
+import { ObjectToArrayPipe } from '../pipes/object-to-array.pipe'
 
 @Component({
     selector: 'customer-index',
