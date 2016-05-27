@@ -1,27 +1,27 @@
 //Angular
-import {Component} from '@angular/core';
-import {CORE_DIRECTIVES} from '@angular/common';
-import {Router, Routes, ROUTER_DIRECTIVES} from '@angular/router';
+import { Component } from '@angular/core';
+import { CORE_DIRECTIVES } from '@angular/common';
+import { Router, Routes, ROUTER_DIRECTIVES } from '@angular/router';
 
 //Component
-import {HomeIndexComponent} from './home-index.component';
+import { HomeIndexComponent } from './home-index.component';
 
-import {ProjectIndexComponent} from '../project/project-index.component';
-import {ProjectCreateComponent} from "../project/project-create.component";
-import {ProjectViewComponent} from "../project/project-view.component";
+import { ProjectIndexComponent } from '../project/project-index.component';
+import { ProjectCreateComponent } from "../project/project-create.component";
+import { ProjectViewComponent } from "../project/project-view.component";
 
-import {UserIndexComponent} from '../member/user-index.component';
-import {UserCreateComponent} from '../member/user-create.component';
-import {UserViewComponent} from '../member/user-view.component';
+import { UserIndexComponent } from '../member/user-index.component';
+import { UserCreateComponent } from '../member/user-create.component';
+import { UserViewComponent } from '../member/user-view.component';
 
-import {CustomerIndexComponent} from '../customer/customer-index.component';
-import {CustomerCreateComponent} from '../customer/customer-create.component';
-import {CustomerViewComponent} from '../customer/customer-view.component';
+import { CustomerIndexComponent } from '../customer/customer-index.component';
+import { CustomerCreateComponent } from '../customer/customer-create.component';
+import { CustomerViewComponent } from '../customer/customer-view.component';
 
-import {SettingComponent} from '../setting/setting.component';
+import { SettingComponent } from '../setting/setting.component';
 
 //Service
-import {LoginService} from "../login/login.service"
+import { LoginService } from "../login/login.service"
 
 @Component({
     selector: 'home',
