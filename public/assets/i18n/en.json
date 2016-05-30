@@ -1,0 +1,30 @@
+{
+    "generic": {
+        "welcome-title": "Welcome to the admin platform"
+    },
+    "login": {
+        "username": "username",
+        "password": "password",
+        "btn": "Sign in",
+        "forgot": "Forgot password?",
+        "remember":"remember-me"
+    },
+    "project": {
+        "title": "Project List",
+        "subtitle": "All projects assigned to this account",
+        "new": "Create new project"
+    },
+    "footer": {
+        "language": "Choose your Language",
+        "copyright-notice": "Check our Legal notices",
+        "copyright-or": "or",
+        "copyright-contact": "contact us"
+    },
+    "index": {
+        "Dashboard": "Dashboard",
+        "Customer": "Customers",
+        "Member": "Members",
+        "Project": "Projects",
+        "Setting": "Settings"
+    }
+}
