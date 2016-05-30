@@ -1,20 +1,23 @@
-<div class="container"  *ngIf="project">
-   <div class="container__header">
+<div class="container" *ngIf="project">
+    <div class="container__header">
         <h2>Edit</h2>
     </div>
     <form (ngSubmit)="setProject(name.value, description.value,date.value,member.value)">
-         <div class="field">
-             <input class="field-input" type="text" #name placeholder="{{project.name}}" value="{{project.name}}">
-         </div>
-          <div class="field">
-              <input class="field-input" type="text" #description value="{{project.description}}" >
-          </div>
-           <div class="field">
-               <input class="field-input" type="date" #date value="{{project.date}}">
-          </div>
-          <div class="field">
-              <input class="field-input" type="text" #member value="{{project.member}}">
-          </div>
+        <div class="field">
+            <input class="field-input" type="text" #name placeholder="{{project.name}}" value="{{project.name}}">
+        </div>
+        <div class="field">
+            <input class="field-input" type="text" #description value="{{project.description}}">
+        </div>
+        <div class="field">
+            <input class="field-input" type="date" #date value="{{project.date}}">
+        </div>
+        <div class="field">
+            <select class="field-input" #member>
+                  <option value="{{project.member}}" selected="">{{project.member}}</option>
+                  <option *ngFor="let user of users" value="{{user.username}}">{{user.username}}</option>
+              </select>
+        </div>
         <button class="btn" type="submit">save</button>
     </form>
     <button class="btn" (click)="deleteProject()">Delete</button>
