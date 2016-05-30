@@ -1,7 +1,7 @@
 //Angular
+import { CORE_DIRECTIVES } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { CORE_DIRECTIVES } from '@angular/common';
 
 //Firebase
 declare var firebase: any;

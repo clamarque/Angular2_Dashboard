@@ -1,7 +1,7 @@
 //Angular
+import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouteSegment, OnActivate } from '@angular/router';
-import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
 
 //Customer
 import { CustomerService } from "./customer.service";

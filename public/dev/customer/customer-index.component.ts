@@ -1,7 +1,7 @@
 //Angular
+import { CORE_DIRECTIVES } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { CORE_DIRECTIVES } from '@angular/common';
 
 //Firebase
 declare var firebase: any;
@@ -33,7 +33,6 @@ export class CustomerIndexComponent implements OnInit {
     ngOnInit(){
         firebase.database().ref('customer').once('value').then((snapshot) => {
             let data = snapshot.val();
-            console.log(data);
             this.temp = data;         
             this.customers_list = this._objectToArrayPipe.transform(this.temp);
         });

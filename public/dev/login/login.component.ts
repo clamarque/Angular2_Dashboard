@@ -1,7 +1,7 @@
 //Angular
+import { FORM_DIRECTIVES } from '@angular/common';
 import {Component} from '@angular/core';
 import {Router, ROUTER_DIRECTIVES} from '@angular/router';
-import { FORM_DIRECTIVES } from '@angular/common';
 
 //Service
 import {LoginService} from "./login.service";
