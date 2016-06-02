@@ -21,7 +21,7 @@ you can run the app: https://blazing-inferno-9370.firebaseapp.com
 
 `$ npm start`
 
-##Do you want help me !
+##Do you want help me ?
 
 Want to file a bug, contribute some code, suggest ideas or improve documentation? don't hesitate!
 
