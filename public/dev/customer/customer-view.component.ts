@@ -12,11 +12,13 @@ declare var firebase: any;
 
 import { ObjectToArrayPipe } from '../pipes/object-to-array.pipe'
 
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+
 @Component({
     selector: "customer-view",
     templateUrl: "/dev/customer/customer-view.component.html",
     directives: [CORE_DIRECTIVES],
-    providers: [CustomerService, ObjectToArrayPipe]
+    providers: [CustomerService, ObjectToArrayPipe, ToastsManager]
 })
 
 export class CustomerViewComponent implements OnActivate {
@@ -24,7 +26,7 @@ export class CustomerViewComponent implements OnActivate {
     projects: any[];
     temp: any;
    
-    constructor(private _customerService: CustomerService, private _router: Router, private _routeSegment: RouteSegment, private _objectToArrayPipe : ObjectToArrayPipe) { }
+    constructor(private _customerService: CustomerService, private _router: Router, private _routeSegment: RouteSegment, private _objectToArrayPipe : ObjectToArrayPipe, private _toastr: ToastsManager) { }
 
     routerOnActivate(current: RouteSegment) {
         let id = current.parameters['id'];
@@ -40,12 +42,14 @@ export class CustomerViewComponent implements OnActivate {
     deleteCustomer() {
         let id = this._routeSegment.getParam('id');
         this._customerService.deleteCustomer(id);
-        this._router.navigate(['/Home/Customer'])
+        this._router.navigate(['/Home/Customer']);
+        this._toastr.success('Customer deleted')
     }
 
     setCustomer(name, project) {
         let id = this._routeSegment.getParam('id');
         this._customerService.setCustomer(id, name, project);
         this._router.navigate(['/Home/Customer'])
+        this._toastr.success('Modifications saved')
     }
 }

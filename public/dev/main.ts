@@ -10,6 +10,7 @@ import {BootstrappingComponent} from './bootstrapping/bootstrapping.component';
 //Implementation Translate
 import { TranslateLoader, TranslateStaticLoader, TRANSLATE_PROVIDERS, TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
 
+
 bootstrap(BootstrappingComponent, [
   HTTP_PROVIDERS,
   ROUTER_PROVIDERS,

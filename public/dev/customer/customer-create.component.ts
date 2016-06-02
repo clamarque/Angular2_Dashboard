@@ -9,23 +9,26 @@ declare var firebase: any;
 import { CustomerService } from "./customer.service";
 import { Customer } from './customer'
 
-import {ObjectToArrayPipe} from '../pipes/object-to-array.pipe'
+import {ObjectToArrayPipe} from '../pipes/object-to-array.pipe';
+
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
     selector: 'customer-create',
     templateUrl: './dev/customer/customer-create.component.html',
-    providers: [CustomerService, ObjectToArrayPipe]
+    providers: [CustomerService, ObjectToArrayPipe, ToastsManager]
 })
 
 export class CustomerCreateComponent implements OnInit {
     project_list: any[];
     temp: any;
 
-    constructor(private _customerService: CustomerService, private _router: Router, private _objectToArrayPipe: ObjectToArrayPipe) { }
+    constructor(private _customerService: CustomerService, private _router: Router, private _objectToArrayPipe: ObjectToArrayPipe, private _toastr: ToastsManager) { }
 
-    createProject(name,project) {
+    createCustomer(name,project) {
         this._customerService.postCustomer(name, project);
-        this._router.navigate(['/Home/Customer'])
+        this._router.navigate(['/Home/Customer']);
+        this._toastr.success('Customer created');
     }
     ngOnInit() {
         firebase.database().ref('project').once('value').then((snapshot) => {

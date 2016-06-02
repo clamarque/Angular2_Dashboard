@@ -9,23 +9,25 @@ declare var firebase: any;
 import { ProjectService } from "./project.service";
 import { Project } from './project'
 
-import { ObjectToArrayPipe } from '../pipes/object-to-array.pipe'
+import { ObjectToArrayPipe } from '../pipes/object-to-array.pipe';
+
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
     selector: 'project-create',
     templateUrl: './dev/project/project-create.component.html',
-    providers: [ProjectService, ObjectToArrayPipe]
+    providers: [ProjectService, ObjectToArrayPipe, ToastsManager]
 })
 
 export class ProjectCreateComponent implements OnInit {
     members_list: any[];
     temp: any;
 
-    constructor(private _projectService: ProjectService, private _router: Router, private _objectToArrayPipe: ObjectToArrayPipe) { }
+    constructor(private _projectService: ProjectService, private _router: Router, private _objectToArrayPipe: ObjectToArrayPipe, private _toastr: ToastsManager) { }
 
     createProject(name, description, date, member) {
         this._projectService.postProject(name, description, date, member);
-        this._router.navigate(['/Home/Project'])
+        this._router.navigate(['/Home/Project']);
     }
     ngOnInit() {
         firebase.database().ref('user').once('value').then((snapshot) => {
