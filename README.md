@@ -7,6 +7,7 @@ Angular2_Dashboard is a platform of Directors to build projects and assign users
 - Angular 2 RC1
 - ng2-translate
 - ng2-toastr
+- Firebase
 
 ##Demo
 
