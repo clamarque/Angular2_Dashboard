@@ -21,7 +21,7 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 export class CustomerCreateComponent implements OnInit {
     project_list: any[];
-    temp: any;
+    temp: number;
 
     constructor(private _customerService: CustomerService, private _router: Router, private _objectToArrayPipe: ObjectToArrayPipe, private _toastr: ToastsManager) { }
 
