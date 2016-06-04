@@ -30,6 +30,7 @@ export class LoginComponent {
                 else {
                     localStorage.setItem('username', this.email);
                     this._router.navigate(['/Home']);
+                    this._toastr.success( this.email, 'Welcome back');
                 }
             })
         } else {
