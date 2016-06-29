@@ -12,6 +12,9 @@ import { ObjectToArrayPipe } from '../pipes/object-to-array.pipe'
 //Firebase
 declare var firebase: any;
 
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+
+
 @Component({
     selector: "project-view",
     templateUrl: "/dev/project/project-view.component.html",
@@ -24,7 +27,7 @@ export class ProjectViewComponent implements OnActivate {
     temp: any;
     users: any[];
 
-    constructor(private _projectService: ProjectService, private _router: Router, private _routeSegment: RouteSegment, private _objecToArray: ObjectToArrayPipe) { }
+    constructor(private _projectService: ProjectService, private _router: Router, private _routeSegment: RouteSegment, private _objecToArray: ObjectToArrayPipe,private _toastr: ToastsManager) { }
 
     routerOnActivate(current: RouteSegment) {
         let id = current.parameters['id'];
@@ -41,7 +44,8 @@ export class ProjectViewComponent implements OnActivate {
     deleteProject() {
         let id = this._routeSegment.getParam('id');
         this._projectService.deleteProject(id);
-        this._router.navigate(['/Home/Project'])
+        this._router.navigate(['/Home/Project']);
+        this._toastr.success('Mission deleted')
     }
 
     setProject(name, description, date, member) {
