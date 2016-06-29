@@ -1,5 +1,5 @@
-<div class="container" *ngIf="user">
-   <div class="container__header">
+<div class="row" *ngIf="user">
+   <div class="cl-title">
         <h2>Edit</h2>
     </div>
     <form (ngSubmit)="setUser(username.value, role.value)">
@@ -30,6 +30,6 @@
             </select>
         </div>
         <button type="submit" class="btn">save</button>
+        <button class="btn" (click)="deleteUser()">delete</button>
     </form>
-    <button class="btn" (click)="deleteUser()">delete</button>
 </div>

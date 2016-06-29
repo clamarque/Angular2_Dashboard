@@ -1,15 +1,15 @@
-<div class="container">
-    <div class="container__header">
-        <h2>{{'project.subtitle' | translate}}</h2>
+<div class="row">
+    <div class="cl-title">
+        <h2>{{'project.title' | translate}}</h2>
     </div>
     <table>
         <thead>
             <tr>
                 <th></th>
-                <th>Name project</th>
-                <th>Created</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>{{'project.table-name' | translate}}</th>
+                <th>{{'project.table-date' | translate}}</th>
+                <th>{{'generic.table-edit' | translate}}</th>
+                <th>{{'generic.table-delete' | translate}}</th>
             </tr>
         </thead>
         <tbody>
@@ -22,5 +22,7 @@
             </tr>
         </tbody>
     </table>
+</div>
+<div class="row">
     <a class="btn-floating wave-effect" [routerLink]="['../CreateProject']">+</a>
 </div>

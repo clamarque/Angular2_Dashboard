@@ -1,25 +1,23 @@
-<div class="container">
-    <div class="container__header">
-        <h2>Create a project</h2>
+<div class="row">
+    <div class="cl-title">
+        <h2>{{'project.title-create' | translate}}</h2>
     </div>
-    <div class="project__content">
-        <form role="form" (ngSubmit)="createProject(name.value, description.value,date.value, member.value)">
-            <div class="field">
-                <input class="field-input" type="text" #name placeholder="Name" required>
-            </div>
-            <div class="field">
-                <textarea class="field-input" #description rows="3" colomns="3" placeholder="Description"></textarea>
-            </div>
-            <div class="field">
-                <input class="field-input" type="date" #date required>
-            </div>
-            <div class="field">
-                <select class="field-input" #member >
-                    <option value="" disabled="" selected="">Member</option>
+    <form role="form" (ngSubmit)="createProject(name.value, description.value,date.value, member.value)">
+        <div class="field">
+            <input class="field-input" type="text" #name placeholder="{{'project.form-name' | translate}}" required>
+        </div>
+        <div class="field">
+            <textarea class="field-input" #description rows="3" colomns="3" placeholder="{{'project.form-description' | translate}}"></textarea>
+        </div>
+        <div class="field">
+            <input class="field-input" type="date" #date required>
+        </div>
+        <div class="field">
+            <select class="field-input" #member>
+                    <option value="" disabled="" selected="">Consultant</option>
                     <option *ngFor="let member of members_list" value="{{member.username}}">{{member.username}}</option>
                 </select>
-            </div>
-            <button class="btn" type="submit">save</button>
-        </form>
-    </div>
+        </div>
+        <button class="btn" type="submit">{{'generic.btn-save' | translate}}</button>
+    </form>
 </div>

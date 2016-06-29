@@ -1,6 +1,6 @@
-<div class="container" *ngIf="project">
-    <div class="container__header">
-        <h2>Edit</h2>
+<div class="row" *ngIf="project">
+    <div class="cl-title">
+        <h2>{{'project.title-edit' | translate}}</h2>
     </div>
     <form (ngSubmit)="setProject(name.value, description.value,date.value,member.value)">
         <div class="field">
@@ -14,11 +14,11 @@
         </div>
         <div class="field">
             <select class="field-input" #member>
-                  <option value="{{project.member}}" selected="">{{project.member}}</option>
-                  <option *ngFor="let user of users" value="{{user.username}}">{{user.username}}</option>
-              </select>
+                <option value="{{project.member}}" selected="">{{project.member}}</option>
+                <option *ngFor="let user of users" value="{{user.username}}">{{user.username}}</option>
+            </select>
         </div>
-        <button class="btn" type="submit">save</button>
+        <button class="btn" type="submit">{{'generic.btn-save' | translate}}</button>
+        <button class="btn" (click)="deleteProject()">{{'generic.btn-delete' | translate}}</button>
     </form>
-    <button class="btn" (click)="deleteProject()">Delete</button>
 </div>

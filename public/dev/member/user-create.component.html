@@ -1,13 +1,12 @@
-<div class="container">
-    <div class="container__header">
+<div class="row">
+    <div class="cl-title">
         <h2>Create a member</h2>
     </div>
-    <div class="project__content">
-        <form class="form-horizontal" role="form" (ngSubmit)="createUser(username.value, role.value)">
-            <div class="field">
-                <input class="field-input" type="text" #username placeholder="Name" required>
-            </div>
-             <div class="field">
+    <form class="form-horizontal" role="form" (ngSubmit)="createUser(username.value, role.value)">
+        <div class="field">
+            <input class="field-input" type="text" #username placeholder="Name" required>
+        </div>
+        <div class="field">
             <select class="field-input" #role>
                 <option value="" disabled="" selected="">Role</option>
                 <option value="Admin">Admin</option>
@@ -27,7 +26,6 @@
                 <option value="Web developer">Web developer</option>
             </select>
         </div>
-            <button class="btn" type="submit">save</button>
-        </form>
-    </div>
+        <button class="btn" type="submit">save</button>
+    </form>
 </div>

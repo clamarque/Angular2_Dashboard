@@ -1,11 +1,11 @@
-<div id="sidebar">
-<nav class="sidebar" role="navigation">
-    <ul class="nav">
-        <li class="nav__profile">
-            <img class="img__circle" src="https://robohash.org/+{{username}}+.png" alt="profil">
-            <h1>{{username}}</h1>
-            <h2>Front-end Developer <i class="fa fa-angle-down" aria-hidden="true"></i></h2>
-       
+<div class="col-xs-12 col-sm-3 col-md-3">
+    <nav class="sidebar" role="navigation">
+        <ul class="nav">
+            <li class="nav__profile">
+                <img class="cl-circle" src="https://robohash.org/+{{username}}+.png" alt="profil">
+                <h1>{{username}}</h1>
+                <h2>Front-end Developer <i class="fa fa-angle-down" aria-hidden="true"></i></h2>
+
                 <ul class="dropdown-menu hidden">
                     <li><a href="profile.html">Profile</a></li>
                     <li><a href="contacts.html">Contacts</a></li>
@@ -13,39 +13,39 @@
                     <li class="divider"></li>
                     <li><a (click)="logout()">Sign Out</a></li>
                 </ul>
-        </li>
-        <li>
-            <a [routerLink]="['/Home']"><i class="fa fa-th-large"></i> <span class="nav-label">{{'index.Dashboard' | translate}}</span></a>
-        </li>
-        <li>
-            <a [routerLink]="['Customer']"><i class="fa fa-users" aria-hidden="true"></i>{{'index.Customer' | translate}}</a>
-        </li>
-        <li>
-            <a [routerLink]="['Member']"><i class="fa fa-users" aria-hidden="true"></i><span class="nav-label">{{'index.Member' | translate}}</span></a>
-        </li>
-        <li>
-            <a [routerLink]="['Project']"><i class="fa fa-folder" aria-hidden="true"></i><span class="nav-label">{{'index.Project' | translate}}</span></a>
-        </li>
-        <li>
-            <a [routerLink]="['Setting']"><i class="fa fa-cogs" aria-hidden="true"></i>{{'index.Setting' | translate}}</a>
-        </li>
-        <li>
-            <a href="mailto:chabox59@gmail.com"><i class="fa fa-comment-o" aria-hidden="true"></i> Feedbacks</a>
-        </li>
-        <li>
-            <a><i class="fa fa-code-fork" aria-hidden="true"></i> Currently v1</a>
-        </li>
-        <li class="nav__copyright">
-            Made with <i class="fa fa-heart" aria-hidden="true"></i> by <strong>clamarque</strong>
-             <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href=""><i class="fa fa-google-plus" arias-hidden="true"></i></a>
-        </li>
-    </ul>
-
-
-</nav>
+            </li>
+            <li>
+                <a [routerLink]="['/Home']"><i class="fa fa-th-large"></i> <span class="nav-label">{{'index.Dashboard' | translate}}</span></a>
+            </li>
+            <li>
+                <a [routerLink]="['Customer']"><i class="fa fa-users" aria-hidden="true"></i>{{'index.Customer' | translate}}</a>
+            </li>
+            <li>
+                <a [routerLink]="['Member']"><i class="fa fa-users" aria-hidden="true"></i><span class="nav-label">{{'index.Member' | translate}}</span></a>
+            </li>
+            <li>
+                <a [routerLink]="['Project']"><i class="fa fa-folder" aria-hidden="true"></i><span class="nav-label">{{'index.Project' | translate}}</span></a>
+            </li>
+            <li>
+                <a [routerLink]="['Setting']"><i class="fa fa-cogs" aria-hidden="true"></i>{{'index.Setting' | translate}}</a>
+            </li>
+            <li>
+                <a href="mailto:chabox59@gmail.com"><i class="fa fa-comment-o" aria-hidden="true"></i> Feedbacks</a>
+            </li>
+            <li>
+                <a><i class="fa fa-code-fork" aria-hidden="true"></i> Currently v1</a>
+            </li>
+            <li class="nav__copyright">
+                Made with <i class="fa fa-heart" aria-hidden="true"></i> by <strong>clamarque</strong>
+            </li>
+            <li class="nav__copyright">
+                <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href=""><i class="fa fa-google-plus" arias-hidden="true"></i></a>
+            </li>
+        </ul>
+    </nav>
 </div>
-<div class="wrap">
+<div class="col-xs-12 col-sm-9 col-md-9">
     <router-outlet></router-outlet>
 </div>

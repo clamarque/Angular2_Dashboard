@@ -1,6 +1,10 @@
 {
     "generic": {
-        "welcome-title": "Welcome to the admin platform"
+        "welcome-title": "Welcome to the admin platform",
+        "btn-save":"Save",
+        "btn-delete":"Delete",
+        "table-edit": "Edit",
+        "table-delete":"Delete"
     },
     "login": {
         "username": "username",
@@ -10,9 +14,13 @@
         "remember":"remember-me"
     },
     "project": {
-        "title": "Project List",
-        "subtitle": "All projects assigned to this account",
-        "new": "Create new project"
+        "title": "List missions",
+        "table-name":"Name mission",
+        "table-date": "Created",
+        "title-create":"Create a mission",
+        "title-edit":"Edit a mission",
+        "form-name":"Name mission",
+        "form-description":"Description mission"
     },
     "footer": {
         "language": "Choose your Language",
@@ -24,7 +32,7 @@
         "Dashboard": "Dashboard",
         "Customer": "Customers",
         "Member": "Members",
-        "Project": "Projects",
+        "Project": "Missions",
         "Setting": "Settings"
     }
 }

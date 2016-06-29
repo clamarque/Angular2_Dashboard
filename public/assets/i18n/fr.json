@@ -1,6 +1,10 @@
 {
     "generic": {
-        "welcome-title": "Bienvenue sur la plateforme d'administration"
+        "welcome-title": "Bienvenue sur la plateforme d'administration",
+        "btn-save":"Enregistrer",
+        "btn-delete":"supprimer",
+        "table-edit": "Editer",
+        "table-delete":"Supprimer"
     },
     "login": {
         "username": "nom d'utilisateur",
@@ -10,9 +14,13 @@
 		"remember":"Se rappeler de moi"
     },
     "project": {
-        "title": "Liste de projet",
-        "subtitle": "Tous les projets assignés à ce compte",
-        "new": "Créer un nouveau projet"
+        "title": "Liste des missions",
+        "table-name":"Nom mission",
+        "table-date": "Créé",
+        "title-create":"Créer une mission",
+        "title-edit":"Editer mission",
+        "form-name":"Nom mission",
+        "form-description":"Description mission"
     },
     "footer": {
         "language": "Choisissez votre langage",
@@ -24,7 +32,7 @@
         "Dashboard": "Tableau de bord",
         "Customer": "Clients",
         "Member": "Membres",
-        "Project": "Projets",
+        "Project": "Missions",
         "Setting": "Paramètres"
     }
 }
