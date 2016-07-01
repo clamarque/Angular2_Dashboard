@@ -17,7 +17,7 @@ declare var firebase;
 
 export class HomeIndexComponent implements OnInit {
     customersCount: number;
-    projectsCount: number;
+    missionsCount: number;
     usersCount: number;
     skillsCount: number;
     date: Date;
@@ -25,7 +25,7 @@ export class HomeIndexComponent implements OnInit {
     constructor(private _router: Router, private _objectToArrayPipe: ObjectToArrayPipe) {
         this.date = new Date();
         this.usersCount = 0;
-        this.projectsCount = 0;
+        this.missionsCount = 0;
         this.customersCount = 0;
         this.skillsCount = 0;
 
@@ -35,8 +35,8 @@ export class HomeIndexComponent implements OnInit {
             self.usersCount = data.numChildren();
         })
 
-        firebase.database().ref('project/').on('value', function (data) {
-            self.projectsCount = data.numChildren();
+        firebase.database().ref('mission/').on('value', function (data) {
+            self.missionsCount = data.numChildren();
         })
         firebase.database().ref('customer/').on('value', function (data) {
             self.customersCount = data.numChildren();
