@@ -7,13 +7,13 @@ import { TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
 //Component
 import { LoginComponent } from '../login/login.component';
 import { HomeComponent } from '../home/home.component';
-import { SettingLanguageComponent } from '../setting/setting-language.component';
+import { SettingIndexComponent } from '../setting/setting-index.component';
 
 
 @Component({
     selector: 'my-app',
     templateUrl: './dev/bootstrapping/bootstrapping.component.html',
-    directives: [ROUTER_DIRECTIVES, SettingLanguageComponent],
+    directives: [ROUTER_DIRECTIVES, SettingIndexComponent],
     pipes: [TranslatePipe]
 })
 @Routes([
