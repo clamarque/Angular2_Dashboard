@@ -31,8 +31,10 @@
     "index": {
         "Dashboard": "Dashboard",
         "Customer": "Customers",
-        "Member": "Members",
-        "Project": "Missions",
-        "Setting": "Settings"
+        "Consultant": "Consultants",
+        "Mission": "Missions",
+        "Setting": "Settings",
+        "Sign-out": "Sign out",
+        "Skill": "Skills"
     }
 }

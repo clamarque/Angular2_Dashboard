@@ -31,8 +31,10 @@
     "index": {
         "Dashboard": "Tableau de bord",
         "Customer": "Clients",
-        "Member": "Membres",
-        "Project": "Missions",
-        "Setting": "Paramètres"
+        "Consultant": "Consultants",
+        "Mission": "Missions",
+        "Setting": "Paramètres",
+        "Sign-out": "Se déconnecter",
+        "Skill": "Compétences"
     }
 }
