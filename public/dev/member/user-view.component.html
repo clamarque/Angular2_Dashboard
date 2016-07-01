@@ -2,12 +2,12 @@
    <div class="cl-title">
         <h2>Edit</h2>
     </div>
-    <form (ngSubmit)="setUser(username.value, role.value)">
+    <form (ngSubmit)="setUser(name.value, role.value)">
         <div class="div">
-            <img class="img__circle" src="https://robohash.org/+{{user.username}}+.png">
+            <img class="img__circle" src="https://robohash.org/+{{user.name}}+.png">
         </div>
         <div class="field">
-            <input class="field-input" type="text" #username value="{{user.username}}">
+            <input class="field-input" type="text" #name value="{{user.name}}">
         </div>
         <div class="field">
             <select class="field-input" #role>

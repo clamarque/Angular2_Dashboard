@@ -6,39 +6,37 @@ import { ROUTER_DIRECTIVES, Router, RouteSegment } from '@angular/router';
 //Firebase
 declare var firebase: any;
 
-//User
-import { DataService } from "../shared/data.service";
-import { User } from './user';
+//Service
+import { DataService } from '../shared/data.service';
+import { Skill } from './skill';
 
 import { ObjectToArrayPipe } from '../pipes/object-to-array.pipe';
 
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
-    selector: 'user-index',
-    templateUrl: '/dev/member/user-index.component.html',
+    selector: 'skill-index',
+    templateUrl: '/dev/skill/skill-index.component.html',
     directives: [ROUTER_DIRECTIVES, CORE_DIRECTIVES],
     providers: [DataService, ObjectToArrayPipe, ToastsManager]
 })
 
-export class UserIndexComponent implements OnInit {
-    //users_list: User[];
-    users_list: any[];
+export class SkillIndexComponent implements OnInit {
+    skills_list: any[];
     temp: any;
   
     constructor(private _dataService: DataService, private _router: Router, private _objectToArrayPipe: ObjectToArrayPipe, private _toastr: ToastsManager) { }
 
-    deleteUser(user: User) {
-        this._dataService.deleteData('user',user.id);
+    deleteData(skill: Skill) {
+        this._dataService.deleteData('skill',skill.id);
         this.ngOnInit();
         this._toastr.success('User deleted');
     }
-
     ngOnInit() {
-          firebase.database().ref('user').once('value').then((snapshot) => {
+          firebase.database().ref('skill').once('value').then((snapshot) => {
             let data = snapshot.val();
             this.temp = data;         
-            this.users_list = this._objectToArrayPipe.transform(this.temp);
+            this.skills_list = this._objectToArrayPipe.transform(this.temp);
         });
     }
 }

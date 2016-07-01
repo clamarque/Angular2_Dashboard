@@ -14,8 +14,8 @@
         </thead>
         <tbody>
             <tr *ngFor="let user of users_list">
-                <td><img class="img__circle" src="https://robohash.org/+{{user.username}}+.png"></td>
-                <td>{{user.username}}</td>
+                <td><img class="img__circle" src="https://robohash.org/+{{user.name}}+.png"></td>
+                <td>{{user.name}}</td>
                 <td>{{user.role}}</td>
                 <td>
                     <a [routerLink]="['/Home/ViewMember', user.id]"><i class="fa fa-pencil fa-1x" aria-hidden="true"></i></a>

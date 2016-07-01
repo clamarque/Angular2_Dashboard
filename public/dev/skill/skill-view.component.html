@@ -1,0 +1,15 @@
+<div class="row" *ngIf="list_skills">
+    <div class="cl-title">
+        <h2>Edit</h2>
+    </div>
+    <form (ngSubmit)="setSkill(name.value, role.value)">
+        <div class="field">
+            <input class="field-input" type="text" #name value="{{list_skills.name}}">
+        </div>
+        <div class="field">
+            <input class="field-input" type="text" #role value="{{list_skills.role}}">
+        </div>
+        <button type="submit" class="btn">save</button>
+        <button class="btn" (click)="deleteSkill()">delete</button>
+    </form>
+</div>

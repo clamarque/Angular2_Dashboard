@@ -4,13 +4,11 @@ import { Component } from '@angular/core';
 import { Router, RouteSegment, OnActivate } from '@angular/router';
 
 //Customer
-import { CustomerService } from "./customer.service";
+import { DataService } from "../shared/data.service";
 import { Customer } from './customer';
 
 //Firebase
 declare var firebase: any;
-
-import { ObjectToArrayPipe } from '../pipes/object-to-array.pipe'
 
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
@@ -18,37 +16,35 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
     selector: "customer-view",
     templateUrl: "/dev/customer/customer-view.component.html",
     directives: [CORE_DIRECTIVES],
-    providers: [CustomerService, ObjectToArrayPipe, ToastsManager]
+    providers: [DataService, ToastsManager]
 })
 
 export class CustomerViewComponent implements OnActivate {
-    customer: Customer;
+    customer: Customer[];
     projects: any[];
     temp: any;
-   
-    constructor(private _customerService: CustomerService, private _router: Router, private _routeSegment: RouteSegment, private _objectToArrayPipe : ObjectToArrayPipe, private _toastr: ToastsManager) { }
+
+    constructor(private _dataService: DataService, private _router: Router, private _routeSegment: RouteSegment, private _toastr: ToastsManager) { }
 
     routerOnActivate(current: RouteSegment) {
         let id = current.parameters['id'];
-        this._customerService.getCustomer(id).subscribe(data => this.customer = data, error => console.log(error))
-        
-        firebase.database().ref('project').once('value').then((snapshot) => {
+        this._dataService.getData('customer', id).then((snapshot) => {
             let data = snapshot.val();
-            this.temp = data;         
-            this.projects = this._objectToArrayPipe.transform(this.temp);
-        });
+            this.temp = data;
+            this.customer = this.temp;
+        })
     }
 
     deleteCustomer() {
         let id = this._routeSegment.getParam('id');
-        this._customerService.deleteCustomer(id);
+        this._dataService.deleteData('customer', id);
         this._router.navigate(['/Home/Customer']);
         this._toastr.success('Customer deleted')
     }
 
     setCustomer(name, project) {
         let id = this._routeSegment.getParam('id');
-        this._customerService.setCustomer(id, name, project);
+        this._dataService.setDataCustomer(id, name, project);
         this._router.navigate(['/Home/Customer'])
         this._toastr.success('Modifications saved')
     }

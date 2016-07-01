@@ -17,7 +17,7 @@
                 <td><img class="img__circle" src="https://robohash.org/+{{project.name}}+.png"></td>
                 <td>{{project.name}}</td>
                 <td>{{project.date}}</td>
-                <td><a [routerLink]="['/Home/ViewProject', project.id]"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+                <td><a [routerLink]="['/Home/ViewProject', project.id]"><i class="fa fa-pencil fa-1x" aria-hidden="true"></i></a></td>
                 <td><button (click)="deleteProject(project)"><i class="fa fa-times" aria-hidden="true"></i></button></td>
             </tr>
         </tbody>

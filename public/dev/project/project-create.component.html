@@ -15,7 +15,7 @@
         <div class="field">
             <select class="field-input" #member>
                     <option value="" disabled="" selected="">Consultant</option>
-                    <option *ngFor="let member of members_list" value="{{member.username}}">{{member.username}}</option>
+                    <option *ngFor="let member of members_list" value="{{member.name}}">{{member.name}}</option>
                 </select>
         </div>
         <button class="btn" type="submit">{{'generic.btn-save' | translate}}</button>

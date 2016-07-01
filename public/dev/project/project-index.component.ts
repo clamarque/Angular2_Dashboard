@@ -7,7 +7,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 declare var firebase: any;
 
 //Project
-import { ProjectService } from "./project.service";
+import { DataService } from "../shared/data.service";
 import { Project } from './project';
 
 import { ObjectToArrayPipe } from '../pipes/object-to-array.pipe'
@@ -16,23 +16,22 @@ import { ObjectToArrayPipe } from '../pipes/object-to-array.pipe'
     selector: 'project-index',
     templateUrl: '/dev/project/project-index.component.html',
     directives: [ROUTER_DIRECTIVES, CORE_DIRECTIVES],
-    providers: [ProjectService, ObjectToArrayPipe]
+    providers: [DataService, ObjectToArrayPipe]
 })
 
 export class ProjectIndexComponent implements OnInit {
-    //projects_list: Project[];
     projects_list: any[];
     temp: any;
     
-    constructor(private _projectService: ProjectService, private _objectToArrayPipe: ObjectToArrayPipe) { }
+    constructor(private _dataService: DataService, private _objectToArrayPipe: ObjectToArrayPipe) { }
 
     deleteProject(project: Project) {
-        this._projectService.deleteProject(project.id);
+        this._dataService.deleteData('mission',project.id);
         this.ngOnInit();
     }
 
     ngOnInit() {
-           firebase.database().ref('project').once('value').then((snapshot) => {
+           firebase.database().ref('mission').once('value').then((snapshot) => {
             let data = snapshot.val();
             this.temp = data;         
             this.projects_list = this._objectToArrayPipe.transform(this.temp);

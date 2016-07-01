@@ -1,15 +1,25 @@
+//Angular
+import { FORM_DIRECTIVES, Control } from '@angular/common';
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES, Router, RouteSegment } from '@angular/router';
+import { TranslateService } from 'ng2-translate/ng2-translate';
 
 
 @Component({
     selector: 'setting-index',
     templateUrl: '/dev/setting/setting-index.component.html',
-    directives: [ROUTER_DIRECTIVES]
+    directives: [FORM_DIRECTIVES]
 })
 
 export class SettingIndexComponent {
- 
-    constructor() { }
+    language: Control = new Control(false);
 
+    constructor(private _translate: TranslateService) { }
+
+    changeLanguage(value) {
+        if (value) {
+            this._translate.use('fr');
+        } else {
+            this._translate.use('en');
+        }
+    }
 }

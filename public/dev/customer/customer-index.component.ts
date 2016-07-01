@@ -7,7 +7,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 declare var firebase: any;
 
 //CustomerIndexComponent
-import { CustomerService } from './customer.service';
+import { DataService } from '../shared/data.service';
 import { Customer } from './customer';
 
 import { ObjectToArrayPipe } from '../pipes/object-to-array.pipe';
@@ -18,17 +18,17 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
     selector: 'customer-index',
     templateUrl: '/dev/customer/customer-index.component.html',
     directives: [ROUTER_DIRECTIVES],
-    providers: [CustomerService, ObjectToArrayPipe, ToastsManager]
+    providers: [DataService, ObjectToArrayPipe, ToastsManager]
 })
 
 export class CustomerIndexComponent implements OnInit {
     customers_list: any[];
     temp: any;
 
-    constructor(private _customerService: CustomerService, private _objectToArrayPipe: ObjectToArrayPipe, private _toastr: ToastsManager) { }
+    constructor(private _dataService: DataService, private _objectToArrayPipe: ObjectToArrayPipe, private _toastr: ToastsManager) { }
 
     deleteCustomer(customer: Customer) {
-        this._customerService.deleteCustomer(customer.id);
+        this._dataService.deleteData('customer',customer.id);
         this.ngOnInit();
         this._toastr.success('Customer deleted');
     }
