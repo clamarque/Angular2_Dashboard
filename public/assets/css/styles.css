@@ -36,7 +36,7 @@ a {
     color: #F44336;
     text-decoration: none;
 }
-
+skill-index .row:nth-child(2),
 customer-index .row:nth-child(2),
 project-index .row:nth-child(2),
 user-index .row:nth-child(2) {
@@ -44,9 +44,7 @@ user-index .row:nth-child(2) {
     margin-top: 100px;
 }
 
-.hidden {
-    display: none;
-}
+
 /*
 * image *
 */
@@ -54,7 +52,7 @@ user-index .row:nth-child(2) {
 .cl-circle {
     border-radius: 50%;
     border: 2px solid #FFF;
-    width: 150px;
+    width: 100%;
     height: auto;
 }
 
@@ -311,6 +309,7 @@ form {
 .sidebar {
     background-color: #424242;
     min-height: 100%;
+    overflow: hidden;
     /*position: fixed;
     */
 }
@@ -327,6 +326,9 @@ form {
 }
 .sidebar li:hover {
     background: #9E9E9E;
+}
+.sidebar li:nth-child(8):hover{
+    background: #F44336;
 }
 
 .sidebar li a {
@@ -346,7 +348,7 @@ form {
 }
 
 .nav__profile {
-    background: #FF5722;
+    background: #FF7043;
     text-align: center;
     color: #FFF;
 }
@@ -454,7 +456,7 @@ form .form-control:focus {
 /*
 * TEAMS | PROJECT | CUSTOMER
 */
-
+skill-index .btn-floating,
 customer-index .btn-floating,
 user-index .btn-floating,
 project-index .btn-floating{
@@ -463,6 +465,8 @@ project-index .btn-floating{
     bottom: 0;
     margin: 20px;
 }
+skill-index a,
+skill-index button,
 customer-index a,
 customer-index button,
 project-index a,
@@ -518,8 +522,13 @@ td:nth-child(2) {
 .col-lg-4 {
     padding: 15px;
 }
-
-.dashboard-stats__item {
+/*
+* home-index *
+*/
+.row:nth-child(2) .cl-home__item {
+    background-color: #FF7043;
+}
+.cl-home__item {
     position: relative;
     overflow: hidden;
     padding: 30px 20px;
@@ -528,20 +537,20 @@ td:nth-child(2) {
     border-radius: 2px;
     background-color: #424242;
 }
-.dashboard-stats__item > .fa {
+.cl-home__item > .fa {
     position: absolute;
     bottom: -20%;
     left: -5%;
     font-size: 100px;
     color: rgba(255, 255, 255, 0.15);
 }
-.dashboard-stats__title {
+.cl-home__item h3 {
     margin: 0;
     text-align: right;
     font-size: 36px;
     color: white;
 }
-.dashboard-stats__title > small {
+.cl-home__item h3 > small {
     display: block;
     font-size: 17px;
     text-transform: capitalize;
