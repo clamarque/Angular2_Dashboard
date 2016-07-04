@@ -17,7 +17,7 @@ you can run the app: https://blazing-inferno-9370.firebaseapp.com
 
 * **username**: test@clamarque.io
 
-* **password**:test
+* **password**:testtest
 
 
 ##Quick Start
