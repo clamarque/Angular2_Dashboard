@@ -1,4 +1,4 @@
-public/typings
+src/typings
 node_modules
-public/app
-public/node_modules
+src/dist
+src/node_modules
