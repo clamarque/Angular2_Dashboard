@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="cl-title">
+        <h2>Create a role</h2>
+    </div>
+    <form class="form-horizontal" role="form" (ngSubmit)="createRole(name.value)">
+        <div class="field">
+            <input class="field-input" type="text" #name placeholder="Name" required>
+        </div>
+        <button class="btn" type="submit">save</button>
+    </form>
+</div>

@@ -1,0 +1,41 @@
+<div class="row" *ngIf="collaborator">
+    <div class="cl-title">
+        <h2>Edit</h2>
+    </div>
+    <form (ngSubmit)="setCollaborator(active.value,admin.value,first.value,last.value,username.value,role.value)">
+        <div class="div">
+            <img class="img__circle" src="https://robohash.org/+{{collaborator.username}}+.png">
+        </div>
+        <div class="field" >
+            <select class="field-input" #active>
+                <option value={{collaborator.active}} selected="">{{collaborator.active}}</option>
+                <option value="true">true</option>
+                <option value="false">false</option>
+            </select>
+        </div>
+        <div class="field" >
+            <select class="field-input" #admin>
+                <option value={{collaborator.admin}} selected="">{{collaborator.admin}}</option>
+                <option value="true">true</option>
+                <option value="false">false</option>
+            </select>
+        </div>
+        <div class="field">
+            <input class="field-input" type="text" #first value="{{collaborator.first}}" placeholder="firstname">
+        </div>
+        <div class="field">
+            <input class="field-input" type="text" #last value="{{collaborator.last}}" placeholder="lastname">
+        </div>
+        <div class="field">
+            <input class="field-input" type="text" #username value="{{collaborator.username}}" placeholder="username">
+        </div>
+        <div class="field">
+            <select class="field-input" #role>
+                <option value="{{collaborator.role}}" selected="">{{collaborator.role}}</option>
+                <option *ngFor="let role of list_roles" value="{{role.name}}">{{role.name}}</option>
+            </select>
+        </div>
+        <button type="submit" class="btn">{{'generic.btn-save' | translate}}</button>
+        <button class="btn" (click)="deleteCollaborator()">{{'generic.btn-delete' | translate}}</button>
+    </form>
+</div>

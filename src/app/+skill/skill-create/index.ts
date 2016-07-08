@@ -1,0 +1,1 @@
+export { SkillCreateComponent } from './skill-create.component';

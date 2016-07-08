@@ -1,0 +1,24 @@
+<div class="row" *ngIf="mission">
+    <div class="cl-title">
+        <h2>{{'project.title-edit' | translate}}</h2>
+    </div>
+    <form (ngSubmit)="setMission(name.value, description.value,date.value,collaborator.value)">
+        <div class="field">
+            <input class="field-input" type="text" #name placeholder="{{mission.name}}" value="{{mission.name}}">
+        </div>
+        <div class="field">
+            <input class="field-input" type="text" #description value="{{mission.description}}">
+        </div>
+        <div class="field">
+            <input class="field-input" type="date" #date value="{{mission.date}}">
+        </div>
+        <div class="field">
+            <select class="field-input" #collaborator>
+                <option value="{{mission.collaborator}}" selected="">{{mission.collaborator}}</option>
+                <option *ngFor="let collaborator of list_collaborators" value="{{collaborator.username}}">{{collaborator.username}}</option>
+            </select>
+        </div>
+        <button class="btn" type="submit">{{'generic.btn-save' | translate}}</button>
+        <button class="btn" (click)="deleteMission()">{{'generic.btn-delete' | translate}}</button>
+    </form>
+</div>

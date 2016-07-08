@@ -1,0 +1,40 @@
+{
+    "generic": {
+        "welcome-title": "Bienvenue sur la plateforme d'administration",
+        "btn-save":"Enregistrer",
+        "btn-delete":"supprimer",
+        "table-edit": "Editer",
+        "table-delete":"Supprimer"
+    },
+    "login": {
+        "username": "nom d'utilisateur",
+        "password": "mot de passe",
+        "btn": "Se connecter",
+        "forgot": "Mot de passe oublié?",        
+		"remember":"Se rappeler de moi"
+    },
+    "project": {
+        "title": "Liste des missions",
+        "table-name":"Nom mission",
+        "table-date": "Créé",
+        "title-create":"Créer une mission",
+        "title-edit":"Editer mission",
+        "form-name":"Nom mission",
+        "form-description":"Description mission"
+    },
+    "footer": {
+        "language": "Choisissez votre langage",
+        "copyright-notice": "Consultez nos Mentions légales",
+        "copyright-or": "ou",
+        "copyright-contact": "contactez-nous"
+    },
+    "index": {
+        "Dashboard": "Tableau de bord",
+        "Customer": "Clients",
+        "Consultant": "Collaborateurs",
+        "Mission": "Missions",
+        "Setting": "Paramètres",
+        "Sign-out": "Se déconnecter",
+        "Skill": "Compétences"
+    }
+}

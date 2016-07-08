@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="cl-title">
+        <h2>Skills</h2>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let skill of list_skills; let i=index">
+                <td>{{i}}</td>
+                <td>{{skill.name}}</td>
+                <td>
+                    <a [routerLink]="['/Home/ViewSkill', skill.id]"><i class="fa fa-pencil fa-1x" aria-hidden="true"></i></a>
+                </td>
+                <td>
+                    <button (click)="deleteData(skill)"><i class="fa fa-times fa-1x" aria-hidden="true"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <a class="btn-floating wave-effect" [routerLink]="['../CreateSkill']">+</a>
+</div>

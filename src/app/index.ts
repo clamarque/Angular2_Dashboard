@@ -1,0 +1,10 @@
+export * from './+collaborator';
+export * from './+customer';
+export * from './+mission';
+export * from './+role';
+export * from './+setting';
+export * from './+skill';
+export * from './+user';
+export * from './shared';
+export * from './+home';
+export { AppComponent } from './app.component';

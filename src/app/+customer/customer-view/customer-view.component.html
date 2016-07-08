@@ -1,0 +1,18 @@
+<div class="row" *ngIf="customer">
+    <div class="cl-title">
+        <h2>Edit</h2>
+    </div>
+    <form (ngSubmit)="setCustomer(name.value, project.value)">
+        <div class="field">
+            <input class="field-input" type="text" #name placeholder="{{customer.name}}" value="{{customer.name}}">
+        </div>
+        <div class="field">
+            <select class="field-input" #project>
+                  <option value="{{customer.project}}" selected="">{{customer.project}}</option>
+                  <option *ngFor="let mission of list_missions" value="{{mission.name}}">{{project.name}}</option>
+             </select>
+        </div>
+        <button class="btn" type="submit">save</button>
+        <button class="btn" (click)="deleteCustomer()">Delete</button>
+    </form>
+</div>

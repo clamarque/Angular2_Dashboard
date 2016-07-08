@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-xl-12 text-xl-center bottom-buffer">
+        <h3>Reset your Password</h3>
+    </div>
+
+    <div class="col-xl-4 col-xl-offset-4">
+        <div class="card">
+            <div class="card-block">
+                <form class="form">
+                    <fieldset class="form-group">
+                        <input [(ngModel)]="email" type="text" class="form-control" placeholder="Email" required>
+                    </fieldset>
+                    <fieldset class="form-group text-xl-right">
+                        <button class="btn sogeti-btn" type="submit" (click)="onClickResetPassword()">
+                            <span class="fa-icon-label">Send Password Reset Email</span> 
+                        </button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
