@@ -1,24 +1,7 @@
 //Angular
 import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Router, Routes, ROUTER_DIRECTIVES } from '@angular/router';
-
-import {
-    CollaboratorIndexComponent,
-    CollaboratorViewComponent,
-    CustomerCreateComponent,
-    CustomerIndexComponent,
-    CustomerViewComponent,
-    MissionCreateComponent,
-    MissionIndexComponent,
-    MissionViewComponent,
-    RoleIndexComponent,
-    RoleCreateComponent,
-    SettingIndexComponent,
-    SkillIndexComponent,
-    SkillCreateComponent,
-    SkillViewComponent,
-    UserRegisterComponent } from '../../';
+import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 
 import { DataService, ObjectToArrayPipe } from '../../shared';
 
@@ -28,24 +11,7 @@ import { DataService, ObjectToArrayPipe } from '../../shared';
     directives: [ROUTER_DIRECTIVES, FORM_DIRECTIVES, CORE_DIRECTIVES],
     providers: [DataService, ObjectToArrayPipe]
 })
-@Routes([
-    { path: '/', component: MissionIndexComponent },
-    { path: '/Mission', component: MissionIndexComponent },
-    { path: '/CreateMission', component: MissionCreateComponent },
-    { path: '/ViewMission/:id', component: MissionViewComponent },
-    { path: '/Collaborator', component: CollaboratorIndexComponent },
-    { path: '/CreateCollaborator', component: UserRegisterComponent },
-    { path: '/ViewCollaborator/:id', component: CollaboratorViewComponent },
-    { path: '/Customer', component: CustomerIndexComponent },
-    { path: '/CreateCustomer', component: CustomerCreateComponent },
-    { path: '/ViewCustomer/:id', component: CustomerViewComponent },
-    { path: '/Setting', component: SettingIndexComponent },
-    { path: '/Skill', component: SkillIndexComponent },
-    { path: '/CreateSkill', component: SkillCreateComponent },
-    { path: '/ViewSkill/:id', component: SkillViewComponent },
-    { path: '/Role', component: RoleIndexComponent },
-    { path: '/CreateRole', component: RoleCreateComponent }
-])
+
 
 export class HomeIndexComponent implements OnInit {
 
@@ -80,12 +46,6 @@ export class HomeIndexComponent implements OnInit {
         firebase.database().ref('customer/').on('value', function (data) {
             self.customersCount = data.numChildren();
         })
-    }
-
-    logout() {
-        firebase.auth().signOut()
-        localStorage.removeItem('username');
-        this._router.navigate(['/login']);
     }
 
     ngOnInit() {
