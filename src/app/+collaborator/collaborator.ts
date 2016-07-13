@@ -1,5 +1,7 @@
 export interface Collaborator {
-    id: string,
+    email: string;
+    password: string;
+    id: string;
     username:string,
     role:string
 }
