@@ -4,7 +4,7 @@
 
   // map tells the System loader where to look for things
   var map = {
-    'app':                        'dist', // 'dist',
+    'app':                        '/dist/app', // 'dist',
     'rxjs':                       'node_modules/rxjs',
     'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
     '@angular':                   'node_modules/@angular',
@@ -21,6 +21,8 @@
     'customer-create':            'app/+customer/customer-create',
     'customer-index':             'app/+customer/customer-index',
     'customer-view':              'app/+customer/customer-view',
+    '+dashboard':                 'app/+dashboard',
+    'dashboard-index':            'app/+dashboard/dashboard-index',
     '+home':                      'app/+home',
     'home-index':                 'app/+home/home-index',
     '+mission':                   'app/+mission',
@@ -74,6 +76,8 @@
     'app/+customer/customer-create',
     'app/+customer/customer-index',
     'app/+customer/customer-view',
+    'app/+dashboard',
+    'app/+dashboard/dashboard-index',
     'app/+home',
     'app/+home/home-index',
     'app/+mission',
