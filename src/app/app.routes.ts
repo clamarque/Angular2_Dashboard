@@ -2,6 +2,7 @@ import { provideRouter, RouterConfig } from '@angular/router';
 
 import {
     CollaboratorIndexComponent,
+    CollaboratorSignInComponent,
     CollaboratorViewComponent,
     CustomerCreateComponent,
     CustomerIndexComponent,
@@ -17,12 +18,11 @@ import {
     SkillIndexComponent,
     SkillCreateComponent,
     SkillViewComponent,
-    UserLoginComponent,
-    UserRegisterComponent } from './';
+}from './';
 
 export const APP_ROUTES: RouterConfig = [
-    { path: 'SignIn', component: UserLoginComponent },
-    { path: '', component: UserLoginComponent },
+    { path: 'SignIn', component: CollaboratorSignInComponent },
+    { path: '', component: CollaboratorSignInComponent },
     {
         path: 'Home', component: HomeIndexComponent,
         children: [
@@ -31,7 +31,6 @@ export const APP_ROUTES: RouterConfig = [
             { path: 'CreateMission', component: MissionCreateComponent },
             { path: 'ViewMission/:id', component: MissionViewComponent },
             { path: 'Collaborator', component: CollaboratorIndexComponent },
-            { path: 'CreateCollaborator', component: UserRegisterComponent },
             { path: 'ViewCollaborator/:id', component: CollaboratorViewComponent },
             { path: 'Customer', component: CustomerIndexComponent },
             { path: 'CreateCustomer', component: CustomerCreateComponent },

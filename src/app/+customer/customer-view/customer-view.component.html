@@ -2,17 +2,17 @@
     <div class="cl-title">
         <h2>Edit</h2>
     </div>
-    <form (ngSubmit)="setCustomer(name.value, project.value)">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div class="field">
-            <input class="field-input" type="text" #name placeholder="{{customer.name}}" value="{{customer.name}}">
+            <input type="text" class="field-input" [(ngModel)]="customer.name" name="customer.name">
         </div>
         <div class="field">
-            <select class="field-input" #project>
-                  <option value="{{customer.project}}" selected="">{{customer.project}}</option>
-                  <option *ngFor="let mission of list_missions" value="{{mission.name}}">{{project.name}}</option>
+            <select class="field-input" [(ngModel)]="customer.mission" name="customer.mission">
+                  <option [value]="mission" selected="">{{customer.mission}}</option>
+                  <option *ngFor="let mission of list_missions" value="{{mission.name}}">{{mission.name}}</option>
              </select>
         </div>
         <button class="btn" type="submit">save</button>
-        <button class="btn" (click)="deleteCustomer()">Delete</button>
+        <button class="btn" (click)="cancel()">Cancel</button>
     </form>
 </div>

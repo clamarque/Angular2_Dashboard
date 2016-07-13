@@ -1,8 +1,6 @@
-//Angular
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-//Firebase
 declare var firebase: any;
 
 @Injectable()
@@ -34,11 +32,11 @@ export class DataService {
     }
 
     //Customer
-    postDataCustomer(name: string, project: string) {
-        firebase.database().ref('customer/').push({ name: name, project: project })
+    postDataCustomer(name: string, mission: string) {
+        return firebase.database().ref('customer/').push({ name: name, mission: mission })
     }
-    setDataCustomer(id: string, name: string, project: string) {
-        firebase.database().ref('customer/' + id).set({ name: name, project: project });
+    setDataCustomer(id: string, name: string, mission: string) {
+        firebase.database().ref('customer/' + id).set({ name: name, mission: mission });
     }
 
     //Mission

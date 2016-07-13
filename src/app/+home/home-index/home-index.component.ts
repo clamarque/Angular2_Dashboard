@@ -3,13 +3,13 @@ import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 
-import { DataService, ObjectToArrayPipe } from '../../shared';
+import { AuthService, DataService, ObjectToArrayPipe } from '../../shared';
 
 @Component({
     selector: 'home-index',
     templateUrl: './app/+home/home-index/home-index.component.html',
     directives: [ROUTER_DIRECTIVES, FORM_DIRECTIVES, CORE_DIRECTIVES],
-    providers: [DataService, ObjectToArrayPipe]
+    providers: [AuthService, DataService, ObjectToArrayPipe]
 })
 
 
@@ -25,7 +25,7 @@ export class HomeIndexComponent implements OnInit {
     public username: String;
     public infos: any = {};
 
-    constructor(private _dataService: DataService, private _router: Router, private _objectToArrayPipe: ObjectToArrayPipe) {
+    constructor(private _authService: AuthService, private _dataService: DataService, private _router: Router, private _objectToArrayPipe: ObjectToArrayPipe) {
         this.username = localStorage.getItem('username');
 
         this.date = new Date();
@@ -46,6 +46,10 @@ export class HomeIndexComponent implements OnInit {
         firebase.database().ref('customer/').on('value', function (data) {
             self.customersCount = data.numChildren();
         })
+    }
+    
+    onSignOut(){
+        this._authService.signOut();
     }
 
     ngOnInit() {

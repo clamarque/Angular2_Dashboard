@@ -1,1 +1,1 @@
-export * './dashboard-index';
+export * from './dashboard-index';

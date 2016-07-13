@@ -14,7 +14,7 @@
     
     './':                         'app/',
     '+collaborator':              'app/+collaborator',
-    'collaborator-create':        'app/+collaborator/collaborator-create',
+    'collaborator-signin':         'app/+collaborator/collaborator-signin',
     'collaborator-index':         'app/+collaborator/collaborator-index',
     'collaborator-view':          'app/+collaborator/collaborator-view',
     '+customer':                  'app/+customer',
@@ -38,9 +38,6 @@
     'skill-create':               'app/+skill/skill-create',
     'skill-index':                'app/+skill/skill-index',
     'skill-view':                 'app/+skill/skill-view',
-    '+user':                      'app/+user',
-    'user-login':                 'app/+user/user-login',
-    'user-register':              'app/+user/user-register',
     'shared':                     'app/shared',
     'pipes':                      'app/shared/pipes',
     'services':                   'app/shared/services'
@@ -59,6 +56,7 @@
     '@angular/common',
     '@angular/compiler',
     '@angular/core',
+    '@angular/forms',
     '@angular/http',
     '@angular/platform-browser',
     '@angular/platform-browser-dynamic',
@@ -69,8 +67,8 @@
     
     'app/',
     'app/+collaborator',
-    'app/+collaborator/collaborator-create',
     'app/+collaborator/collaborator-index',
+    'app/+collaborator/collaborator-signin',
     'app/+collaborator/collaborator-view',
     'app/+customer',
     'app/+customer/customer-create',
@@ -93,9 +91,6 @@
     'app/+skill/skill-create',
     'app/+skill/skill-index',
     'app/+skill/skill-view',
-    'app/+user',
-    'app/+user/user-login',
-    'app/+user/user-register',
     'app/shared',
     'app/shared/pipes',
     'app/shared/services'

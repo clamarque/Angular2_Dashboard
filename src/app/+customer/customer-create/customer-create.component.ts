@@ -1,8 +1,7 @@
-//Angular
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
-import { Customer } from '../customer'
 import { DataService, ObjectToArrayPipe } from '../../shared';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
@@ -18,11 +17,12 @@ export class CustomerCreateComponent implements OnInit {
 
     constructor(private _dataService: DataService, private _router: Router, private _objectToArrayPipe: ObjectToArrayPipe, private _toastr: ToastsManager) { }
 
-    createCustomer(name, project) {
-        this._dataService.postDataCustomer(name, project);
+    onSubmit(form: NgForm) {
+        this._dataService.postDataCustomer(form.value.name, form.value.mission);
         this._router.navigate(['/Home/Customer']);
-        this._toastr.success('Customer created');
+        this._toastr.success('Customer created')
     }
+
     ngOnInit() {
         this._dataService.getAllData('mission').then((snapshot) => {
             this.data = snapshot.val();

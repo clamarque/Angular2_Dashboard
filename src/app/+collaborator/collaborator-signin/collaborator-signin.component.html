@@ -3,12 +3,12 @@
         <h2>{{'generic.welcome-title' | translate}}</h2>
         <form role="form">
             <div class="field">
-                <input [(ngModel)]="email" type="email" class="field-input" placeholder="Email" required>
+                <input [(ngModel)]="email" name="email" type="email" class="field-input" placeholder="Email" required>
             </div>
             <div class="field">
-                <input [(ngModel)]="password" type="password" class="field-input" placeholder="Password" required>
+                <input [(ngModel)]="password" name="password" type="password" class="field-input" placeholder="Password" required>
             </div>
-            <button class="btn wave-effect" (click)="login()">{{'login.btn' | translate}}</button>            
+            <button class="btn wave-effect" (click)="onSignIn()">{{'login.btn' | translate}}</button>            
             <div class="login__error">{{msg}}</div>
         </form>
         <!--<a [routerLink]="['Register']">Create a account</a>-->

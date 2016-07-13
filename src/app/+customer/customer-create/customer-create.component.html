@@ -2,15 +2,14 @@
     <div class="cl-title">
         <h2>Create a customer</h2>
     </div>
-    <form role="form" (ngSubmit)="createCustomer(name.value, project.value)">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div class="field">
-            <input class="field-input" type="text" #name placeholder="Name" required>
+            <input type="text"  class="field-input" placeholder="Name" required [(ngModel)]="name" name="name">
         </div>
-
         <div class="field">
-            <select class="field-input" #project>
-                    <option value="" disabled="" selected="">project</option>
-                    <option *ngFor="let project of list_missions" value="{{project.name}}">{{project.name}}</option>
+            <select class="field-input" [(ngModel)]="mission" name="mission">
+                    <option [value]="mission" disabled="" selected="">Mission:</option>
+                    <option *ngFor="let mission of list_missions" value="{{mission.name}}">{{mission.name}}</option>
                 </select>
         </div>
         <button class="btn" type="submit">save</button>
