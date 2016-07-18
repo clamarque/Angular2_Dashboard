@@ -3,8 +3,6 @@ import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { Observable }                   from 'rxjs/Observable';
-import 'rxjs/add/observable/fromPromise';
 
 import { Customer } from '../customer';
 import { DataService, ObjectToArrayPipe } from '../../shared';
@@ -31,7 +29,7 @@ export class CustomerViewComponent implements OnInit {
         private _toastr: ToastsManager) { }
 
     cancel() {
-        this._router.navigate(['/Home/Customer']);
+        //this._router.navigate(['/Home/Customer']);
     }
     /*
    deleteCustomer() {
@@ -42,23 +40,18 @@ export class CustomerViewComponent implements OnInit {
    }
    */
     onSubmit(form: NgForm) {
-        console.log(form.value);
-
+        //console.log(form.value);
+        let name = form.controls['customer.name'].value;
+        let mission = form.controls['customer.mission'].value;
+      
         this.sub = this._route.params.subscribe(params => {
             let id = params['id'];
-            this._dataService.setDataCustomer(id, form.value.customer.name, form.value.customer.mission);
+            this._dataService.setDataCustomer(id, name, mission);
             this._router.navigate(['/Home/Customer'])
             this._toastr.success('Modifications saved')
         })
     }
-    /* setCustomer(name, project) {
-         let id = this._routeSegment.getParam('id');
-         this._dataService.setDataCustomer(id, name, project);
-         this._router.navigate(['/Home/Customer'])
-         this._toastr.success('Modifications saved')
-     }
-     */
-
+   
     ngOnInit() {
         this.sub = this._route.params.subscribe(params => {
             let id = params['id'];
@@ -74,10 +67,5 @@ export class CustomerViewComponent implements OnInit {
             this.list_missions = this._objecToArrayPipe.transform(this.data);
         })
     }
-    /*
-     canDeactivate(): Observable<boolean> | boolean {
-         let p = this.dialogService.confirm('Discard changes?');
-    let o = Observable.fromPromise(p);
-    return o;
-     }*/
+    
 }
