@@ -55,7 +55,6 @@ export class CustomerViewComponent implements OnInit {
     ngOnInit() {
         this.sub = this._route.params.subscribe(params => {
             let id = params['id'];
-            console.log('id:' + id);
             this._dataService.getData('customer', id).then((snapshot) => {
                 this.data = snapshot.val();
                 this.customer = this.data;

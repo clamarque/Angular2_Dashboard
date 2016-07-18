@@ -27,8 +27,9 @@ export class DataService {
     }
     
     //Collaborator
-    setDataCollaborator(id: string, active: boolean, admin: boolean, first:string,last:string,username:string,role:string) {
-        firebase.database().ref('collaborator/' + id).set({active:active, admin:admin, first:first, last:last, username:username, role: role });
+    setDataCollaborator(id: string, Collaborator: any) {
+        console.log(Collaborator.active);
+        firebase.database().ref('collaborator/' + id).set({active: Collaborator.active, admin: Collaborator.admin,email: Collaborator.email, first: Collaborator.first, last: Collaborator.last, username: Collaborator.username, role: Collaborator.role });
     }
 
     //Customer

@@ -147,6 +147,7 @@ input[type="checkbox"] {
     border: 1px solid #F44336;
     border-radius: 50%;
     -webkit-appearance: none;
+    vertical-align: middle;
 }
 
 input[type="checkbox"]:checked {
