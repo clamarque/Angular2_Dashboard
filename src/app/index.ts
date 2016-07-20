@@ -7,4 +7,4 @@ export * from './+setting';
 export * from './+skill';
 export * from './shared';
 export * from './+home';
-export { AppComponent } from './app.component';
+export { AppComponent } from './app.component'; 
