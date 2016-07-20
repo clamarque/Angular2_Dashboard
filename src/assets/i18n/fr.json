@@ -1,6 +1,7 @@
 {
     "generic": {
         "welcome-title": "Bienvenue sur la plateforme d'administration",
+        "btn-cancel": "Annuler",
         "btn-save":"Enregistrer",
         "btn-delete":"supprimer",
         "table-edit": "Editer",

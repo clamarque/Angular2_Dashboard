@@ -1,6 +1,7 @@
 {
     "generic": {
         "welcome-title": "Welcome to the admin platform",
+        "btn-cancel": "Cancel",
         "btn-save":"Save",
         "btn-delete":"Delete",
         "table-edit": "Edit",
