@@ -14,8 +14,9 @@
     
     './':                         'app/',
     '+collaborator':              'app/+collaborator',
-    'collaborator-signin':         'app/+collaborator/collaborator-signin',
+    'collaborator-signin':        'app/+collaborator/collaborator-signin',
     'collaborator-index':         'app/+collaborator/collaborator-index',
+    'collaborator-register':      'app/+collaborator/collaborator-register',
     'collaborator-view':          'app/+collaborator/collaborator-view',
     '+customer':                  'app/+customer',
     'customer-create':            'app/+customer/customer-create',
@@ -68,6 +69,7 @@
     'app/',
     'app/+collaborator',
     'app/+collaborator/collaborator-index',
+    'app/+collaborator/collaborator-register',
     'app/+collaborator/collaborator-signin',
     'app/+collaborator/collaborator-view',
     'app/+customer',
