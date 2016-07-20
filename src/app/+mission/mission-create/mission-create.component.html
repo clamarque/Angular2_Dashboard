@@ -2,19 +2,22 @@
     <div class="cl-title">
         <h2>{{'project.title-create' | translate}}</h2>
     </div>
-    <form role="form" (ngSubmit)="createMission(name.value, description.value,date.value, collaborator.value)">
+    <form (ngSubmit)="onSubmit(f.value, f.valid)" #f="ngForm">
         <div class="field">
-            <input class="field-input" type="text" #name placeholder="{{'project.form-name' | translate}}" required>
+            <input class="field-input" type="text" placeholder="Name mission" [(ngModel)]="mission.name" name="name" required>
         </div>
         <div class="field">
-            <textarea class="field-input" #description rows="3" colomns="3" placeholder="{{'project.form-description' | translate}}"></textarea>
+            <textarea class="field-input" rows="3" colomns="3" placeholder="Description of mission" [(ngModel)]="mission.description" name="description"></textarea>
         </div>
         <div class="field">
-            <input class="field-input" type="date" #date required>
+            <input class="field-input" type="date" required [(ngModel)]="mission.dateStart" name="dateStart">
         </div>
         <div class="field">
-            <select class="field-input" #collaborator>
-                    <option value="" disabled="" selected="">Consultant</option>
+            <input class="field-input" type="date" required [(ngModel)]="mission.dateEnd" name="dateEnd">
+        </div>
+        <div class="field">
+            <select class="field-input" [(ngModel)]="mission.collaborator" name="collaborator">
+                    <option [value]="Consultant" disabled="" selected="">Consultant</option>
                     <option *ngFor="let collaborator of list_collaborators" value="{{collaborator.username}}">{{collaborator.username}}</option>
                 </select>
         </div>

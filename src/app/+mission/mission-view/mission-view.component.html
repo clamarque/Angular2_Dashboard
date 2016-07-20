@@ -2,23 +2,26 @@
     <div class="cl-title">
         <h2>{{'project.title-edit' | translate}}</h2>
     </div>
-    <form (ngSubmit)="setMission(name.value, description.value,date.value,collaborator.value)">
+    <form (ngSubmit)="onSubmit(f.value, f.valid)" #f="ngForm">
         <div class="field">
-            <input class="field-input" type="text" #name placeholder="{{mission.name}}" value="{{mission.name}}">
+            <input class="field-input" type="text" [(ngModel)]="mission.name" name="name">
         </div>
         <div class="field">
-            <input class="field-input" type="text" #description value="{{mission.description}}">
+            <input class="field-input" type="text" [(ngModel)]="mission.description" name="description">
         </div>
         <div class="field">
-            <input class="field-input" type="date" #date value="{{mission.date}}">
+            <input class="field-input" type="date" [(ngModel)]="mission.dateStart" name="dateStart">
         </div>
         <div class="field">
-            <select class="field-input" #collaborator>
-                <option value="{{mission.collaborator}}" selected="">{{mission.collaborator}}</option>
+            <input class="field-input" type="date" required [(ngModel)]="mission.dateEnd" name="dateEnd">
+        </div>
+        <div class="field">
+            <select class="field-input" [(ngModel)]="mission.collaborator" name="collaborator">
+                <option [value]="mission.collaborator" selected="">{{mission.collaborator}}</option>
                 <option *ngFor="let collaborator of list_collaborators" value="{{collaborator.username}}">{{collaborator.username}}</option>
             </select>
         </div>
         <button class="btn" type="submit">{{'generic.btn-save' | translate}}</button>
-        <button class="btn" (click)="deleteMission()">{{'generic.btn-delete' | translate}}</button>
+        <button class="btn" (click)="deleteMission()">{{'generic.btn-cancel' | translate}}</button>
     </form>
 </div>

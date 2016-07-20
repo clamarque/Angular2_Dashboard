@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { DataService, ObjectToArrayPipe } from "../../shared";
-import { Mission } from '../mission';
 
 @Component({
     selector: 'mission-index',
@@ -19,7 +18,8 @@ export class MissionIndexComponent implements OnInit {
     
     constructor(private _dataService: DataService, private _objectToArrayPipe: ObjectToArrayPipe) { }
 
-    deleteMission(mission: Mission) {
+    deleteMission(mission: any) {
+        console.log(mission.id);
         this._dataService.deleteData('mission',mission.id);
         this.ngOnInit();
     }
