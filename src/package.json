@@ -1,7 +1,7 @@
 {
   "name": "Angular2_Dashboard",
   "version": "1.0.0",
-  "description": "a dashboard",
+  "description": "Admin dashboard angular2",
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
