@@ -27,9 +27,15 @@ export class DataService {
     }
     
     //Collaborator
-    setDataCollaborator(id: string, Collaborator: any) {
-        console.log(Collaborator.active);
-        firebase.database().ref('collaborator/' + id).set({active: Collaborator.active, admin: Collaborator.admin,email: Collaborator.email, first: Collaborator.first, last: Collaborator.last, username: Collaborator.username, role: Collaborator.role });
+    setDataCollaborator(id: string, Detail: any) {
+        firebase.database().ref('collaborator/' + id).set({
+            active: Detail.active, 
+            admin: Detail.admin,
+            email: Detail.email, 
+            first: Detail.first,
+            last: Detail.last,
+            username: Detail.username,
+            role: Detail.role });
     }
 
     //Customer
@@ -41,11 +47,21 @@ export class DataService {
     }
 
     //Mission
-    postDataMission(name: string, description: string, date: string, collaborator: string) {
-        firebase.database().ref('mission/').push({ name: name, description: description, date: date, collaborator: collaborator })
+    postDataMission(Detail: any) {
+        firebase.database().ref('mission/').push({ 
+            name: Detail.name, 
+            description: Detail.description, 
+            dateStart: Detail.dateStart, 
+            dateEnd: Detail.dateEnd, 
+            collaborator: Detail.collaborator })
     }
-    setDataMission(id: string, name: string, description: string, date: string, collaborator: string) {
-        firebase.database().ref('mission/' + id).set({ name: name, description: description, date: date, collaborator: collaborator });
+    setDataMission(id: string, Detail: any) {
+        firebase.database().ref('mission/' + id).set({
+            name: Detail.name,
+            description: Detail.description,
+            dateStart: Detail.dateStart,
+            dateEnd: Detail.dateEnd,
+            collaborator: Detail.collaborator });
     }
     
     //Role
