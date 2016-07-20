@@ -15,7 +15,7 @@ bootstrap(AppComponent, [
   appRouterProviders,
   HTTP_PROVIDERS,
   disableDeprecatedForms(),
-  provideForms(),
+  provideForms(), 
   TRANSLATE_PROVIDERS,
   TranslateService,
   provide(TranslateLoader, { useFactory: (http: Http) => new TranslateStaticLoader(http, 'assets/i18n', '.json'), deps: [Http] }),
