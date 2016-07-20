@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
-import { Customer } from '../customer';
+import { Customer } from '../customer.interface';
 import { DataService, ObjectToArrayPipe } from '../../shared';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
@@ -16,7 +16,7 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 })
 
 export class CustomerViewComponent implements OnInit {
-    customer: Customer[];
+    customer: Customer;
     list_missions: any[];
     data: any;
     private sub: any;
@@ -29,24 +29,16 @@ export class CustomerViewComponent implements OnInit {
         private _toastr: ToastsManager) { }
 
     cancel() {
-        //this._router.navigate(['/Home/Customer']);
+        this._router.navigate(['/Home/Customer']);
     }
-    /*
-   deleteCustomer() {
-       let id = this._routeSegment.getParam('id');
-       this._dataService.deleteData('customer', id);
-       this._router.navigate(['/Home/Customer']);
-       this._toastr.success('Customer deleted')
-   }
-   */
-    onSubmit(form: NgForm) {
-        //console.log(form.value);
-        let name = form.controls['customer.name'].value;
-        let mission = form.controls['customer.mission'].value;
+
+    onSubmit() {
+ 
+        console.log(this.customer);
       
         this.sub = this._route.params.subscribe(params => {
             let id = params['id'];
-            this._dataService.setDataCustomer(id, name, mission);
+            this._dataService.setDataCustomer(id, this.customer);
             this._router.navigate(['/Home/Customer'])
             this._toastr.success('Modifications saved')
         })

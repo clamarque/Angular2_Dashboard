@@ -2,17 +2,21 @@
     <div class="cl-title">
         <h2>Edit</h2>
     </div>
-    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <form (ngSubmit)="onSubmit(f.value, f.valid)" #f="ngForm">
         <div class="field">
-            <input type="text" class="field-input" [(ngModel)]="customer.name" name="customer.name">
+            <input type="checkbox" [(ngModel)]="customer.active" name="active">
+            <label>Mission Active</label>
         </div>
         <div class="field">
-            <select class="field-input" [(ngModel)]="customer.mission" name="customer.mission">
+            <input type="text" class="field-input" [(ngModel)]="customer.name" name="name">
+        </div>
+        <div class="field">
+            <select class="field-input" [(ngModel)]="customer.mission" name="mission">
                   <option [value]="mission" selected="">{{customer.mission}}</option>
                   <option *ngFor="let mission of list_missions" value="{{mission.name}}">{{mission.name}}</option>
              </select>
         </div>
-        <button class="btn" type="submit">save</button>
-        <button class="btn" (click)="cancel()">Cancel</button>
+        <button class="btn" type="submit">{{'generic.btn-save' | translate}}</button>
     </form>
+    <button class="btn" (click)="cancel()">{{'generic.btn-cancel' | translate}}</button>
 </div>

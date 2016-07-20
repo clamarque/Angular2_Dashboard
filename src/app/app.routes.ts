@@ -2,6 +2,7 @@ import { provideRouter, RouterConfig } from '@angular/router';
 
 import {
     CollaboratorIndexComponent,
+    CollaboratorRegisterComponent,
     CollaboratorSignInComponent,
     CollaboratorViewComponent,
     CustomerCreateComponent,
@@ -31,6 +32,7 @@ export const APP_ROUTES: RouterConfig = [
             { path: 'CreateMission', component: MissionCreateComponent },
             { path: 'ViewMission/:id', component: MissionViewComponent },
             { path: 'Collaborator', component: CollaboratorIndexComponent },
+            { path: 'Register', component: CollaboratorRegisterComponent },
             { path: 'ViewCollaborator/:id', component: CollaboratorViewComponent },
             { path: 'Customer', component: CustomerIndexComponent },
             { path: 'CreateCustomer', component: CustomerCreateComponent },

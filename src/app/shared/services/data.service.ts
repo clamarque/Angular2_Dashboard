@@ -10,8 +10,8 @@ export class DataService {
     constructor() { }
 
     //Common
-    postData(category: string, name: string) {
-        firebase.database().ref(category).push({ name: name})
+    postData(category: string, detail: any) {
+        firebase.database().ref(category).push({ name: detail.name})
     }
     getData(category: string, id: string) {
         return firebase.database().ref(category + '/' + id).once('value');
@@ -19,7 +19,7 @@ export class DataService {
      getAllData(category: string) {
         return firebase.database().ref(category).once('value');
     }
-    setData(category: string, id: string, name: string, role: string) {
+    setData(category: string, id: string, detail: any) {
         firebase.database().ref(category + '/' + id).set({ name: name, role: role });
     }
     deleteData(category: string, id: string) {
@@ -39,11 +39,19 @@ export class DataService {
     }
 
     //Customer
-    postDataCustomer(name: string, mission: string) {
-        return firebase.database().ref('customer/').push({ name: name, mission: mission })
+    postDataCustomer(Detail: any) {
+        return firebase.database().ref('customer/').push({
+            active: Detail.active,
+            mission: Detail.mission,
+            name: Detail.name        
+        })
     }
-    setDataCustomer(id: string, name: string, mission: string) {
-        firebase.database().ref('customer/' + id).set({ name: name, mission: mission });
+    setDataCustomer(id: string, Detail: any) {
+        firebase.database().ref('customer/' + id).set({
+            active: Detail.active,
+            mission: Detail.mission,
+            name: Detail.name
+         });
     }
 
     //Mission
@@ -53,7 +61,8 @@ export class DataService {
             description: Detail.description, 
             dateStart: Detail.dateStart, 
             dateEnd: Detail.dateEnd, 
-            collaborator: Detail.collaborator })
+            collaborator: Detail.collaborator 
+        })
     }
     setDataMission(id: string, Detail: any) {
         firebase.database().ref('mission/' + id).set({
@@ -61,13 +70,18 @@ export class DataService {
             description: Detail.description,
             dateStart: Detail.dateStart,
             dateEnd: Detail.dateEnd,
-            collaborator: Detail.collaborator });
+            collaborator: Detail.collaborator 
+        })
     }
     
     //Role
-    postDataRole(name: string){
-        firebase.database().ref('role/').push({name: name})
+    postDataRole(Detail: any){
+        firebase.database().ref('role/').push({name: Detail.name})
         //firebase.database().ref('role/').child('id').push({name})   
+    }
+    //Skill
+    setDataSkill(id: string, Detail: any){
+        firebase.database().ref('skill/' + id).set({name: Detail.name})
     }
     
 }

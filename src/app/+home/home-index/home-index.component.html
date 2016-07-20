@@ -13,16 +13,16 @@
                     <a [routerLink]="['/Home']"><i class="fa fa-th-large"></i>Profil</a>
                 </li>
                 <li *ngIf="infos.admin">
-                    <a [routerLink]="['Customer']"><i class="fa fa-users" aria-hidden="true"></i>{{'index.Customer' | translate}}</a>
-                </li>
-                <li *ngIf="infos.admin">
                     <a [routerLink]="['Collaborator']"><i class="fa fa-users" aria-hidden="true"></i>{{'index.Consultant' | translate}}</a>
                 </li>
                 <li *ngIf="infos.admin">
-                    <a [routerLink]="['Role']"><i class="fa fa-users" aria-hidden="true"></i>Role</a>
+                    <a [routerLink]="['Customer']"><i class="fa fa-users" aria-hidden="true"></i>{{'index.Customer' | translate}}</a>
                 </li>
                 <li *ngIf="infos.admin">
                     <a [routerLink]="['Mission']"><i class="fa fa-folder" aria-hidden="true"></i>{{'index.Mission' | translate}}</a>
+                </li>
+                <li *ngIf="infos.admin">
+                    <a [routerLink]="['Role']"><i class="fa fa-users" aria-hidden="true"></i>Role</a>
                 </li>
                 <li *ngIf="infos.admin">
                     <a [routerLink]="['Skill']"><i class="fa fa-list" aria-hidden="true"></i>{{'index.Skill' | translate}}</a>
@@ -37,7 +37,7 @@
                     <a href="mailto:chabox59@gmail.com"><i class="fa fa-comment-o" aria-hidden="true"></i> Feedbacks</a>
                 </li>
                 <li>
-                    <a><i class="fa fa-code-fork" aria-hidden="true"></i> Currently v-0.2</a>
+                    <a><i class="fa fa-code-fork" aria-hidden="true"></i> Currently v-0.2.1</a>
                 </li>
                 <li class="nav__copyright">
                     Made with <i class="fa fa-heart" aria-hidden="true"></i> by <strong>clamarque</strong>

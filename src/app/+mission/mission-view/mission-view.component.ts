@@ -24,7 +24,7 @@ export class MissionViewComponent implements OnInit {
     constructor(private _dataService: DataService, private _router: Router, private _route: ActivatedRoute, private _objecToArray: ObjectToArrayPipe, private _toastr: ToastsManager) { }
 
     cancel(){
-        
+        this._router.navigate(['/Home/Mission']);
     }
     
     onSubmit(model: Mission, isValid: boolean) {

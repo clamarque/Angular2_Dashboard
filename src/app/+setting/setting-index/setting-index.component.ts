@@ -17,9 +17,9 @@ export class SettingIndexComponent {
 
     changeLanguage(value) {
         if (value) {
-            this._translate.use('fr');
-        } else {
             this._translate.use('en');
+        } else {
+            this._translate.use('fr');
         }
     }
 }

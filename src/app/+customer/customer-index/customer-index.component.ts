@@ -3,7 +3,6 @@ import { CORE_DIRECTIVES } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import { Customer } from '../customer';
 import { DataService, ObjectToArrayPipe } from '../../shared';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
@@ -20,7 +19,7 @@ export class CustomerIndexComponent implements OnInit {
 
     constructor(private _dataService: DataService, private _objectToArrayPipe: ObjectToArrayPipe, private _toastr: ToastsManager) { }
 
-    deleteCustomer(customer: Customer) {
+    deleteCustomer(customer: any) {
         this._dataService.deleteData('customer', customer.id);
         this.ngOnInit();
         this._toastr.success('Customer deleted');

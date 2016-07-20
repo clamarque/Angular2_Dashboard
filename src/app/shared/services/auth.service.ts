@@ -28,9 +28,9 @@ export class AuthService {
 
     }
 
-    signUp(user: any) {
-        firebase.auth().createUserWithEmailAndPassword(user.email, user.password).then(
-            (user: any) => this.createUserResume(user.uid, user)
+    signUp(collaborator: any) {
+        firebase.auth().createUserWithEmailAndPassword(collaborator.email, collaborator.password).then(
+            (collaborator: any) => this.createUserResume(collaborator.uid, collaborator)
 
         )
     }
@@ -42,17 +42,18 @@ export class AuthService {
 
         )
     }
+    */
     
     private createUserResume(uid: string, userDetails: any) {
-        console.log('function create');
-        this.login(userDetails.email, userDetails.password, (error: any) => {
+        console.log(userDetails.password);
+        this.signIn(userDetails.email, userDetails.password, (error: any) => {
             firebase.database().ref('collaborator').child(uid).set({
                 active: true, admin: false, first: userDetails.first,last: userDetails.last,username: userDetails.username,role: userDetails.role,email: userDetails.email
             });
 
         });
     }  
-*/
+
     isAuthenticated() {
         let user = firebase.auth().currentUser;
         if (user) {

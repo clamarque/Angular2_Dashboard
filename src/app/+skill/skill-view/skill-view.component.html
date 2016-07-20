@@ -2,14 +2,11 @@
     <div class="cl-title">
         <h2>Edit</h2>
     </div>
-    <form (ngSubmit)="setSkill(name.value, role.value)">
+    <form (ngSubmit)="onSubmit(f.value, f.valid)" #f="ngForm">
         <div class="field">
-            <input class="field-input" type="text" #name value="{{list_skills.name}}">
+            <input class="field-input" type="text" [(ngModel)]="list_skills.name" name="name">
         </div>
-        <div class="field">
-            <input class="field-input" type="text" #role value="{{list_skills.role}}">
-        </div>
-        <button type="submit" class="btn">save</button>
-        <button class="btn" (click)="deleteSkill()">delete</button>
+        <button class="btn" type="submit">{{'generic.btn-save' | translate}}</button>
     </form>
+    <button class="btn" (click)="cancel()">{{'generic.btn-cancel' | translate}}</button>
 </div>

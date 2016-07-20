@@ -1,10 +1,9 @@
 //Angular
 import { CORE_DIRECTIVES } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES, Router, RouteSegment } from '@angular/router';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { DataService, ObjectToArrayPipe } from "../../shared";
-import { Role } from '../role';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
@@ -18,9 +17,9 @@ export class RoleIndexComponent implements OnInit {
     list_roles: any[];
     data: any;
   
-    constructor(private _dataService: DataService, private _router: Router, private _objectToArrayPipe: ObjectToArrayPipe, private _toastr: ToastsManager) { }
+    constructor(private _dataService: DataService, private _objectToArrayPipe: ObjectToArrayPipe, private _toastr: ToastsManager) { }
 
-    deleteRole(role: Role) {
+    deleteRole(role: any) {
         this._dataService.deleteData('role',role.id);
         this.ngOnInit();
         this._toastr.success('role deleted');

@@ -1,7 +1,7 @@
 //Angular
 import { CORE_DIRECTIVES } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES, Router, RouteSegment } from '@angular/router';
+import { ROUTER_DIRECTIVES} from '@angular/router';
 
 import { DataService, ObjectToArrayPipe } from '../../shared';
 import { Skill } from '../skill';
@@ -18,12 +18,12 @@ export class SkillIndexComponent implements OnInit {
     list_skills: any[];
     data: any;
   
-    constructor(private _dataService: DataService, private _router: Router, private _objectToArrayPipe: ObjectToArrayPipe, private _toastr: ToastsManager) { }
+    constructor(private _dataService: DataService, private _objectToArrayPipe: ObjectToArrayPipe, private _toastr: ToastsManager) { }
 
     deleteData(skill: Skill) {
         this._dataService.deleteData('skill',skill.id);
         this.ngOnInit();
-        this._toastr.success('User deleted');
+        this._toastr.success('Skill deleted');
     }
     ngOnInit() {
         this._dataService.getAllData('skill').then((snapshot) => {
