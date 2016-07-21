@@ -15,10 +15,15 @@ Angular2_Dashboard is a platform of Directors to build projects and assign users
 
 you can run the app: https://blazing-inferno-9370.firebaseapp.com 
 
+Admin: 
+
 * **username**: test@clamarque.io
 
 * **password**:testtest
 
+User:
+
+* Coming soon
 
 ##Quick Start
 
