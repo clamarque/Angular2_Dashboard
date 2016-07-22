@@ -1,1 +1,89 @@
-Hello {{name}}
+<div class="row"></div>
+<div class="row">
+    <div class="col-xs-12 col-md-4">
+        <div class="card">
+            <div class="card-banner-header">
+                <i class="fa fa-users fa-4x" aria-hidden="true"></i>
+            </div>
+            <div class="card-content">
+                <h2>Collaborators</h2>
+                <p>Accédez à la liste des collaborateurs présent et visualiser les plus en détails</p>
+            </div>
+            <div class="card-link">
+                 <a [routerLink]="['Collaborator']">Premiers pas</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+        <div class="card">
+            <div class="card-banner-header">
+                <i class="fa fa-users fa-4x" aria-hidden="true"></i>
+            </div>
+            <div class="card-content">
+                <h2>Customers</h2>
+                <p>Accédez à la liste des clients et assigner une mission d'un collaborateur</p>
+            </div>
+            <div class="card-link">
+                <a [routerLink]="['Customer']">Premiers pas</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+        <div class="card">
+            <div class="card-banner-header">
+                <i class="fa fa-folder fa-4x" aria-hidden="true"></i>
+            </div>
+            <div class="card-content">
+                <h2>Missions</h2>
+                <p>Accédez à la liste des missions présente et à venir. assigner un collaborateur à une mission</p>
+            </div>
+            <div class="card-link">
+                <a [routerLink]="['Mission']">Premiers pas</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-md-4">
+        <div class="card">
+            <div class="card-banner-header">
+                <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>
+            </div>
+            <div class="card-content">
+                <h2>Roles</h2>
+                <p>Accédez à la liste des roles présent dans votre entreprise</p>
+            </div>
+            <div class="card-link">
+                 <a [routerLink]="['Role']">Premiers pas</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+        <div class="card">
+            <div class="card-banner-header">
+                <i class="fa fa-cogs fa-4x" aria-hidden="true"></i>
+            </div>
+            <div class="card-content">
+                <h2>Settings</h2>
+                <p>Accéder aux paramètres, pour y modifier la langue par exemple</p>
+            </div>
+            <div class="card-link">
+                <a [routerLink]="['Setting']">Premiers pas</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+        <div class="card">
+            <div class="card-banner-header">
+                <i class="fa fa-list fa-4x" aria-hidden="true"></i>
+            </div>
+            <div class="card-content">
+                <h2>Skills</h2>
+                <p>Accédez à la liste des compétences</p>
+            </div>
+            <div class="card-link">
+                <a [routerLink]="['Skill']">Premiers pas</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -21,7 +21,7 @@ export class AuthService {
     signOut() {
         let self = this;
         firebase.auth().signOut().then(function () {
-            self._router.navigate(['/SignIn']);
+            self._router.navigate(['']);
         }), function (error) {
             console.log(error)
         }
@@ -33,6 +33,12 @@ export class AuthService {
             (collaborator: any) => this.createUserResume(collaborator.uid, collaborator)
 
         )
+    }
+    sendPasswordResetEmail(email: string, callback: any) {
+        firebase.auth().sendPasswordResetEmail(email).then(
+            () => callback(),
+            (error: any) => callback(error)
+        );
     }
 
     /*

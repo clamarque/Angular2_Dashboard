@@ -22,7 +22,7 @@ export class CollaboratorSignInComponent implements OnInit {
         if (this.email != '' && this.password != '') {
             this._authService.signIn(this.email, this.password, (error: any) => {
                 if (error) {
-                    this._toastr.error('Incorrect username or password', 'Oops !')
+                    this._toastr.error(error, 'Oops !')
                 }
                 else {
                     localStorage.setItem('username', this.email);

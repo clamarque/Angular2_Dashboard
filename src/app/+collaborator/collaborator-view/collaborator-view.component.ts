@@ -30,24 +30,20 @@ export class CollaboratorViewComponent implements OnInit {
         private _objecToArrayPipe: ObjectToArrayPipe,
         private _toastr: ToastsManager) { }
 
-    /*
-    deleteCollaborator() {
-        let id = this._routeSegment.getParam('id');
-        this._dataService.deleteData('collaborator', id);
+    cancel() {
         this._router.navigate(['/Home/Collaborator']);
-        this._toastr.success('Collaborator deleted')
+
     }
-    */
     onSubmit(form: NgForm) {
         console.log(form.value);
         console.log(this.collaborator);
-        
+
         this.sub = this._route.params.subscribe(params => {
             let id = params['id'];
             this._dataService.setDataCollaborator(id, this.collaborator);
             this._router.navigate(['/Home/Collaborator']);
             this._toastr.success('modifications saved');
-        }) 
+        })
     }
 
     ngOnInit() {

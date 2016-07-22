@@ -9,10 +9,13 @@ import { appRouterProviders } from './app.routes';
 import { AppComponent } from './app.component';
 import { TranslateLoader, TranslateStaticLoader, TRANSLATE_PROVIDERS, TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
 
+import { AuthGuard } from './shared';
+
 enableProdMode();
 
 bootstrap(AppComponent, [
   appRouterProviders,
+  AuthGuard,
   HTTP_PROVIDERS,
   disableDeprecatedForms(),
   provideForms(), 

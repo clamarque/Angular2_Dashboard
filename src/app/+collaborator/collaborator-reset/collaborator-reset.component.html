@@ -1,0 +1,12 @@
+<div class="login">
+    <h2>Reset your Password</h2>
+    <form>
+        <div class="field">
+            <input class="field-input" [(ngModel)]="email" name="email" type="text" placeholder="Email" required>
+        </div>
+        <button class="btn sogeti-btn" type="submit" (click)="onClickResetPassword()">
+            <span class="fa-icon-label">Send Password Reset Email</span>
+        </button>
+    </form>
+    <button class="btn" (click)="cancel()">{{'generic.btn-cancel' | translate}}</button>
+</div>

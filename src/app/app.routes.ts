@@ -1,8 +1,9 @@
 import { provideRouter, RouterConfig } from '@angular/router';
-
+import { AuthGuard } from './shared';
 import {
     CollaboratorIndexComponent,
     CollaboratorRegisterComponent,
+    CollaboratorResetComponent,
     CollaboratorSignInComponent,
     CollaboratorViewComponent,
     CustomerCreateComponent,
@@ -22,10 +23,11 @@ import {
 }from './';
 
 export const APP_ROUTES: RouterConfig = [
-    { path: 'SignIn', component: CollaboratorSignInComponent },
+    //{ path: 'SignIn', component: CollaboratorSignInComponent },
+    { path: 'Reset-password', component: CollaboratorResetComponent},
     { path: '', component: CollaboratorSignInComponent },
     {
-        path: 'Home', component: HomeIndexComponent,
+        path: 'Home', component: HomeIndexComponent, canActivate: [AuthGuard],
         children: [
             { path: '', component: DashboardIndexComponent },
             { path: 'Mission', component: MissionIndexComponent },

@@ -14,18 +14,14 @@ html {
 /*
 * COMMON *
 */
-home {
+/*
+home-index {
     display: flex;
     flex-direction: row;
     min-height: 100%;
     align-items: stretch;
 }
-
-[class*="col-xs-"],
-[class*="col-md-"]{
-    /*padding: 0; */
-}
-
+*/
 [class*="row"]{
     margin: 0;
     padding: 6px 12px;
@@ -36,7 +32,6 @@ a {
     color: #F44336;
     text-decoration: none;
 }
-
 
 
 /*
@@ -135,11 +130,6 @@ a.btn-floating:before {
 ** INPUT **
 */
 
-input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
-    background-color: transparent !important;
-}
 input[type="checkbox"] {
     width: 16px;
     height: 16px;
@@ -231,74 +221,28 @@ form {
     transition: transform 0.3s;
 }
 
+/*
+* BOOTSTRAP *
+*/
 
-/* Field is activated
-   ========================================================================== */
-
-.has-label .field-label {
-    -webkit-transform: translateY(0) scale(0.75);
-    -ms-transform: translateY(0) scale(0.75);
-    transform: translateY(0) scale(0.75);
-}
-
-
-/* Field is focused
-   ========================================================================== */
-
-.is-focused .field-label {
+#container__spinner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
     color: #F44336;
 }
 
-.field.is-focused::after {
-    -webkit-transform: scaleX(1);
-    -ms-transform: scaleX(1);
-    transform: scaleX(1);
+.spinner__icon {
+    margin: auto auto 5px;
 }
 
-
-.switch label .lever {
-    content: "";
-    display: inline-block;
-    position: relative;
-    width: 40px;
-    height: 15px;
-    background-color: #BDBDBD;
-    border-radius: 15px;
-    margin-right: 10px;
-    transition: background 0.3s ease;
-    vertical-align: middle;
-    margin: 0 16px;
-}
-
-.switch label input[type=checkbox]:checked+.lever {
-    background-color: #FF7043;
-}
-.switch label [type="checkbox"]:not(:checked),
-.switch label [type="checkbox"]:checked {
-    position: absolute;
-    left: -9999px;
-    opacity: 0;
-}
-.switch label input[type=checkbox]:checked+.lever:after {
-    background-color: #FF5722;
-    left: 24px;
-}
-.switch label .lever:after {
-    content: "";
-    position: absolute;
-    display: inline-block;
-    width: 21px;
-    height: 21px;
-    background-color: #E0E0E0;
-    border-radius: 21px;
-    box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4);
-    left: -5px;
-    top: -3px;
-    transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease;
+.spinner__txt {
+    margin: 5px auto auto;
 }
 
 /*
-* HEADER *
+* NAVIGATION *
 */
 
 .sidebar {
@@ -367,39 +311,6 @@ form {
 .nav__copyright a {
     padding: 13px !important;
     display: inline-block;
-}
-
-header {
-    padding: 15px;
-    min-height: 90px;
-    background: #F44336;
-    color: #FFF;
-    text-align: center;
-}
-
-header img {
-    margin: 0 auto
-}
-
-
-/*
-* BOOTSTRAP *
-*/
-
-#container__spinner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100vh;
-    color: #F44336;
-}
-
-.spinner__icon {
-    margin: auto auto 5px;
-}
-
-.spinner__txt {
-    margin: 5px auto auto;
 }
 
 
@@ -541,20 +452,50 @@ td:nth-child(2) {
 /*
 * home-index *
 */
+.card {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
+    min-height: 300px;
+}
+.card-banner-header{
+    padding: 12px;
+    background: #424242;
+    color: #FFF;
+}
+.card-content {
+    min-height: 120px;
+    padding: 16px;
+}
+.card-content h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.card-content p {
+    color: rgba(0,0,0,0.54);
+    font-size: 13px;
+    line-height: 20px;
+}
+.card-link {
+    padding: 4px 4px 4px 16px;
+    min-height: 44px;
+}
+.card-link a {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 8px 0;
+}
+
+
 .col-md-3:nth-child(4) .cl-home__item {
     background-color: #FF7043;
-}
-.col-md-3:nth-child(4) .cl-home__item h3 {
-    
 }
 .cl-home__item {
     position: relative;
     overflow: hidden;
     padding: 30px 20px;
-    min-width: 180px;
-    margin: 30px;
     border-radius: 2px;
     background-color: #424242;
+    margin: 20px 0 50px;
 }
 .cl-home__item > .fa {
     position: absolute;
