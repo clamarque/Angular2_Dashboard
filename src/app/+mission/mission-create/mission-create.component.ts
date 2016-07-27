@@ -19,24 +19,23 @@ export class MissionCreateComponent implements OnInit {
 
     constructor(private _dataService: DataService, private _router: Router, private _objectToArrayPipe: ObjectToArrayPipe, private _toastr: ToastsManager) { }
 
-    cancel(){
+    cancel() {
         this._router.navigate(['/Home/Mission']);
     }
 
-    onSubmit(model: Mission, isValid: boolean) {
-        console.log(model, isValid);
-        if (isValid = true) {
-            this._dataService.postDataMission(model);
+    onSubmit() {
+        if (this.mission.name != '') {
+            this._dataService.postDataMission(this.mission);
             this._router.navigate(['/Home/Mission']);
         }
         else {
-            console.log('error')
+            this._toastr.error('Thank you to fill the fields', 'Oops!')
         }
-
     }
 
     ngOnInit() {
         this.mission = {
+            active: false,
             name: '',
             description: '',
             dateStart: '',
@@ -46,6 +45,15 @@ export class MissionCreateComponent implements OnInit {
 
         this._dataService.getAllData('collaborator').then((snapshot) => {
             this.data = snapshot.val();
+
+            if (this.data != null) {
+                Object.keys(this.data).forEach((key) => {
+                    if (!this.data[key].active) {
+                        delete this.data[key];
+                    }
+                })
+            }
+
             this.list_collaborators = this._objectToArrayPipe.transform(this.data);
         })
     }

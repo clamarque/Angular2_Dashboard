@@ -1,1 +1,1 @@
-export { SettingIndexComponent } from './setting-index.component';
+export * from './setting-index.component';

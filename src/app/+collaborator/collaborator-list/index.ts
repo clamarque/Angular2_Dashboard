@@ -1,0 +1,1 @@
+export * from './collaborator-list.component';

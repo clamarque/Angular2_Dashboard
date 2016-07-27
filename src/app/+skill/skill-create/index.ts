@@ -1,1 +1,1 @@
-export { SkillCreateComponent } from './skill-create.component';
+export * from './skill-create.component';

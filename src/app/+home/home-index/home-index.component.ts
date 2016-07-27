@@ -1,5 +1,3 @@
-//Angular
-import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 
@@ -8,7 +6,7 @@ import { AuthService, DataService, ObjectToArrayPipe } from '../../shared';
 @Component({
     selector: 'home-index',
     templateUrl: './app/+home/home-index/home-index.component.html',
-    directives: [ROUTER_DIRECTIVES, FORM_DIRECTIVES, CORE_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES],
     providers: [AuthService, DataService, ObjectToArrayPipe]
 })
 
@@ -54,12 +52,11 @@ export class HomeIndexComponent implements OnInit {
 
     ngOnInit() {
         let user = firebase.auth().currentUser;
-        console.log(user.uid);
+        ///console.log(user.uid);
         if (user) {
             this._dataService.getData('collaborator', user.uid).then((snapshot) => {
                 this.infos = snapshot.val();
-
-                console.log(this.infos.admin);
+                //console.log(this.infos.admin);
             })
         }
     }

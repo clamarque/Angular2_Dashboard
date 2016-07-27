@@ -1,3 +1,3 @@
 export * from './mission-create';
-export * from './mission-index';
-export * from './mission-view';
+export * from './mission-detail';
+export * from './mission-list';

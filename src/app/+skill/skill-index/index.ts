@@ -1,1 +1,0 @@
-export { SkillIndexComponent } from './skill-index.component';

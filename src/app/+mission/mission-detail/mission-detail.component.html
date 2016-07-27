@@ -1,0 +1,31 @@
+<div class="row" *ngIf="mission">
+    <div class="cl-title">
+        <h2>{{'project.title-edit' | translate}}</h2>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+        <div class="field">
+            <input type="checkbox" [(ngModel)]="mission.active" name="active">
+            <label>Is Active</label>
+        </div>
+        <div class="field">
+            <input class="field-input" type="text" [(ngModel)]="mission.name" name="name">
+        </div>
+        <div class="field">
+            <input class="field-input" type="text" [(ngModel)]="mission.description" name="description">
+        </div>
+        <div class="field">
+            <input class="field-input" type="date" [(ngModel)]="mission.dateStart" name="dateStart">
+        </div>
+        <div class="field">
+            <input class="field-input" type="date" required [(ngModel)]="mission.dateEnd" name="dateEnd">
+        </div>
+        <div class="field">
+            <select class="field-input" [(ngModel)]="mission.collaborator" name="collaborator">
+                <option [value]="mission.collaborator" selected="">{{mission.collaborator}}</option>
+                <option *ngFor="let collaborator of list_collaborators" value="{{collaborator.username}}">{{collaborator.username}}</option>
+            </select>
+        </div>
+        <button class="btn" type="submit">{{'generic.btn-save' | translate}}</button>
+    </form>
+    <button class="btn" (click)="cancel()">{{'generic.btn-cancel' | translate}}</button>
+</div>

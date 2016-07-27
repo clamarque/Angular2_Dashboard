@@ -27,8 +27,8 @@ export class CustomerCreateComponent implements OnInit {
             this._router.navigate(['/Home/Customer']);
             this._toastr.success('Customer created')
         }
-        else{
-           this._toastr.error('Thank you to fill the fields', 'Oops!') 
+        else {
+            this._toastr.error('Thank you to fill the fields', 'Oops!')
         }
     }
 
@@ -41,6 +41,13 @@ export class CustomerCreateComponent implements OnInit {
 
         this._dataService.getAllData('mission').then((snapshot) => {
             this.data = snapshot.val();
+            if (this.data != null) {
+                Object.keys(this.data).forEach((key) => {
+                    if (!this.data[key].active) {
+                        delete this.data[key];
+                    }
+                })
+            }
             this.list_missions = this._objectToArrayPipe.transform(this.data);
         })
     }

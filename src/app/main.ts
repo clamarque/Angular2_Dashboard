@@ -1,4 +1,3 @@
-//Angular
 import { provide, PLATFORM_PIPES, enableProdMode } from '@angular/core';
 import { HTTP_PROVIDERS, Http } from '@angular/http';
 import { bootstrap }    from '@angular/platform-browser-dynamic';

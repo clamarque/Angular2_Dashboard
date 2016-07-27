@@ -240,7 +240,49 @@ form {
 .spinner__txt {
     margin: 5px auto auto;
 }
+/*
+* SETTING *
+*/
+.switch label .lever {
+     content: "";
+     display: inline-block;
+     position: relative;
+     width: 40px;
+     height: 15px;
+     background-color: #BDBDBD;
+     border-radius: 15px;
+     margin-right: 10px;
+     transition: background 0.3s ease;
+     vertical-align: middle;
+     margin: 0 16px;
+}
+.switch label input[type=checkbox]:checked+.lever {
+     background-color: #FF7043;
+ }
 
+ .switch label [type="checkbox"]:not(:checked),
+ .switch label [type="checkbox"]:checked {
+   position: absolute;
+   left: -9999px;
+     opacity: 0;
+ }
+ .switch label input[type=checkbox]:checked+.lever:after {
+     background-color: #FF5722;
+     left: 24px;
+ }
+ .switch label .lever:after {
+     content: "";
+     position: absolute;
+     display: inline-block;
+    width: 21px;
+     height: 21px;
+     background-color: #E0E0E0;
+     border-radius: 21px;
+     box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4);
+     left: -5px;
+     top: -3px;
+     transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease;
+ }
 /*
 * NAVIGATION *
 */
@@ -369,20 +411,20 @@ home-index .row:first-child {
 }
 
 home-index .row:nth-child(4),
-role-index .row:nth-child(2),
-skill-index .row:nth-child(2),
-customer-index .row:nth-child(2),
-mission-index .row:nth-child(2),
-collaborator-index .row:nth-child(2) {
+role-list .row:nth-child(2),
+skill-list .row:nth-child(2),
+customer-list .row:nth-child(2),
+mission-list .row:nth-child(2),
+collaborator-list .row:nth-child(2) {
     position: relative;
     margin-top: 100px;
 }
 home-index .btn-floating,
-role-index .btn-floating,
-skill-index .btn-floating,
-customer-index .btn-floating,
-collaborator-index .btn-floating,
-mission-index .btn-floating{
+role-list .btn-floating,
+skill-list .btn-floating,
+customer-list .btn-floating,
+collaborator-list .btn-floating,
+mission-list .btn-floating{
     position: absolute;
     right: 0;
     bottom: 0;
@@ -390,16 +432,16 @@ mission-index .btn-floating{
 }
 home-index a,
 home-index button,
-role-index a,
-role-index button,
-skill-index a,
-skill-index button,
-customer-index a,
-customer-index button,
-mission-index a,
-mission-index button,
-collaborator-index a,
-collaborator-index button {
+role-list a,
+role-list button,
+skill-list a,
+skill-list button,
+customer-list a,
+customer-list button,
+mission-list a,
+mission-list button,
+collaborator-list a,
+collaborator-list button {
     border: none;
     background: transparent;
     color: #F44336;
@@ -407,8 +449,8 @@ collaborator-index button {
 }
 
 
-customer-index img,
-collaborator-index img {
+customer-list img,
+collaborator-list img {
     width: 60px !important;
 }
 

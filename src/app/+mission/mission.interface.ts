@@ -1,4 +1,5 @@
 export interface Mission {
+    active: boolean;
     name: string;
     description: string;
     dateStart: string;

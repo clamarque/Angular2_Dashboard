@@ -1,8 +1,8 @@
-//Angular
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { DataService } from "../../shared";
+import { Skill } from '../skill.interface';
+import { DataService } from '../../shared';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
@@ -12,15 +12,10 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 })
 
 export class SkillCreateComponent implements OnInit {
-    skill: any;
+    skill: Skill;
 
     constructor(private _dataService: DataService, private _router: Router, private _toastr: ToastsManager) { }
 
-    createSkill(name) {
-        this._dataService.postData('skill', name);
-        this._router.navigate(['/Home/Skill'])
-        this._toastr.success('Skill created')
-    }
     cancel() {
         this._router.navigate(['/Home/Skill'])
     }

@@ -2,12 +2,17 @@
     <div class="cl-title">
         <h2>{{'project.title-create' | translate}}</h2>
     </div>
-    <form (ngSubmit)="onSubmit(f.value, f.valid)" #f="ngForm">
+    <form (ngSubmit)="onSubmit()>
+        <div class="field">
+            <input type="checkbox" [(ngModel)]="mission.active" name="active">
+            <label>Is Active</label>
+        </div>
         <div class="field">
             <input class="field-input" type="text" placeholder="Name mission" [(ngModel)]="mission.name" name="name" required>
         </div>
         <div class="field">
-            <textarea class="field-input" rows="3" colomns="3" placeholder="Description of mission" [(ngModel)]="mission.description" name="description"></textarea>
+            <textarea class="field-input" rows="3" colomns="3" placeholder="Description of mission" [(ngModel)]="mission.description"
+                name="description"></textarea>
         </div>
         <div class="field">
             <input class="field-input" type="date" required [(ngModel)]="mission.dateStart" name="dateStart">
@@ -17,7 +22,7 @@
         </div>
         <div class="field">
             <select class="field-input" [(ngModel)]="mission.collaborator" name="collaborator">
-                    <option [value]="Consultant" disabled="" selected="">Consultant</option>
+                    <option [value]="mission.collaborator" disabled="" selected="">Consultant</option>
                     <option *ngFor="let collaborator of list_collaborators" value="{{collaborator.username}}">{{collaborator.username}}</option>
                 </select>
         </div>

@@ -1,1 +1,0 @@
-export { RoleIndexComponent } from './role-index.component';

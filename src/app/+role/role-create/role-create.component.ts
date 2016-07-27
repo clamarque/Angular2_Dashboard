@@ -1,4 +1,3 @@
-//Angular
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -25,9 +24,9 @@ export class RoleCreateComponent implements OnInit {
         this._router.navigate(['/Home/Role'])
 
     }
-    onSubmit(model: Role, isValid: boolean) {
-        if (isValid != true || this.role.name != '') {
-            this._dataService.postDataRole(model);
+    onSubmit() {
+        if (this.role.name != '') {
+            this._dataService.postDataRole(this.role);
             this._router.navigate(['/Home/Role'])
             this._toastr.success('Role created')
         }

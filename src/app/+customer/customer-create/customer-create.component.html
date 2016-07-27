@@ -2,7 +2,7 @@
     <div class="cl-title">
         <h2>Create a customer</h2>
     </div>
-    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <form (ngSubmit)="onSubmit()">
         <div class="field">
             <input type="checkbox" [(ngModel)]="customer.active" name="active">
             <label>Mission Is Active</label>
@@ -12,7 +12,7 @@
         </div>
         <div class="field">
             <select class="field-input" [(ngModel)]="customer.mission" name="mission">
-                    <option [value]="mission" disabled="" selected="">Mission:</option>
+                    <option [value]="customer.mission" disabled="" selected="">Mission:</option>
                     <option *ngFor="let mission of list_missions" value="{{mission.name}}">{{mission.name}}</option>
                 </select>
         </div>

@@ -1,4 +1,3 @@
-//Angular
 import { FORM_DIRECTIVES, Control } from '@angular/common';
 import { Component } from '@angular/core';
 

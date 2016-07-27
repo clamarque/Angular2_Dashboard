@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="cl-title">
+        <h2>Collaborators</h2>
+    </div>
+    <button (click)="orderby()">OrderBy</button>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Active</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let collaborator of list_collaborators">
+                <td><img class="img__circle" src="https://robohash.org/+{{collaborator.username}}+.png"></td>
+                <td>{{collaborator.username}}</td>
+                <td>{{collaborator.role}}</td>
+                <td>{{collaborator.active}}</td>
+                <td>
+                    <a [routerLink]="['/Home/DetailCollaborator', collaborator.id]"><i class="fa fa-pencil fa-1x" aria-hidden="true"></i></a>
+                </td>
+                <td>
+                    <button (click)="deleteCollaborator(collaborator)"><i class="fa fa-times fa-1x" aria-hidden="true"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <a class="btn-floating wave-effect" [routerLink]="['../Register']">+</a>
+</div>

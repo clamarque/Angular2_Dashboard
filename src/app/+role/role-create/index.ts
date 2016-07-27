@@ -1,1 +1,1 @@
-export { RoleCreateComponent } from './role-create.component';
+export * from './role-create.component';

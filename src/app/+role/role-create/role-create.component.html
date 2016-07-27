@@ -2,7 +2,7 @@
     <div class="cl-title">
         <h2>Create a role</h2>
     </div>
-    <form (ngSubmit)="onSubmit(f.value, f.valid)" #f="ngForm">
+    <form (ngSubmit)="onSubmit()">
         <div class="field">
             <input class="field-input" type="text" placeholder="Name" [(ngModel)]="role.name" name="name">
         </div>

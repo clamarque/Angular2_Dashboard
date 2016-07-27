@@ -2,7 +2,7 @@
     <div class="cl-title">
         <h2>Create a skill</h2>
     </div>
-    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <form (ngSubmit)="onSubmit()">
         <div class="field">
             <input class="field-input" type="text" placeholder="Name" [(ngModel)]="skill.name" name="name">
         </div>

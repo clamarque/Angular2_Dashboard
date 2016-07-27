@@ -51,7 +51,7 @@ export class AuthService {
     */
     
     private createUserResume(uid: string, userDetails: any) {
-        console.log(userDetails.password);
+        //console.log(userDetails.password);
         this.signIn(userDetails.email, userDetails.password, (error: any) => {
             firebase.database().ref('collaborator').child(uid).set({
                 active: true, admin: false, first: userDetails.first,last: userDetails.last,username: userDetails.username,role: userDetails.role,email: userDetails.email
