@@ -10,7 +10,6 @@ import { AuthService, DataService, ObjectToArrayPipe } from '../../shared';
     providers: [AuthService, DataService, ObjectToArrayPipe]
 })
 
-
 export class HomeIndexComponent implements OnInit {
 
     customersCount: number;

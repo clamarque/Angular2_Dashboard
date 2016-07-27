@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Collaborator } from '../../+collaborator/collaborator'
+import { Collaborator } from '../../+collaborator/collaborator.interface'
 
 declare var firebase: any;
 

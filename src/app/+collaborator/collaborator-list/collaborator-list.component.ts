@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 
-import { Collaborator } from '../collaborator';
+import { Collaborator } from '../collaborator.interface';
 import { DataService, ObjectToArrayPipe } from '../../shared';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 

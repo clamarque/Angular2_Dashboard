@@ -2,3 +2,4 @@ src/typings
 node_modules
 src/dist
 src/node_modules
+npm-debug.log

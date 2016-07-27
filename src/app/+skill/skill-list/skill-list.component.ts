@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES} from '@angular/router';
 
 import { DataService, ObjectToArrayPipe } from '../../shared';
-import { Skill } from '../skill';
+import { Skill } from '../skill.interface';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
