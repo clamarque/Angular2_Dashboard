@@ -30,7 +30,7 @@ User:
 
 `$ git clone https://github.com/clamarque/Angular2_Dashboard.git`
 
-`$ cd Angular2_Dashboard/public/dev`
+`$ cd Angular2_Dashboard/src/`
 
 `$ npm install`
 
