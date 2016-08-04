@@ -7,6 +7,7 @@ Angular2_Dashboard is a platform of Directors to build projects and assign users
 ##Dependencies used
 
 - Angular 2 RC4
+- Angular 2 material
 - ng2-translate
 - ng2-toastr
 - Firebase
