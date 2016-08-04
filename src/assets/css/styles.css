@@ -71,8 +71,8 @@ h4 {
 
 .login {
     padding: 40px 0;
-    text-align: center;
     height: auto;
+    text-align: center;
 }
 
 .login form {
@@ -465,20 +465,25 @@ md-input {
 .cl-user__info p:first-child {
     font-weight: 500;
 }
+ #navigation ul {
     margin: 0;
     padding-left: 0;
     list-style: none;
     text-align: left;
 }
+#navigation ul > li {
     padding: 8px 24px;
     min-height: 48px;
     line-height: 48px;
 }
+#navigation ul > li:hover {
     background: #EEEEEE;
 }
+#navigation ul > li > a {
     color: #37474F;
     font-weight: 500;
 }
+#navigation ul > li > a > span {
     margin-left: 24px;
 }
 i.material-icons {

@@ -1,51 +1,57 @@
-<div class="row"></div>
-<div class="row">
-    <div class="col-xs-12 col-md-4">
-        <div class="card">
-            <div class="card-banner-header">
-                <i class="fa fa-users fa-4x" aria-hidden="true"></i>
-            </div>
-            <div class="card-content">
-                <h2>Collaborators</h2>
-                <p>Accédez à la liste des collaborateurs présent et visualiser les plus en détails</p>
-            </div>
-            <div class="card-link">
-                 <a [routerLink]="['Collaborator']">Premiers pas</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-xs-12 col-md-4">
-        <div class="card">
-            <div class="card-banner-header">
-                <i class="fa fa-users fa-4x" aria-hidden="true"></i>
-            </div>
-            <div class="card-content">
-                <h2>Customers</h2>
-                <p>Accédez à la liste des clients et assigner une mission d'un collaborateur</p>
-            </div>
-            <div class="card-link">
-                <a [routerLink]="['Customer']">Premiers pas</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-xs-12 col-md-4">
-        <div class="card">
-            <div class="card-banner-header">
-                <i class="fa fa-folder fa-4x" aria-hidden="true"></i>
-            </div>
-            <div class="card-content">
-                <h2>Missions</h2>
-                <p>Accédez à la liste des missions présente et à venir. assigner un collaborateur à une mission</p>
-            </div>
-            <div class="card-link">
-                <a [routerLink]="['Mission']">Premiers pas</a>
-            </div>
-        </div>
-    </div>
+<div class="mdl-grid">
+    <h4>Welcome !</h4>
+    <p>Version 0.3.0</p>
+    <ul>
+        <li>add angular2-material (new design !)</li>
+        <li>add first prototype dynamic title page</li>
+        <li>add material icon (remove font awesome)</li>
+        <li>bug fixe</li>
+        <li>delete folder JS (don't need now)</li>
+        <li>supression of some unused CSS lines (Flexbox too)</li>
+    </ul>
 </div>
-<div class="row">
-    <div class="col-xs-12 col-md-4">
-        <div class="card">
+
+<!--
+<md-grid-list cols="4" *ngIf="infos.admin">
+    <md-grid-tile>
+        <md-card class="cl-home__item">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <h3>
+                <span>{{customersCount}}</span>
+                <small>Customers</small>
+            </h3>
+        </md-card>
+    </md-grid-tile>
+    <md-grid-tile>
+        <md-card class="cl-home__item">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <h3>
+                <span>{{usersCount}}</span>
+                <small>Consultants</small>
+            </h3>
+        </md-card>
+    </md-grid-tile>
+    <md-grid-tile>
+        <md-card class="card cl-home__item">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h3>
+                <span>{{missionsCount}}</span>
+                <small>Missions</small>
+            </h3>
+        </md-card>
+    </md-grid-tile>
+    <md-grid-tile>
+        <md-card class="card cl-home__item">
+            <i class="fa fa-clock-o " aria-hidden="true "></i>
+            <h3>
+                <span>{{date | date:'dd MM yy HH:mm'}}</span>
+            </h3>
+        </md-card>
+    </md-grid-tile>
+</md-grid-list>
+<md-grid-list cols="3" *ngIf="infos.admin">
+    <md-grid-tile>
+        <md-card>
             <div class="card-banner-header">
                 <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>
             </div>
@@ -54,12 +60,12 @@
                 <p>Accédez à la liste des roles présent dans votre entreprise</p>
             </div>
             <div class="card-link">
-                 <a [routerLink]="['Role']">Premiers pas</a>
+                <a [routerLink]="['Role']">Premiers pas</a>
             </div>
-        </div>
-    </div>
-    <div class="col-xs-12 col-md-4">
-        <div class="card">
+        </md-card>
+    </md-grid-tile>
+    <md-grid-tile>
+        <md-card>
             <div class="card-banner-header">
                 <i class="fa fa-cogs fa-4x" aria-hidden="true"></i>
             </div>
@@ -70,10 +76,10 @@
             <div class="card-link">
                 <a [routerLink]="['Setting']">Premiers pas</a>
             </div>
-        </div>
-    </div>
-    <div class="col-xs-12 col-md-4">
-        <div class="card">
+        </md-card>
+    </md-grid-tile>
+    <md-grid-tile>
+        <md-card>
             <div class="card-banner-header">
                 <i class="fa fa-list fa-4x" aria-hidden="true"></i>
             </div>
@@ -84,6 +90,7 @@
             <div class="card-link">
                 <a [routerLink]="['Skill']">Premiers pas</a>
             </div>
-        </div>
-    </div>
-</div>
+        </md-card>
+    </md-grid-tile>
+</md-grid-list>
+-->
