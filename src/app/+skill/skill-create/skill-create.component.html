@@ -1,12 +1,7 @@
 <div class="row">
-    <div class="cl-title">
-        <h2>Create a skill</h2>
-    </div>
     <form (ngSubmit)="onSubmit()">
-        <div class="field">
-            <input class="field-input" type="text" placeholder="Name" [(ngModel)]="skill.name" name="name">
-        </div>
-        <button class="btn" type="submit">{{'generic.btn-save' | translate}}</button>
+        <md-input type="text" placeholder="Name skill" [(ngModel)]="skill.name" name="name"></md-input>
+        <button md-raised-button color="primary" type="submit">{{'generic.btn-save' | translate}}</button>
+        <button md-raised-button type="button" class="btn" (click)="cancel()">{{'generic.btn-cancel' | translate}}</button>
     </form>
-    <button class="btn" (click)="cancel()">{{'generic.btn-cancel' | translate}}</button>
 </div>

@@ -1,7 +1,4 @@
 <div class="row">
-    <div class="cl-title">
-        <h2>Roles</h2>
-    </div>
     <table>
         <thead>
             <tr>
@@ -15,12 +12,12 @@
                 <td>{{i}}</td>
                 <td>{{role.name}}</td>
                 <td>
-                    <button (click)="deleteRole(role)"><i class="fa fa-times fa-1x" aria-hidden="true"></i></button>
+                    <button (click)="deleteRole(role)"><i class="material-icons">clear</i></button>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
 <div class="row">
-    <a class="btn-floating wave-effect" [routerLink]="['../CreateRole']">+</a>
+    <button md-fab [routerLink]="['../CreateRole']"><i class="material-icons">add</i></button>
 </div>

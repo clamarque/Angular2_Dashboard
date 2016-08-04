@@ -1,61 +1,45 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 
-import { AuthService, DataService, ObjectToArrayPipe } from '../../shared';
+import { AuthService, DataService, ObjectToArrayPipe, TitlePageService } from '../../shared';
+import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav'
+import { MD_TOOLBAR_DIRECTIVES } from '@angular2-material/toolbar/toolbar';
 
 @Component({
     selector: 'home-index',
     templateUrl: './app/+home/home-index/home-index.component.html',
-    directives: [ROUTER_DIRECTIVES],
-    providers: [AuthService, DataService, ObjectToArrayPipe]
+    directives: [ROUTER_DIRECTIVES, MD_SIDENAV_DIRECTIVES, MD_TOOLBAR_DIRECTIVES],
+    providers: [AuthService, DataService, ObjectToArrayPipe, TitlePageService]
 })
 
 export class HomeIndexComponent implements OnInit {
 
-    customersCount: number;
-    missionsCount: number;
-    usersCount: number;
-    skillsCount: number;
-    date: Date;
     data: any;
 
-    public username: String;
+    public first: string;
+    public last: string;
+    public email: string;
     public infos: any = {};
+    title: any;
 
-    constructor(private _authService: AuthService, private _dataService: DataService, private _router: Router, private _objectToArrayPipe: ObjectToArrayPipe) {
-        this.username = localStorage.getItem('username');
+    constructor(private _titlePageService: TitlePageService, private _authService: AuthService, private _dataService: DataService, private _router: Router, private _objectToArrayPipe: ObjectToArrayPipe) { }
 
-        this.date = new Date();
-        this.usersCount = 0;
-        this.missionsCount = 0;
-        this.customersCount = 0;
-        this.skillsCount = 0;
-
-        let self = this;
-
-        firebase.database().ref('collaborator/').on('value', function (data) {
-            self.usersCount = data.numChildren();
-        })
-
-        firebase.database().ref('mission/').on('value', function (data) {
-            self.missionsCount = data.numChildren();
-        })
-        firebase.database().ref('customer/').on('value', function (data) {
-            self.customersCount = data.numChildren();
-        })
-    }
-    
-    onSignOut(){
+    onSignOut() {
         this._authService.signOut();
     }
 
     ngOnInit() {
+        setInterval(() => {
+            this.title = this._titlePageService.getTitle();
+        }, 1000)
+
         let user = firebase.auth().currentUser;
-        ///console.log(user.uid);
         if (user) {
             this._dataService.getData('collaborator', user.uid).then((snapshot) => {
                 this.infos = snapshot.val();
-                //console.log(this.infos.admin);
+                this.first = this.infos.first
+                this.last = this.infos.last
+                this.email = this.infos.email
             })
         }
     }

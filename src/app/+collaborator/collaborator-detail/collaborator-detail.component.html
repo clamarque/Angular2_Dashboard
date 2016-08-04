@@ -1,38 +1,26 @@
 <div class="row" *ngIf="collaborator">
-    <div class="cl-title">
-        <h2>Edit</h2>
-    </div>
     <form (ngSubmit)="onSubmit()">
         <div class="div">
-            <img class="img__circle" src="https://robohash.org/+{{collaborator.username}}+.png">
+            <img class="cl-form__profil" src="https://robohash.org/+{{collaborator.username}}+.png">
         </div>
-        <div class="field">
-            <input type="checkbox" [(ngModel)]="collaborator.active" name="collaborator.active">
+        <md-checkbox type="checkbox" [(ngModel)]="collaborator.active" name="collaborator.active">
             <label>Is Active</label>
-        </div>
-        <div class="field">
-            <input type="checkbox" [(ngModel)]="collaborator.admin" name="collaborator.admin">
+        </md-checkbox>
+        <md-checkbox type="checkbox" [(ngModel)]="collaborator.admin" name="collaborator.admin">
             <label>is Admin</label>
-        </div>
-        <div class="field">
-            <input class="field-input" type="text" [(ngModel)]="collaborator.email" name="collaborator.email">
-        </div>
-        <div class="field">
-            <input class="field-input" type="text" [(ngModel)]="collaborator.first" name="collaborator.first">
-        </div>
-        <div class="field">
-            <input class="field-input" type="text" [(ngModel)]="collaborator.last" name="collaborator.last">
-        </div>
-        <div class="field">
-            <input class="field-input" type="text" [(ngModel)]="collaborator.username" name="collaborator.username">
-        </div>
+        </md-checkbox>
+        <md-input class="field-input" type="text" [(ngModel)]="collaborator.email" name="collaborator.email"></md-input>
+        <md-input class="field-input" type="text" [(ngModel)]="collaborator.first" name="collaborator.first"></md-input>
+        <md-input class="field-input" type="text" [(ngModel)]="collaborator.last" name="collaborator.last"></md-input>
+        <md-input class="field-input" type="text" [(ngModel)]="collaborator.username" name="collaborator.username"></md-input>
+
         <div class="field">
             <select class="field-input" [(ngModel)]="collaborator.role" name="collaborator.role">
                 <option [value]="collaborator.role" selected="">{{collaborator.role}}</option>
                 <option *ngFor="let role of list_roles" value="{{role.name}}">{{role.name}}</option>
             </select>
         </div>
-        <button type="submit" class="btn">{{'generic.btn-save' | translate}}</button>
+        <button md-raised-button color="primary" type="submit">{{'generic.btn-save' | translate}}</button>
+        <button md-raised-button type="button" (click)="cancel()">{{'generic.btn-cancel' | translate}}</button>
     </form>
-    <button class="btn" (click)="cancel()">{{'generic.btn-cancel' | translate}}</button>
 </div>

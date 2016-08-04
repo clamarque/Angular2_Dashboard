@@ -1,12 +1,10 @@
 <div class="row" *ngIf="list_skills">
-    <div class="cl-title">
-        <h2>Edit</h2>
-    </div>
     <form (ngSubmit)="onSubmit()">
-        <div class="field">
-            <input class="field-input" type="text" [(ngModel)]="list_skills.name" name="name">
+        <div class="cl-form__title">
+            <h2>Edit</h2>
         </div>
-        <button class="btn" type="submit">{{'generic.btn-save' | translate}}</button>
+        <md-input class="field-input" type="text" [(ngModel)]="list_skills.name" name="name"></md-input>
+        <button md-raised-button color="primary" type="submit">{{'generic.btn-save' | translate}}</button>
+        <button md-raised-button type="button" (click)="cancel()">{{'generic.btn-cancel' | translate}}</button>
     </form>
-    <button class="btn" (click)="cancel()">{{'generic.btn-cancel' | translate}}</button>
 </div>

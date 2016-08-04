@@ -1,7 +1,4 @@
 <div class="row">
-    <div class="cl-title">
-        <h2>{{'project.title' | translate}}</h2>
-    </div>
     <table>
         <thead>
             <tr>
@@ -17,12 +14,12 @@
                 <td>{{i}}</td>
                 <td>{{mission.name}}</td>
                 <td>{{mission.active}}</td>
-                <td><a [routerLink]="['/Home/DetailMission', mission.id]"><i class="fa fa-pencil fa-1x" aria-hidden="true"></i></a></td>
-                <td><button (click)="deleteMission(mission)"><i class="fa fa-times" aria-hidden="true"></i></button></td>
+                <td><a [routerLink]="['/Home/DetailMission', mission.id]"><i class="material-icons">mode_edit</i></a></td>
+                <td><button (click)="deleteMission(mission)"><i class="material-icons">clear</i></button></td>
             </tr>
         </tbody>
     </table>
 </div>
 <div class="row">
-    <a class="btn-floating wave-effect" [routerLink]="['../CreateMission']">+</a>
+    <button md-fab [routerLink]="['../CreateMission']"><i class="material-icons">add</i></button>
 </div>

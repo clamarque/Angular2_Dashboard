@@ -2,13 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { Customer } from '../customer.interface';
-import { DataService, ObjectToArrayPipe } from '../../shared';
+import { DataService, ObjectToArrayPipe, TitlePageService } from '../../shared';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import { MD_CHECKBOX_DIRECTIVES } from '@angular2-material/checkbox';
+import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
 
 @Component({
     selector: "customer-detail",
     templateUrl: './app/+customer/customer-detail/customer-detail.component.html',
-    providers: [DataService, ObjectToArrayPipe, ToastsManager]
+    directives: [MD_BUTTON_DIRECTIVES, MD_CHECKBOX_DIRECTIVES, MD_INPUT_DIRECTIVES],
+    providers: [DataService, ObjectToArrayPipe, ToastsManager, TitlePageService]
 })
 
 export class CustomerDetailComponent implements OnInit {
@@ -22,7 +26,8 @@ export class CustomerDetailComponent implements OnInit {
         private _route: ActivatedRoute,
         private _router: Router,
         private _objecToArrayPipe: ObjectToArrayPipe,
-        private _toastr: ToastsManager) { }
+        private _toastr: ToastsManager,
+        private _titlePageService: TitlePageService) { }
 
     cancel() {
         this._router.navigate(['/Home/Customer']);
@@ -38,6 +43,8 @@ export class CustomerDetailComponent implements OnInit {
     }
 
     ngOnInit() {
+        this._titlePageService.setTitle('Customer details');
+
         this.sub = this._route.params.subscribe(params => {
             let id = params['id'];
             this._dataService.getData('customer', id).then((snapshot) => {

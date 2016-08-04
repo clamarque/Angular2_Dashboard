@@ -3,12 +3,15 @@ import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 
 import { AuthService } from '../../shared';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
 
 
 @Component({
     selector: 'user-reset-password',
     templateUrl: './app/+collaborator/collaborator-reset/collaborator-reset.component.html',
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES, MD_BUTTON_DIRECTIVES, MD_CARD_DIRECTIVES, MD_INPUT_DIRECTIVES],
     providers: [AuthService, ToastsManager]
 })
 export class CollaboratorResetComponent implements OnInit { 

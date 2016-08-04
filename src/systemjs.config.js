@@ -8,10 +8,10 @@
     'rxjs':                       'node_modules/rxjs',
     'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
     '@angular':                   'node_modules/@angular',
+    '@angular2-material':         'node_modules/@angular2-material',
     'ng2-translate':              'node_modules/ng2-translate',
     'firebase':                   'node_modules/firebase/lib/firebase-web.js',
-    'ng2-notifications':          'node_modules/ng2-notifications',
-    
+     
     './':                         'app/',
     '+collaborator':              'app/+collaborator',
     'collaborator-signin':        'app/+collaborator/collaborator-signin',
@@ -51,8 +51,18 @@
     'rxjs':                       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { defaultExtension: 'js' },
     'ng2-translate':              { defaultExtension: 'js'},
-    'ng2-notifications':          { defaultExtension: 'js'}
-  };
+    '@angular2-material/card':    { main: 'card.js', defaultExtension: 'js'},
+    '@angular2-material/core':    { main: 'core.js', defaultExtension: 'js'},
+    '@angular2-material/checkbox':    { main: 'checkbox.js', defaultExtension: 'js'},
+    '@angular2-material/button':  { main: 'button.js', defaultExtension: 'js'},
+    '@angular2-material/list':    { main: 'list.js', defaultExtension: 'js'},
+    '@angular2-material/grid-list': { main:'grid-list.js', defaultExtension: 'js'},
+    '@angular2-material/input':   { main: 'input.js', defaultExtension: 'js'},
+    '@angular2-material/menu':    { main: 'menu.js', defaultExtension: 'js'},
+    '@angular2-material/sidenav': { main: 'sidenav.js', defaultExtension:'js'},
+    '@angular2-material/slide-toggle': { main: 'slide-toggle.js', defaultExtension: 'js'},
+    '@angular2-material/toolbar': { main: 'js', defaultExtension: 'js'}  
+};
 
   var packageNames = [
     '@angular/common',

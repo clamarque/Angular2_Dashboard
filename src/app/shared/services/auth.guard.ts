@@ -8,7 +8,7 @@ import { ObjectToArrayPipe } from '../';
 
 export class AuthGuard implements CanActivate {
 
-
+public infos = {};
     constructor( private _router: Router) { }
     
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable <boolean> | boolean {
@@ -32,7 +32,18 @@ export class AuthGuard implements CanActivate {
             return false;
         }
     }
-    isAdmin() {
-
+    isAdmin(info: any) {
+                /*let self = this;
+          firebase.database().ref('collaborator/' + info.uid).once('value').then(function (snapshot) {
+                self.infos = snapshot.val();
+                console.log(self.infos);
+                if (self.infos.admin == true) {
+                    return true
+                }
+                else {
+                    //this._router.navigate(['Home']);
+                    return false
+                }
+            })*/
     }
 }

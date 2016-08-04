@@ -1,7 +1,4 @@
 <div class="row">
-    <div class="cl-title">
-        <h2>Customers</h2>
-    </div>
     <table>
         <thead>
             <tr>
@@ -18,15 +15,15 @@
                 <td>{{customer.name}}</td>
                 <td>{{customer.mission}}</td>
                 <td>
-                    <a [routerLink]="['/Home/DetailCustomer', customer.id]"><i class="fa fa-pencil fa-1x" aria-hidden="true"></i></a>
+                    <a [routerLink]="['/Home/DetailCustomer', customer.id]"><i class="material-icons">mode_edit</i></a>
                 </td>
                 <td>
-                    <button (click)="deleteCustomer(customer)"><i class="fa fa-times fa-1x" aria-hidden="true"></i></button>
+                    <button (click)="deleteCustomer(customer)"><i class="material-icons">clear</i></button>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
 <div class="row">
-    <a class="btn-floating wave-effect" [routerLink]="['../CreateCustomer']">+</a>
+    <button md-fab [routerLink]="['../CreateCustomer']"><i class="material-icons">add</i></button>
 </div>

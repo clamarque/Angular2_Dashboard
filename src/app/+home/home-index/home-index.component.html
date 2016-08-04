@@ -1,92 +1,59 @@
-<div class="row">
-    <div class="col-xs-12 col-sm-2 col-md-2 sidebar">
-        <nav class="" role="navigation" id="navigation">
+<md-sidenav-layout class="demo-sidenav-layout">
+    <md-sidenav #end align="start" mode="push">
+        <div class="cl-user__details">
+            <div class="cl-user__photo">
+                <img alt="profil" class="cl-circle" src="https://robohash.org/++.png">
+            </div>
+            <div class="cl-user__info">
+                <p>test Test</p>
+                <p>test@clamarque.io</p>
+            </div>
+        </div>
+        <nav class="" id="navigation" role="navigation">
             <ul class="nav">
-                <li class="nav__profile">
-                    <img class="cl-circle" src="https://robohash.org/+{{username}}+.png" alt="profil">
-                    <h1>{{username}}</h1>
+                <li>
+                    <a [routerLink]="['/Home']" (click)="end.close()"><i class="material-icons">home</i><span>{{'index.Dashboard' | translate}}</span></a>
                 </li>
                 <li>
-                    <a [routerLink]="['/Home']"><i class="fa fa-th-large"></i>{{'index.Dashboard' | translate}}</a>
-                </li>
-                <li *ngIf="!infos.admin">
-                    <a [routerLink]="['/Home']"><i class="fa fa-th-large"></i>Profil</a>
-                </li>
-                <li *ngIf="infos.admin">
-                    <a [routerLink]="['Collaborator']"><i class="fa fa-users" aria-hidden="true"></i>{{'index.Consultant' | translate}}</a>
-                </li>
-                <li *ngIf="infos.admin">
-                    <a [routerLink]="['Customer']"><i class="fa fa-users" aria-hidden="true"></i>{{'index.Customer' | translate}}</a>
-                </li>
-                <li *ngIf="infos.admin">
-                    <a [routerLink]="['Mission']"><i class="fa fa-folder" aria-hidden="true"></i>{{'index.Mission' | translate}}</a>
-                </li>
-                <li *ngIf="infos.admin">
-                    <a [routerLink]="['Role']"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Role</a>
-                </li>
-                <li *ngIf="infos.admin">
-                    <a [routerLink]="['Skill']"><i class="fa fa-list" aria-hidden="true"></i>{{'index.Skill' | translate}}</a>
+                    <a [routerLink]="['Collaborator']" (click)="end.close()"><i class="material-icons">group</i><span>{{'index.Consultant' | translate}}</span></a>
                 </li>
                 <li>
-                    <a [routerLink]="['Setting']"><i class="fa fa-cogs" aria-hidden="true"></i>{{'index.Setting' | translate}}</a>
+                    <a [routerLink]="['Customer']" (click)="end.close()"><i class="material-icons">group</i><span>{{'index.Customer' | translate}}</span></a>
                 </li>
                 <li>
-                    <a (click)="onSignOut()"><i class="fa fa-sign-out" aria-hidden="true"></i>{{'index.Sign-out' | translate}}</a>
+                    <a [routerLink]="['Mission']" (click)="end.close()"> <i class="material-icons">assignment_ind</i><span>{{'index.Mission' | translate}}</span></a>
                 </li>
                 <li>
-                    <a href="mailto:chabox59@gmail.com"><i class="fa fa-comment-o" aria-hidden="true"></i> Feedbacks</a>
+                    <a [routerLink]="['Role']" (click)="end.close()"><i class="material-icons">school</i><span>Role</span></a>
                 </li>
                 <li>
-                    <a><i class="fa fa-code-fork" aria-hidden="true"></i> Currently v-0.2.3</a>
+                    <a [routerLink]="['Skill']" (click)="end.close()"><i class="material-icons">format_align_left</i><span>{{'index.Skill' | translate}}</span></a>
                 </li>
-                <li class="nav__copyright">
-                    Made with <i class="fa fa-heart" aria-hidden="true"></i> by <strong>clamarque</strong>
+                <li>
+                    <a [routerLink]="['Setting']" (click)="end.close()"><i class="material-icons">settings</i><span>{{'index.Setting' | translate}}</span></a>
                 </li>
-                <li class="nav__copyright">
-                    <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href=""><i class="fa fa-google-plus" arias-hidden="true"></i></a>
+                <li>
+                    <a (click)="onSignOut()"><i class="material-icons">exit_to_app</i><span>{{'index.Sign-out' | translate}}</span></a>
+                </li>
+                <li>
+                    <a href="mailto:chabox59@gmail.com"><i class="material-icons">bug_report</i><span>Feedbacks</span></a>
+                </li>
+                <li>
+                    <a><i class="material-icons">new_releases</i><span>Currently v-0.3.0</span></a>
+                </li>
+                <li>
+                    <a>Made with <i class="material-icons">favorite</i> by <strong>clamarque</strong></a>
                 </li>
             </ul>
         </nav>
-    </div>
-    <div class="col-xs-12 col-sm-10 col-md-10">
-        <div class="row">
-            <div class="col-xs-12 col-md-3">
-                <div class="cl-home__item">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <h3>
-                        <span>{{customersCount}}</span>
-                        <small>Customers</small>
-                    </h3>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-3">
-                <div class="cl-home__item">
-                    <i class="fa fa-users" aria-hidden="true"></i>
-                    <h3>
-                        <span>{{usersCount}}</span>
-                        <small>Consultants</small>
-                    </h3>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-3">
-                <div class="cl-home__item">
-                    <i class="fa fa-folder-open" aria-hidden="true"></i>
-                    <h3>
-                        <span>{{missionsCount}}</span>
-                        <small>Missions</small>
-                    </h3>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-3">
-                <div class=" cl-home__item ">
-                    <i class="fa fa-clock-o " aria-hidden="true "></i>
-                    <h3>
-                        <span>{{date | date:'dd MM yy HH:mm'}}</span>
-                    </h3>
-                </div>
-            </div>
-        </div>
+    </md-sidenav>
+    <md-toolbar color="primary">
+        <button class="app-icon-button" (click)="end.toggle()">
+            <i class="material-icons app-toolbar-menu">menu</i>
+            </button> Angular Dashboard <i class="material-icons">keyboard_arrow_right</i> {{title}}
+        <span class="app-toolbar-filler"></span>
+    </md-toolbar>
+    <div class="app-content">
         <router-outlet></router-outlet>
     </div>
+</md-sidenav-layout>

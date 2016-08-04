@@ -1,15 +1,12 @@
 <div class="login">
-        <img class="login__img" src="assets/img/C.png" alt="Clamarque">
-        <h2>{{'generic.welcome-title' | translate}}</h2>
-        <form (ngSubmit)="onSubmit()">
-            <div class="field">
-                <input [(ngModel)]="email" name="email" type="email" class="field-input" placeholder="Email" required>
-            </div>
-            <div class="field">
-                <input [(ngModel)]="password" name="password" type="password" class="field-input" placeholder="Password" required>
-            </div>
-            <button class="btn wave-effect" type="submit">{{'login.btn' | translate}}</button>            
+    <form (ngSubmit)="onSubmit()">
+        <md-card>
+            <img class="login__img" src="assets/img/C.png" alt="Clamarque">
+            <md-input [(ngModel)]="email" name="email" type="email" placeholder="First name" required></md-input>
+            <md-input [(ngModel)]="password" name="password" type="password" placeholder="Password" required></md-input>
+            <button md-raised-button color="primary" type="submit">{{'login.btn' | translate}}</button>
             <div class="login__error">{{msg}}</div>
-        </form>
-        <a [routerLink]="['Reset-password']">Forgot password ?</a>
+            <a [routerLink]="['Reset-password']">Forgot password ?</a>
+        </md-card>
+    </form>
 </div>

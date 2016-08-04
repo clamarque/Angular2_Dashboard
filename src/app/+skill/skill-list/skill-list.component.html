@@ -1,7 +1,4 @@
 <div class="row">
-    <div class="cl-title">
-        <h2>Skills</h2>
-    </div>
     <table>
         <thead>
             <tr>
@@ -16,15 +13,15 @@
                 <td>{{i}}</td>
                 <td>{{skill.name}}</td>
                 <td>
-                    <a [routerLink]="['/Home/DetailSkill', skill.id]"><i class="fa fa-pencil fa-1x" aria-hidden="true"></i></a>
+                    <a [routerLink]="['/Home/DetailSkill', skill.id]"><i class="material-icons">mode_edit</i></a>
                 </td>
                 <td>
-                    <button (click)="deleteData(skill)"><i class="fa fa-times fa-1x" aria-hidden="true"></i></button>
+                    <button (click)="deleteData(skill)"><i class="material-icons">clear</i></button>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
 <div class="row">
-    <a class="btn-floating wave-effect" [routerLink]="['../CreateSkill']">+</a>
+    <button md-fab [routerLink]="['../CreateSkill']"><i class="material-icons">add</i></button>
 </div>

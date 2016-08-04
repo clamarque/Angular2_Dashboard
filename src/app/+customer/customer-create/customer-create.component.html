@@ -1,22 +1,16 @@
 <div class="row">
-    <div class="cl-title">
-        <h2>Create a customer</h2>
-    </div>
     <form (ngSubmit)="onSubmit()">
-        <div class="field">
-            <input type="checkbox" [(ngModel)]="customer.active" name="active">
+        <md-checkbox type="checkbox" [(ngModel)]="customer.active" name="active">
             <label>Mission Is Active</label>
-        </div>
-        <div class="field">
-            <input type="text" class="field-input" placeholder="Name" [(ngModel)]="customer.name" name="name">
-        </div>
+        </md-checkbox>
+        <md-input type="text" placeholder="Name" [(ngModel)]="customer.name" name="name"></md-input>
         <div class="field">
             <select class="field-input" [(ngModel)]="customer.mission" name="mission">
                     <option [value]="customer.mission" disabled="" selected="">Mission:</option>
                     <option *ngFor="let mission of list_missions" value="{{mission.name}}">{{mission.name}}</option>
                 </select>
         </div>
-        <button class="btn" type="submit">{{'generic.btn-save' | translate}}</button>
+        <button md-raised-button color="primary" type="submit">{{'generic.btn-save' | translate}}</button>
+        <button md-raised-button type="button" (click)="cancel()">{{'generic.btn-cancel' | translate}}</button>
     </form>
-    <button class="btn" (click)="cancel()">{{'generic.btn-cancel' | translate}}</button>
 </div>

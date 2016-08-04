@@ -1,31 +1,19 @@
 <div class="row">
-    <div class="cl-title">
-        <h2>Create a collaborator</h2>
-    </div>
     <form (ngSubmit)="onSubmit()">
-        <div class="field">
-            <input class="field-input" [(ngModel)]="list_infosUser.first" name="first" type="text" placeholder="Firstname" required>
-        </div>
-        <div class="field">
-            <input class="field-input" [(ngModel)]="list_infosUser.last" name="last" type="text" placeholder="Lastname" required>
-        </div>
-        <div class="field">
-            <input class="field-input" [(ngModel)]="list_infosUser.username" name="username" type="text" placeholder="username" required>
-        </div>
+            <md-input [(ngModel)]="list_infosUser.first" name="first" type="text" placeholder="Firstname" required></md-input>
+            <md-input [(ngModel)]="list_infosUser.last" name="last" type="text" placeholder="Lastname" required></md-input>
+            <md-input [(ngModel)]="list_infosUser.username" name="username" type="text" placeholder="username" required></md-input>
         <div class="field">
             <select class="field-input" [(ngModel)]="list_infosUser.role" name="role">
                 <option [value]="list_infosUser.role" disabled="" selected="">Role</option>
                 <option *ngFor="let role of list_roles" value="{{role.name}}">{{role.name}}</option>
             </select>
         </div>
-        <div class="field">
-            <input class="field-input" [(ngModel)]="list_infosUser.email" name="email" type="email" placeholder="email" required>
-        </div>
-        <div class="field">
-            <input class="field-input" [(ngModel)]="list_infosUser.password" name="password" type="password" placeholder="password" required>
-        </div>
-        <button class="btn" type="submit">
-            <i class="fa fa-user-plus" aria-hidden="true"></i><span class="fa-icon-label"> Create Account</span>
+            <md-input [(ngModel)]="list_infosUser.email" name="email" type="email" placeholder="email" required></md-input>
+            <md-input [(ngModel)]="list_infosUser.password" name="password" type="password" placeholder="password" required></md-input>
+        <button md-raised-button color="primary" type="submit">
+           <i class="material-icons">person_add</i><span class="fa-icon-label"> Create Account</span>
         </button>
+        <button md-raised-button type="button"(click)="cancel()">{{'generic.btn-cancel' | translate}}</button>
     </form>
 </div>

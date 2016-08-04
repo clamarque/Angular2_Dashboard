@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { DataService, ObjectToArrayPipe } from '../../shared';
+import { DataService, ObjectToArrayPipe, TitlePageService } from '../../shared';
 import { Customer } from '../customer.interface';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import { MD_CHECKBOX_DIRECTIVES } from '@angular2-material/checkbox';
+import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
 
 @Component({
     selector: 'customer-create',
     templateUrl: './app/+customer/customer-create/customer-create.component.html',
-    providers: [DataService, ObjectToArrayPipe, ToastsManager]
+    directives: [MD_BUTTON_DIRECTIVES, MD_CHECKBOX_DIRECTIVES, MD_INPUT_DIRECTIVES],
+    providers: [DataService, ObjectToArrayPipe, ToastsManager, TitlePageService]
 })
 
 export class CustomerCreateComponent implements OnInit {
@@ -16,7 +20,12 @@ export class CustomerCreateComponent implements OnInit {
     list_missions: any[];
     customer: Customer;
 
-    constructor(private _dataService: DataService, private _router: Router, private _objectToArrayPipe: ObjectToArrayPipe, private _toastr: ToastsManager) { }
+    constructor(
+        private _dataService: DataService,
+        private _router: Router,
+        private _objectToArrayPipe: ObjectToArrayPipe,
+        private _toastr: ToastsManager,
+        private _titlePageService: TitlePageService) { }
 
     cancel() {
         this._router.navigate(['/Home/Customer']);
@@ -33,6 +42,8 @@ export class CustomerCreateComponent implements OnInit {
     }
 
     ngOnInit() {
+        this._titlePageService.setTitle('Create a customer');
+
         this.customer = {
             active: false,
             mission: '',
