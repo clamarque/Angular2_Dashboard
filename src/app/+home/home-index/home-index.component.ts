@@ -37,10 +37,20 @@ export class HomeIndexComponent implements OnInit {
         if (user) {
             this._dataService.getData('collaborator', user.uid).then((snapshot) => {
                 this.infos = snapshot.val();
-                this.first = this.infos.first
-                this.last = this.infos.last
-                this.email = this.infos.email
+                this.email = user.email;
+
+                if (this.infos != null) {
+                    this.first = this.infos.first;
+                    this.last = this.infos.last;
+                }
+                else{
+                    console.log("infos this users doesn't exist");
+                }
+                
             })
+        }
+        else {
+            console.log("this user doesn't exit");
         }
     }
 }
