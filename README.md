@@ -11,6 +11,7 @@ Angular2_Dashboard is a management platform of collaborators for the entreprises
 - ng2-translate
 - ng2-toastr
 - Firebase 3
+- Typescript
 
 ##Demo
 
