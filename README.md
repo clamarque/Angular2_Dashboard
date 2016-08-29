@@ -3,8 +3,7 @@
 
 [![Join the chat at https://gitter.im/clamarque/Angular2_Dashboard](https://badges.gitter.im/clamarque/Angular2_Dashboard.svg)](https://gitter.im/clamarque/Angular2_Dashboard?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![npm](https://img.shields.io/npm/v/npm.svg?maxAge=2592000)]()
-
-
+[![npm](https://img.shields.io/badge/node-6.4.0-blue.svg)]()
 
 <p align="center">
 <img src="https://github.com/clamarque/Angular2_Dashboard/blob/master/src/assets/img/demo.png" width="400" height="400">
