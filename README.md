@@ -40,6 +40,6 @@ User:
 - Firebase 3
 - Typescript
 
-##Do you want help me ?
+##who wants to help me?
 
 Want to file a bug, contribute some code, suggest ideas or improve documentation? don't hesitate!
