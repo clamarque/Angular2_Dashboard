@@ -2,6 +2,9 @@
 > Angular2_Dashboard is a management platform of collaborators for the entreprises. This platform was developed with Angular RC.4 and Firebase and it is still developing.
 
 [![Join the chat at https://gitter.im/clamarque/Angular2_Dashboard](https://badges.gitter.im/clamarque/Angular2_Dashboard.svg)](https://gitter.im/clamarque/Angular2_Dashboard?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![npm](https://img.shields.io/npm/v/npm.svg?maxAge=2592000)]()
+
+
 
 <p align="center">
 <img src="https://github.com/clamarque/Angular2_Dashboard/blob/master/src/assets/img/demo.png" width="400" height="400">
