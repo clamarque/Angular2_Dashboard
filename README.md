@@ -2,15 +2,15 @@
 
 [![Join the chat at https://gitter.im/clamarque/Angular2_Dashboard](https://badges.gitter.im/clamarque/Angular2_Dashboard.svg)](https://gitter.im/clamarque/Angular2_Dashboard?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Angular2_Dashboard is a platform of Directors to build projects and assign users to these project. This platform was developed with Angular RC.4 and Firebase and it is still developing.
+Angular2_Dashboard is a management platform of collaborators for the entreprises. This platform was developed with Angular RC.4 and Firebase and it is still developing.
 
-##Dependencies used
+##Stack
 
 - Angular 2 RC4
 - Angular 2 material
 - ng2-translate
 - ng2-toastr
-- Firebase
+- Firebase 3
 
 ##Demo
 
