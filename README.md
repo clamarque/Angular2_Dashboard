@@ -9,7 +9,7 @@
 <img src="https://github.com/clamarque/Angular2_Dashboard/blob/master/src/assets/img/demo.png" width="400" height="400">
 </p>
 
-##Demo
+## Demo
 
 you can run the app: https://blazing-inferno-9370.firebaseapp.com 
 
@@ -23,7 +23,7 @@ User:
 
 * Coming soon
 
-##Quick Start
+## Quick Start
 
 `$ git clone https://github.com/clamarque/Angular2_Dashboard.git`
 
@@ -33,7 +33,7 @@ User:
 
 `$ npm start`
 
-##Stack
+## Stack
 
 - Angular 2 RC4
 - Angular 2 material
@@ -42,6 +42,6 @@ User:
 - Firebase 3
 - Typescript
 
-##Who wants to help me?
+## Who wants to help me?
 
 Want to file a bug, contribute some code, suggest ideas or improve documentation? don't hesitate!
